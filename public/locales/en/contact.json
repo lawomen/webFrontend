@@ -1,0 +1,10 @@
+{
+    "name": "Name:",
+    "email": "Email:",
+    "note": "Enter Your Message:",
+    "load": "Processing...",
+    "submit": "Submit",
+    "requiredError": "This field is required",
+    "emailError": "Please enter a valid email",
+    "charError": "Require at least 3 characters"
+}
