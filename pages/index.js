@@ -54,6 +54,7 @@ function Home({ apiRes }) {
         <div className={homeStyle.overlay}>
           <div className={homeStyle.mainTagline}>
             <h1>{t2.t("companyName")}</h1>
+            <h3> Testing Git Branching!!</h3>
             <h2>{apiRes.tagline}</h2>
             <h3>{apiRes.landingDesc}</h3>
           </div>
