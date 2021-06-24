@@ -24,6 +24,7 @@
 
 .menuIcon{
     display: none;
+    cursor: pointer;
 }
 
 .menu{

@@ -1,5 +1,9 @@
 import Layout from "./../components/Layout";
 import FormikForm from "../components/FormikForm";
+import LawArea from "../components/LawArea";
+import WhyLawomen from "../components/WhyLawomen";
+import Team from "../components/Team";
+
 import { useEffect } from "react";
 import Image from "next/image";
 import homeStyle from "../styles/Home.module.css";
@@ -49,6 +53,7 @@ function Home({ apiRes }) {
           src="/unsplashHomeTemp.jpg"
           layout="fill"
           objectFit="cover"
+          quality={10}
           priority
         />
         <div className={homeStyle.overlay}>
@@ -59,11 +64,18 @@ function Home({ apiRes }) {
           </div>
         </div>
       </section>
-      <section className={homeStyle.mainCont}>
-        <div className={homeStyle.card}>
-          <h2>{t1.t("contactTitle")}</h2>
-          <FormikForm />
-        </div>
+      <section>
+        <LawArea />
+      </section>
+      <section>
+        <WhyLawomen />
+      </section>
+      <section>
+        <Team />
+      </section>
+      <section>
+        <h3>Let us know how we can help</h3>
+        <FormikForm />
       </section>
     </Layout>
   );

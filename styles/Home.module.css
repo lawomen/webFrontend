@@ -1,73 +1,44 @@
 .backdrop {
-  height: 120vh;
-  width: 100vw;
-  position: relative;
-  color: white;
+    height: 100vh;
+    width: 100vw;
+    position: relative;
+    color: white;
 }
 
 .overlay {
-  position: absolute;
-  content: "";
-  left: 0px;
-  top: 0px;
-  right: 0px;
-  bottom: 0px;
-  z-index: 2;
-  background-color: var(--bgLanding);
+    position: absolute;
+    content: "";
+    left: 0px;
+    top: 0px;
+    right: 0px;
+    bottom: 0px;
+    z-index: 2;
+    background-color: var(--bgLanding);
 }
 
 .mainTagline {
-  padding-inline-start: 10%;
-  padding-block-start: 10rem;
-  width: 70%;
+    padding-inline-start: 10%;
+    padding-block-start: 10rem;
+    width: 70%;
 }
 
 .mainTagline h1 {
-  font-size: 5.5rem;
+    font-size: 5.5rem;
 }
 
 .mainTagline h2 {
-  font-size: 2rem;
+    font-size: 2rem;
 }
 
 .mainTagline h3 {
-  font-size: 1.2rem;
+    font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
-  .mainTagline h4 {
-    font-size: 1.4rem;
-  }
-}
-
-
-/* Contact Form */
-
-.mainCont {
-  display: flex;
-  justify-content: center;
-}
-
-.card {
-  width: 700px;
-  padding-bottom: 50px;
-  box-shadow: 5px 8px 10px 10px rgba(199, 198, 198, 0.25);
-  transform: translateY(-30vh);
-  z-index: 8;
-  background-color: white;
-}
-
-.card h2 {
-  font-size: 2.5rem;
-  margin-inline-start: 7%;
-}
-
-.card h2::after {
-  content: "";
-  display: block;
-  margin-block-start: 0.7rem;
-  height: 2px;
-  width: 120px;
-  background-color: var(--primary);
-  z-index: 999;
+    .mainTagline h4 {
+        font-size: 1.4rem;
+    }
+    .backdrop {
+        height: 80vh;
+    }
 }

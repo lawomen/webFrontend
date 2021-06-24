@@ -1,0 +1,19 @@
+.cont{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    grid-gap: 2rem;
+    margin: 0 2rem;
+    margin-bottom: -3vh;
+}
+
+.card{
+    border: 2px solid red;
+    /* width: 43vw; */
+    /* height: 10rem; */
+    padding: 2rem 1rem;
+    background-color: white;
+
+    transform: translateY(-10vh);
+    z-index: 100;
+
+}
