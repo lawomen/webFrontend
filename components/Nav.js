@@ -1,7 +1,8 @@
 import { useRef, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import navStyle from "./styles/nav.module.css";
-import { BiMenuAltRight } from "react-icons/bi";
+import { HiOutlineMenuAlt3 } from "react-icons/hi";
+import { BiChevronDown } from "react-icons/bi";
 
 import { useTranslation } from "next-i18next";
 
@@ -41,7 +42,7 @@ function Nav() {
     }
   }
 
-  function getMenu(props) {
+  function getMenu() {
     if (openNav) {
       menuItem.current.className = navStyle.menu;
       iconItem.current.style.color = "";
@@ -52,6 +53,36 @@ function Nav() {
     changeOpenNav((prev) => !prev);
   }
 
+  function getSubmenu(e) {
+    console.log(e.target.parentElement.className);
+    if (
+      e.target.className ===
+      navStyle.navitem + " " + navStyle.submenuActive
+    ) {
+      e.target.className = navStyle.navitem;
+    } else if (e.target.className === navStyle.navitem) {
+      e.target.className = navStyle.navitem + " " + navStyle.submenuActive;
+    } else if (e.target.parentElement.className === navStyle.navitem) {
+      e.target.parentElement.className =
+        navStyle.navitem + " " + navStyle.submenuActive;
+    } else if (
+      e.target.parentElement.className ===
+      navStyle.navitem + " " + navStyle.submenuActive
+    ) {
+      e.target.parentElement.className = navStyle.navitem;
+    }
+   else if (e.target.parentElement.parentElement.className === navStyle.navitem) {
+    e.target.parentElement.parentElement.className =
+      navStyle.navitem + " " + navStyle.submenuActive;
+  } else if (
+    e.target.parentElement.parentElement.className ===
+    navStyle.navitem + " " + navStyle.submenuActive
+  ) {
+    e.target.parentElement.parentElement.className = navStyle.navitem;
+  }
+
+  }
+
   return (
     <nav className={navStyle.cont}>
       <div ref={navItem} className={navStyle.nav}>
@@ -59,11 +90,17 @@ function Nav() {
           {/* <Image width={144} height={75} src='" alt='LaWomen Logo' /> */}
         </div>
         <a ref={iconItem} className={navStyle.menuIcon} onClick={getMenu}>
-          <BiMenuAltRight size={42} />
+          <HiOutlineMenuAlt3 size={42} />
         </a>
         <ul ref={menuItem} className={navStyle.menu}>
-          <li className={navStyle.navitem}>
-            {t("cases")}
+          <li
+            className={navStyle.navitem}
+            aria-haspopup="true"
+            onClick={getSubmenu}
+          >
+            <p>
+              {t("cases")} <BiChevronDown size={23} />
+            </p>
             <ul className={navStyle.dropdown} aria-label="submenu">
               <li>
                 <a href="#">All Cases</a>
@@ -73,8 +110,14 @@ function Nav() {
               </li>
             </ul>
           </li>
-          <li className={navStyle.navitem} aria-haspopup="true">
-            {t("expertise")}
+          <li
+            className={navStyle.navitem}
+            aria-haspopup="true"
+            onClick={getSubmenu}
+          >
+            <p>
+              {t("expertise")} <BiChevronDown size={23} />
+            </p>
             <ul className={navStyle.dropdown} aria-label="submenu">
               <li>
                 <a href="#">All Areas</a>
@@ -90,8 +133,14 @@ function Nav() {
               </li>
             </ul>
           </li>
-          <li className={navStyle.navitem} aria-haspopup="true">
-            {t("people")}
+          <li
+            className={navStyle.navitem}
+            aria-haspopup="true"
+            onClick={getSubmenu}
+          >
+            <p>
+              {t("people")} <BiChevronDown size={23} />
+            </p>
             <ul className={navStyle.dropdown} aria-label="submenu">
               <li>
                 <a href="#">Lawyers</a>
@@ -101,8 +150,14 @@ function Nav() {
               </li>
             </ul>
           </li>
-          <li className={navStyle.navitem} aria-haspopup="true">
-            {t("blog")}
+          <li
+            className={navStyle.navitem}
+            aria-haspopup="true"
+            onClick={getSubmenu}
+          >
+            <p>
+              {t("blog")} <BiChevronDown size={23} />
+            </p>
             <ul className={navStyle.dropdown} aria-label="submenu">
               <li>
                 <a href="#">All posts</a>
@@ -118,7 +173,9 @@ function Nav() {
               </li>
             </ul>
           </li>
-          <li className={navStyle.navitem}>{t("about")}</li>
+          <li className={navStyle.navitem}>
+            <a href="#">{t("about")}</a>
+          </li>
         </ul>
         <div className={navStyle.langCont}>
           <select

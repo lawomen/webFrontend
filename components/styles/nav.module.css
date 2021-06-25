@@ -45,6 +45,12 @@
     padding-bottom: 2rem;
 }
 
+.navitem p{
+    display: flex;
+    width: fit-content;
+    margin: 0;
+}
+
 .dropdown {
     display: block;
     visibility: hidden;
@@ -67,12 +73,6 @@
 
 .dropdown li:hover {
     color: #515050
-}
-
-.navitem:hover .dropdown {
-    visibility: visible;
-    opacity: 100;
-    transform: translateY(1rem);
 }
 
 .navitem:hover {
@@ -114,6 +114,14 @@
     color: black;
 }
 
+@media (min-width: 769px) {
+    .navitem:hover .dropdown {
+        visibility: visible;
+        opacity: 100;
+        transform: translateY(1rem);
+    }
+}
+
 @media (max-width: 768px) {
     .nav {
         min-height: 5rem;
@@ -121,7 +129,7 @@
     .menuIcon {
         display: inherit;
         position: absolute;
-        right: 8%;
+        right: 2%;
         z-index: 10;
         transition: color cubic-bezier(0.165, 0.84, 0.44, 1) 1s;
     }
@@ -130,21 +138,22 @@
     }
     .menu {
         display: none;
+        position: fixed;
         background-color: var(--background);
         color: white;
-        position: fixed;
+        font-size: 1.5rem;
         top: 0;
         right: 0;
-        width: 75vw;
+        width: 70vw;
         height: 100vh;
         margin: 0 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        padding: 8rem 0 20rem 3rem;
-        font-size: 1.5rem;
         transform: translateX(200vw);
         transition: transform 1s cubic-bezier(0.165, 0.84, 0.44, 1);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 4.5rem 0 0 0;
+        overflow: hidden;
     }
     .menuResp {
         transform: translateX(0);
@@ -158,5 +167,43 @@
     .lang {
         font-size: 1.5rem;
     }
+
+    .navitem p svg{
+        margin-top: 3px;
+    }
+
     /* hover drop down */
+    .navitem {
+        width: 100%;
+        padding: 1.5rem 0.5rem;
+        padding-inline-start: 2rem;
+        margin: 0;
+    }
+    .dropdown {
+        display: block;
+        list-style: none;
+        z-index: 8;
+        transition: none;
+        visibility: hidden;
+        opacity: 100;
+        background-color: var(--background);
+        color: white;
+        padding: 1rem 0 0 0.5rem;
+        margin: 0;
+        border-radius: 0;
+        font-size: 1.2rem;
+    }
+    .dropdown li {
+        padding: 0.8rem 0;
+    }
+
+    .submenuActive .dropdown {
+        visibility: visible;
+        transform: none;
+        position: relative;
+    }
+
+    .dropdown li:hover {
+        color: #cbcbcb;
+    }
 }

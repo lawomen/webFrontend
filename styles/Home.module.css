@@ -41,4 +41,10 @@
     .backdrop {
         height: 80vh;
     }
+    .mainTagline {
+        padding-block-start: 7rem;
+    }
+    .mainTagline h1 {
+        font-size: 3rem;
+    }
 }
