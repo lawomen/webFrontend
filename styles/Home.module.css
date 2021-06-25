@@ -120,4 +120,13 @@ body[dir="rtl"] .socials {
     .mainTagline h1 {
         font-size: 3rem;
     }
+    .contactCont h3 {
+        margin: 0 2rem 3rem 2rem;
+    }
+    .contactCont h3::after {
+        width: 60vw;
+    }
+    .contactCont {
+        padding: 0 2vw;
+    }
 }

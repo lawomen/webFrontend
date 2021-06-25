@@ -68,6 +68,18 @@
 
 @media (max-width: 768px) {
     .cont{
-        margin: 0 3rem;
+        margin: 0 1.5rem;
+        grid-template-columns: 1fr;
+
     }
+
+    .card{
+        height: 120%;
+    }
+
+    .cardIcon{
+        width: 3rem;
+        left: -0.5rem;
+    }
+
 }

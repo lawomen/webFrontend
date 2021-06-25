@@ -80,8 +80,8 @@ function Home({ apiRes }) {
                 });
               }}
             >
-              Contact Us
               <BsFillCaretRightFill size={27} />
+              Contact Us
             </button>
           </div>
         </div>

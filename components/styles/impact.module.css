@@ -1,7 +1,7 @@
 .cont {
-    height: 70vh;
+    min-height: 70vh;
     padding: 2rem 4rem;
-    margin: 8rem 0;
+    margin: 2rem 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,7 +18,7 @@
     display: block;
     margin-block-start: 0.7rem;
     height: 2px;
-    width: 500px;
+    width: 30vw;
     background-color: var(--primary);
     z-index: 999;
 }
@@ -57,9 +57,6 @@
     .cardCont {
         flex-direction: column;
     }
-    .cont {
-        margin: 45vh 0;
-    }
     .subtitle {
         width: 80%;
     }
@@ -69,5 +66,9 @@
     }
     .card {
         margin-bottom: 3rem;
+    }
+
+    .cont>h3::after {
+        width: 70vw;
     }
 }
