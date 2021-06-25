@@ -55,7 +55,6 @@ function Nav() {
   }
 
   function getSubmenu(e) {
-    console.log(e.target.parentElement.className);
     if (
       e.target.className ===
       navStyle.navitem + " " + navStyle.submenuActive
@@ -71,6 +70,16 @@ function Nav() {
       navStyle.navitem + " " + navStyle.submenuActive
     ) {
       e.target.parentElement.className = navStyle.navitem;
+    }
+    else if (e.target.tagName === 'svg' && e.target.parentElement.parentElement.className === navStyle.navitem) {
+      e.target.parentElement.parentElement.className =
+        navStyle.navitem + " " + navStyle.submenuActive;
+    } else if (
+      e.target.tagName === 'svg' && 
+      e.target.parentElement.parentElement.className ===
+      navStyle.navitem + " " + navStyle.submenuActive
+    ) {
+      e.target.parentElement.parentElement.className = navStyle.navitem;
     }
   }
 
