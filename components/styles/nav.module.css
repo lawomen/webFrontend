@@ -54,7 +54,7 @@
 }
 
 .navitem p svg{
-    margin-left: 5px;
+    margin-inline-start: 0.75rem;
 }
 
 .dropdown {
@@ -162,8 +162,9 @@
         display: flex;
         flex-direction: column;
         justify-content: flex-start;
-        padding: 4.5rem 0 0 0;
+        padding: 6rem 0 0 0;
         overflow: scroll;
+        user-select: none;
     }
     .menuResp {
         transform: translateX(0);
@@ -181,9 +182,10 @@
     .navitem {
         width: 100%;
         padding: 1.5rem 0.5rem;
-        padding-inline-start: 5rem;
+        padding-inline-start: 4rem;
         margin: 0;
-        border-bottom: 3px solid rgb(9, 48, 103);
+        border: 3px solid var(--background);
+        background-color: rgb(9, 48, 103);
     }
     .dropdown {
         display: block;
@@ -192,7 +194,7 @@
         transition: none;
         visibility: hidden;
         opacity: 100;
-        background-color: var(--background);
+        background-color: rgb(9, 48, 103);
         color: white;
         padding: 1rem 0 0 0.5rem;
         margin: 0;
@@ -201,12 +203,22 @@
     }
     .dropdown li {
         padding: 0.8rem 0;
+        padding-inline-start: 12%;
+        margin-inline-start: -12%;
     }
 
     .submenuActive .dropdown {
         visibility: visible;
         transform: none;
         position: relative;
+    }
+
+    .submenuActive p svg{
+        transform: rotate(180deg);
+    }
+
+    .scrolledNav .navitem:hover {
+        color: #cbcbcb;
     }
 
     .dropdown li:hover {

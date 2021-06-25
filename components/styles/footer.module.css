@@ -43,6 +43,15 @@
 
 @media (max-width: 768px) {
     .cont{
+        flex-direction: column-reverse;
         padding: 4rem;
+    }
+    
+    .about{
+        margin-top: 3rem;
+    }
+
+    .socials{
+        width: 75%;
     }
 }
