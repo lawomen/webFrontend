@@ -2,7 +2,7 @@
     width: 100%;
     background-color: var(--background);
     color: white;
-    padding: 4rem 15vw;
+    padding: 4rem 15vw 6rem 5vw;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;

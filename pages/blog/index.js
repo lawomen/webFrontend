@@ -30,7 +30,7 @@ function allBlogs({ apiRes }) {
           width: "100vw",
           height: "150px",
           top: 0,
-          backgroundColor: "blue",
+          backgroundColor: "var(--background)",
         }}
       ></div>
       <div style={{marginTop: '150px'}}>

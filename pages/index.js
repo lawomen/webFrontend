@@ -2,7 +2,7 @@ import Layout from "./../components/Layout";
 import FormikForm from "../components/landing/FormikForm";
 import LawArea from "../components/landing/LawArea";
 import WhyLawomen from "../components/landing/WhyLawomen";
-import Team from "../components/landing/Team";
+import Impact from "../components/landing/Impact";
 
 import {
   RiInstagramLine,
@@ -103,12 +103,13 @@ function Home({ apiRes }) {
       </section>
 
       <section>
+        <Impact />
+      </section>
+      
+      <section>
         <WhyLawomen />
       </section>
 
-      <section>
-        <Team />
-      </section>
 
       <section className={homeStyle.contactCont} ref={contactUs}>
         <h3>Let us know how we can help</h3>

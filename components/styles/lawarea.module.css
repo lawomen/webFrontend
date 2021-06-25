@@ -3,7 +3,7 @@
     grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
     grid-gap: 5rem;
     margin: 0 6rem;
-    margin-bottom: 10vh;
+    margin-bottom: 5vh;
 }
 
 .card{
