@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import { useRef, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import navStyle from "./styles/nav.module.css";
@@ -89,9 +90,9 @@ function Nav() {
         <div className={navStyle.logo}>
           {/* <Image width={144} height={75} src='" alt='LaWomen Logo' /> */}
         </div>
-        <a ref={iconItem} className={navStyle.menuIcon} onClick={getMenu}>
+        <div ref={iconItem} className={navStyle.menuIcon} onClick={getMenu}>
           <HiOutlineMenuAlt3 size={42} />
-        </a>
+        </div>
         <ul ref={menuItem} className={navStyle.menu}>
           <li
             className={navStyle.navitem}
@@ -103,10 +104,10 @@ function Nav() {
             </p>
             <ul className={navStyle.dropdown} aria-label="submenu">
               <li>
-                <a href="#">All Cases</a>
+                <Link href="/cases">All Cases</Link>
               </li>
               <li>
-                <a href="#">Case one </a>
+                <Link href="#">Case one </Link>
               </li>
             </ul>
           </li>
@@ -120,16 +121,16 @@ function Nav() {
             </p>
             <ul className={navStyle.dropdown} aria-label="submenu">
               <li>
-                <a href="#">All Areas</a>
+                <Link href="/expertise">All Areas</Link>
               </li>
               <li>
-                <a href="#">Civil Law</a>
+                <Link href="#">Civil Law</Link>
               </li>
               <li>
-                <a href="#">Civil Law</a>
+                <Link href="#">Civil Law</Link>
               </li>
               <li>
-                <a href="#">Civil Law</a>
+                <Link href="#">Civil Law</Link>
               </li>
             </ul>
           </li>
@@ -143,10 +144,10 @@ function Nav() {
             </p>
             <ul className={navStyle.dropdown} aria-label="submenu">
               <li>
-                <a href="#">Lawyers</a>
+                <Link href="/lawyers">Lawyers</Link>
               </li>
               <li>
-                <a href="#">Lawomen</a>
+                <Link href="#">Lawomen</Link>
               </li>
             </ul>
           </li>
@@ -160,21 +161,21 @@ function Nav() {
             </p>
             <ul className={navStyle.dropdown} aria-label="submenu">
               <li>
-                <a href="#">All posts</a>
+                <Link href="/blog">All posts</Link>
               </li>
               <li>
-                <a href="#">Post One</a>
+                <Link href="#">Post One</Link>
               </li>
               <li>
-                <a href="#">Post Two</a>
+                <Link href="#">Post Two</Link>
               </li>
               <li>
-                <a href="#">Post Three</a>
+                <Link href="#">Post Three</Link>
               </li>
             </ul>
           </li>
           <li className={navStyle.navitem}>
-            <a href="#">{t("about")}</a>
+            <Link href="/about">{t("about")}</Link>
           </li>
         </ul>
         <div className={navStyle.langCont}>
