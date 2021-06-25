@@ -2,7 +2,7 @@ import * as Yup from "yup";
 import { Formik, Field, Form } from "formik";
 import axios from "axios";
 import { useTranslation } from "next-i18next";
-import contactStyle from "./styles/formikform.module.css";
+import contactStyle from "../styles/formikform.module.css";
 
 
 function FormikForm() {

@@ -1,8 +1,8 @@
 import Layout from "./../components/Layout";
-import FormikForm from "../components/FormikForm";
-import LawArea from "../components/LawArea";
-import WhyLawomen from "../components/WhyLawomen";
-import Team from "../components/Team";
+import FormikForm from "../components/landing/FormikForm";
+import LawArea from "../components/landing/LawArea";
+import WhyLawomen from "../components/landing/WhyLawomen";
+import Team from "../components/landing/Team";
 
 import { useEffect } from "react";
 import Image from "next/image";
