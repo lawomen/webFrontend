@@ -8,12 +8,18 @@
 
 .card{
     border: 2px solid red;
-    /* width: 43vw; */
-    /* height: 10rem; */
     padding: 2rem 1rem;
     background-color: white;
 
     transform: translateY(-10vh);
     z-index: 100;
 
+}
+
+
+@media (max-width: 768px) {
+    .cont{
+        grid-template-columns: repeat(auto-fit, minmax(70vw, 1fr));
+        margin: 0 2rem;
+    }
 }
