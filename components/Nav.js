@@ -72,16 +72,6 @@ function Nav() {
     ) {
       e.target.parentElement.className = navStyle.navitem;
     }
-   else if (e.target.parentElement.parentElement.className === navStyle.navitem) {
-    e.target.parentElement.parentElement.className =
-      navStyle.navitem + " " + navStyle.submenuActive;
-  } else if (
-    e.target.parentElement.parentElement.className ===
-    navStyle.navitem + " " + navStyle.submenuActive
-  ) {
-    e.target.parentElement.parentElement.className = navStyle.navitem;
-  }
-
   }
 
   return (
