@@ -1,8 +1,8 @@
 .cont{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30vw, 40vw));
+    grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
     grid-gap: 5rem;
-    margin: 0 7rem;
+    margin: 0 6rem;
     margin-bottom: -3vh;
 }
 
@@ -68,7 +68,6 @@
 
 @media (max-width: 768px) {
     .cont{
-        grid-template-columns: repeat(auto-fit, minmax(70vw, 1fr));
-        margin: 0 2rem;
+        margin: 0 3rem;
     }
 }
