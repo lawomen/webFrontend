@@ -110,7 +110,7 @@ function Home({ apiRes }) {
         <Team />
       </section>
 
-      <section ref={contactUs}>
+      <section className={homeStyle.contactCont} ref={contactUs}>
         <h3>Let us know how we can help</h3>
         <FormikForm />
       </section>

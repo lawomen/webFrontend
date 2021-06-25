@@ -134,7 +134,7 @@
 
 @media (max-width: 768px) {
     .nav {
-        min-height: 5rem;
+        min-height: 5.5rem;
     }
     .menuIcon {
         display: inherit;
