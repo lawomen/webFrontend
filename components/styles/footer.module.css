@@ -2,7 +2,9 @@
     width: 100%;
     background-color: var(--background);
     color: white;
-    padding: 4rem 15vw 6rem 5vw;
+    padding: 4rem 0 6rem 0;
+    padding-inline-start: 5vw;
+    padding-inline-end: 15vw;
     display: flex;
     justify-content: space-around;
     align-items: flex-start;
@@ -13,7 +15,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: flex-start;
-    margin-right: 5vw;
+    margin-inline-end: 5vw;
 }
 
 .socials{

@@ -1,3 +1,8 @@
+import { useEffect, useRef } from "react";
+import Image from "next/image";
+import Link from 'next/link'
+import homeStyle from "../styles/Home.module.css";
+
 import Layout from "./../components/Layout";
 import FormikForm from "../components/landing/FormikForm";
 import LawArea from "../components/landing/LawArea";
@@ -11,10 +16,6 @@ import {
 } from "react-icons/ri";
 
 import { BsFillCaretRightFill } from "react-icons/bs";
-
-import { useEffect, useRef } from "react";
-import Image from "next/image";
-import homeStyle from "../styles/Home.module.css";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
@@ -67,22 +68,34 @@ function Home({ apiRes }) {
           priority
         />
         <div className={homeStyle.overlay}>
-          <div className={homeStyle.mainTagline}>
-            <h1>{t2.t("companyName")}</h1>
-            <h2>{apiRes.tagline}</h2>
-            <h3>{apiRes.landingDesc}</h3>
-            <button
-              className={homeStyle.contact}
-              onClick={() => {
-                contactUs.current.scrollIntoView({
-                  behavior: "smooth",
-                  block: "center",
-                });
-              }}
-            >
-              <BsFillCaretRightFill size={27} />
-              Contact Us
-            </button>
+          <div className={homeStyle.landingCont}>
+            <div className={homeStyle.mainContent}>
+              <h1>{t2.t("companyName")}</h1>
+              <h2>{apiRes.tagline}</h2>
+              <h3>{apiRes.landingDesc}</h3>
+              <button
+                className={`${homeStyle.button} ${homeStyle.contact}`}
+                onClick={() => {
+                  contactUs.current.scrollIntoView({
+                    behavior: "smooth",
+                    block: "center",
+                  });
+                }}
+              >
+                <BsFillCaretRightFill size={27} />
+                Contact Us
+              </button>
+            </div>
+            <div className={homeStyle.donateContent}>
+              <h2>Consider Donating</h2>
+              <h3>
+                All donations go to supporting our non-profit initiatives, and
+                [content]
+              </h3>
+              <Link href="#">
+                <button className={homeStyle.button}>Donate</button>
+              </Link>
+            </div>
           </div>
         </div>
         <div className={homeStyle.socials}>
@@ -105,11 +118,10 @@ function Home({ apiRes }) {
       <section>
         <Impact />
       </section>
-      
+
       <section>
         <WhyLawomen />
       </section>
-
 
       <section className={homeStyle.contactCont} ref={contactUs}>
         <h3>Let us know how we can help</h3>

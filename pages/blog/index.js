@@ -1,4 +1,7 @@
+import Image from "next/image";
+
 import Layout from "../../components/Layout";
+import style from "../../styles/blog.module.css";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
@@ -24,19 +27,27 @@ function allBlogs({ apiRes }) {
 
   return (
     <Layout>
-      <div
-        style={{
-          position: "fixed",
-          width: "100vw",
-          height: "150px",
-          top: 0,
-          backgroundColor: "var(--background)",
-        }}
-      ></div>
-      <div style={{marginTop: '150px'}}>
+      <div className={style.landedNavCont}></div>
+      <div className={style.backdrop}>
+        <Image
+          alt="Decorative background image of library"
+          src="/unsplashHomeTemp.jpg"
+          layout="fill"
+          objectFit="cover"
+          quality={10}
+          priority
+        />
+      </div>
+
+      <section className={style.overlay}>
+        <h1>Blog</h1>
+        <p>Intro the blogs we have written. It is a great resource for [content here]</p>
+      </section>
+
+      <section className={style.mainCont}>
         <h3>all Blogs</h3>
         <h1>{t2.t("companyName")}</h1>
-      </div>
+      </section>
     </Layout>
   );
 }
