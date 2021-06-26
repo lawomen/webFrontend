@@ -58,6 +58,7 @@
 @media (max-width: 768px) {
     .cardCont {
         flex-direction: column;
+        padding: 2rem 0;
     }
     .subtitle {
         width: 80%;

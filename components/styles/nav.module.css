@@ -1,13 +1,13 @@
 .cont {
     position: fixed;
     top: 0;
-    left:0;
+    left: 0;
     width: 100vw;
     margin: 0;
     z-index: 999;
 }
 
-.nav{
+.nav {
     display: flex;
     justify-content: space-between;
     padding: 2rem 8vw 2rem 8vw;
@@ -21,14 +21,13 @@
     margin: 0;
 }
 
-
 .scrolledNav {
     background-color: white;
     transition: background-color 1s linear;
     box-shadow: 0 5px 5px rgba(120, 120, 120, 0.25);
 }
 
-.scrolledNav .mainNavCont{
+.scrolledNav .mainNavCont {
     color: black;
 }
 
@@ -39,7 +38,7 @@
     margin-top: -0.25rem;
 }
 
-.scrolledNav .menuIcon{
+.scrolledNav .menuIcon {
     color: black;
 }
 
@@ -60,14 +59,14 @@
     padding-bottom: 2rem;
 }
 
-.navitem p{
+.navitem p {
     display: flex;
     width: fit-content;
     margin: 0;
     align-items: center;
 }
 
-.navitem p svg{
+.navitem p svg {
     margin-inline-start: 0.75rem;
 }
 
@@ -95,7 +94,6 @@
     color: #515050
 }
 
-
 .menu>* {
     margin-inline-end: 4vw;
 }
@@ -103,7 +101,7 @@
 .logo {
     position: relative;
     width: 200px;
-    height:80px;
+    height: 80px;
     margin-top: -1vh;
     cursor: pointer;
 }
@@ -138,11 +136,9 @@
         opacity: 100;
         transform: translateY(1rem);
     }
-
     .navitem:hover {
         color: #cbcbcb;
     }
-    
     .scrolledNav .navitem:hover {
         color: #515050
     }
@@ -153,6 +149,7 @@
         min-height: 5.5rem;
         justify-content: center;
         padding-inline-end: 0;
+        padding-block-end: 0;
         z-index: 3;
     }
     .menuIcon {
@@ -170,7 +167,10 @@
     .lang {
         font-size: 1.5rem;
     }
-
+    .logo {
+        width: 100px;
+        margin-top: -2vh;
+    }
     .menu {
         display: none;
         position: fixed;
@@ -194,7 +194,6 @@
     .menuResp {
         transform: translateX(0);
     }
-
     /* hover drop down */
     .navitem {
         width: 100%;
@@ -223,30 +222,24 @@
         padding-inline-start: 12%;
         margin-inline-start: -12%;
     }
-
-    .submenuActive{
+    .submenuActive {
         padding-bottom: 0rem;
         border-bottom: none;
     }
-
     .submenuActive .dropdown {
         visibility: visible;
         transform: none;
         position: relative;
     }
-
-    .submenuActive p svg{
+    .submenuActive p svg {
         transform: rotate(180deg);
     }
-
     .scrolledNav .navitem a:hover {
         color: #cbcbcb;
     }
-
-    .navitem a[href="/about"]:hover{
+    .navitem a[href="/about"]:hover {
         color: #cbcbcb;
     }
-
     .dropdown li a:hover {
         color: #cbcbcb;
     }
