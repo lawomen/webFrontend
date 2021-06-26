@@ -6,35 +6,47 @@
     z-index: 999;
 }
 
-.nav {
+.nav{
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem 8vw 0 8vw;
+}
+
+.mainNavCont {
     font-size: 1.25rem;
     color: white;
     display: flex;
     justify-content: space-around;
     margin: 0;
-    padding: 2rem 0.5rem 0 0.5rem;
 }
 
+
 .scrolledNav {
-    color: black;
     background-color: white;
     transition: background-color 1s linear;
     box-shadow: 0 5px 5px rgba(120, 120, 120, 0.25);
 }
 
+.scrolledNav .mainNavCont{
+    color: black;
+}
+
 .menuIcon {
     display: none;
     cursor: pointer;
+    color: white;
     margin-top: -0.25rem;
 }
 
+.scrolledNav .menuIcon{
+    color: black;
+}
+
 .menu {
-    width: 70%;
     display: flex;
     justify-content: flex-end;
     align-items: center;
     margin: 0;
-    padding-inline-start: 10%;
     list-style: none;
 }
 
@@ -84,19 +96,20 @@
 
 
 .menu>* {
-    margin-inline-end: 10%;
+    margin-inline-end: 4vw;
 }
 
 .logo {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 22%;
+    position: relative;
+    width:150px;
+    max-height: 40px;
+    margin-top: -1vh;
+    cursor: pointer;
 }
 
 .langCont {
     width: 5%;
-    margin-inline-end: 10%;
+    margin-inline-end: 5%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -137,6 +150,9 @@
 @media (max-width: 768px) {
     .nav {
         min-height: 5.5rem;
+        justify-content: center;
+        padding-inline-end: 0;
+        z-index: 3;
     }
     .menuIcon {
         display: inherit;
@@ -145,9 +161,15 @@
         z-index: 10;
         transition: color cubic-bezier(0.165, 0.84, 0.44, 1) 1s;
     }
-    .nav {
-        padding-inline-end: 0;
+    .langCont {
+        position: absolute;
+        left: 7%;
+        z-index: 10;
     }
+    .lang {
+        font-size: 1.5rem;
+    }
+
     .menu {
         display: none;
         position: fixed;
@@ -170,14 +192,6 @@
     }
     .menuResp {
         transform: translateX(0);
-    }
-    .langCont {
-        position: absolute;
-        left: 7%;
-        z-index: 10;
-    }
-    .lang {
-        font-size: 1.5rem;
     }
 
     /* hover drop down */

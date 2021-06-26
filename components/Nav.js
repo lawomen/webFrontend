@@ -1,4 +1,5 @@
-import Link from 'next/link'
+import Link from "next/link";
+import Image from "next/image";
 import { useRef, useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import navStyle from "./styles/nav.module.css";
@@ -70,14 +71,16 @@ function Nav() {
       navStyle.navitem + " " + navStyle.submenuActive
     ) {
       e.target.parentElement.className = navStyle.navitem;
-    }
-    else if (e.target.tagName === 'svg' && e.target.parentElement.parentElement.className === navStyle.navitem) {
+    } else if (
+      e.target.tagName === "svg" &&
+      e.target.parentElement.parentElement.className === navStyle.navitem
+    ) {
       e.target.parentElement.parentElement.className =
         navStyle.navitem + " " + navStyle.submenuActive;
     } else if (
-      e.target.tagName === 'svg' && 
+      e.target.tagName === "svg" &&
       e.target.parentElement.parentElement.className ===
-      navStyle.navitem + " " + navStyle.submenuActive
+        navStyle.navitem + " " + navStyle.submenuActive
     ) {
       e.target.parentElement.parentElement.className = navStyle.navitem;
     }
@@ -87,107 +90,119 @@ function Nav() {
     <nav className={navStyle.cont}>
       <div ref={navItem} className={navStyle.nav}>
         <div className={navStyle.logo}>
-          {/* <Image width={144} height={75} src='" alt='LaWomen Logo' /> */}
+          <Link href="/">
+            <Image
+              layout="fill"
+              objectFit="cover"
+              priority
+              src="/logoTemp.png"
+              alt="LaWomen Logo"
+            />
+          </Link>
         </div>
+
         <div ref={iconItem} className={navStyle.menuIcon} onClick={getMenu}>
           <HiOutlineMenuAlt3 size={42} />
         </div>
-        <ul ref={menuItem} className={navStyle.menu}>
-          <li
-            className={navStyle.navitem}
-            aria-haspopup="true"
-            onClick={getSubmenu}
-          >
-            <p>
-              {t("cases")} <BiChevronDown size={23} />
-            </p>
-            <ul className={navStyle.dropdown} aria-label="submenu">
-              <li>
-                <Link href="/cases">All Cases</Link>
-              </li>
-              <li>
-                <Link href="#">Case one </Link>
-              </li>
-            </ul>
-          </li>
-          <li
-            className={navStyle.navitem}
-            aria-haspopup="true"
-            onClick={getSubmenu}
-          >
-            <p>
-              {t("expertise")} <BiChevronDown size={23} />
-            </p>
-            <ul className={navStyle.dropdown} aria-label="submenu">
-              <li>
-                <Link href="/expertise">All Areas</Link>
-              </li>
-              <li>
-                <Link href="#">Civil Law</Link>
-              </li>
-              <li>
-                <Link href="#">Civil Law</Link>
-              </li>
-              <li>
-                <Link href="#">Civil Law</Link>
-              </li>
-            </ul>
-          </li>
-          <li
-            className={navStyle.navitem}
-            aria-haspopup="true"
-            onClick={getSubmenu}
-          >
-            <p>
-              {t("people")} <BiChevronDown size={23} />
-            </p>
-            <ul className={navStyle.dropdown} aria-label="submenu">
-              <li>
-                <Link href="/lawyers">Lawyers</Link>
-              </li>
-              <li>
-                <Link href="#">Lawomen</Link>
-              </li>
-            </ul>
-          </li>
-          <li
-            className={navStyle.navitem}
-            aria-haspopup="true"
-            onClick={getSubmenu}
-          >
-            <p>
-              {t("blog")} <BiChevronDown size={23} />
-            </p>
-            <ul className={navStyle.dropdown} aria-label="submenu">
-              <li>
-                <Link href="/blog">All posts</Link>
-              </li>
-              <li>
-                <Link href="#">Post One</Link>
-              </li>
-              <li>
-                <Link href="#">Post Two</Link>
-              </li>
-              <li>
-                <Link href="#">Post Three</Link>
-              </li>
-            </ul>
-          </li>
-          <li className={navStyle.navitem}>
-            <Link href="/about">{t("about")}</Link>
-          </li>
-        </ul>
-        <div className={navStyle.langCont}>
-          <select
-            ref={langComp}
-            className={navStyle.lang}
-            defaultValue={locale}
-            onChange={handleLang}
-            aria-label="Language selector"
-          >
-            <option value="en">EN</option>
-            <option value="ur">UR</option>
-          </select>
+        <div className={navStyle.mainNavCont}>
+          <ul ref={menuItem} className={navStyle.menu}>
+            <li
+              className={navStyle.navitem}
+              aria-haspopup="true"
+              onClick={getSubmenu}
+            >
+              <p>
+                {t("cases")} <BiChevronDown size={23} />
+              </p>
+              <ul className={navStyle.dropdown} aria-label="submenu">
+                <li>
+                  <Link href="/cases">All Cases</Link>
+                </li>
+                <li>
+                  <Link href="#">Case one </Link>
+                </li>
+              </ul>
+            </li>
+            <li
+              className={navStyle.navitem}
+              aria-haspopup="true"
+              onClick={getSubmenu}
+            >
+              <p>
+                {t("expertise")} <BiChevronDown size={23} />
+              </p>
+              <ul className={navStyle.dropdown} aria-label="submenu">
+                <li>
+                  <Link href="/expertise">All Areas</Link>
+                </li>
+                <li>
+                  <Link href="#">Civil Law</Link>
+                </li>
+                <li>
+                  <Link href="#">Civil Law</Link>
+                </li>
+                <li>
+                  <Link href="#">Civil Law</Link>
+                </li>
+              </ul>
+            </li>
+            <li
+              className={navStyle.navitem}
+              aria-haspopup="true"
+              onClick={getSubmenu}
+            >
+              <p>
+                {t("people")} <BiChevronDown size={23} />
+              </p>
+              <ul className={navStyle.dropdown} aria-label="submenu">
+                <li>
+                  <Link href="/lawyers">Lawyers</Link>
+                </li>
+                <li>
+                  <Link href="#">Lawomen</Link>
+                </li>
+              </ul>
+            </li>
+            <li
+              className={navStyle.navitem}
+              aria-haspopup="true"
+              onClick={getSubmenu}
+            >
+              <p>
+                {t("blog")} <BiChevronDown size={23} />
+              </p>
+              <ul className={navStyle.dropdown} aria-label="submenu">
+                <li>
+                  <Link href="/blog">All posts</Link>
+                </li>
+                <li>
+                  <Link href="#">Post One</Link>
+                </li>
+                <li>
+                  <Link href="#">Post Two</Link>
+                </li>
+                <li>
+                  <Link href="#">Post Three</Link>
+                </li>
+              </ul>
+            </li>
+            <li className={navStyle.navitem}>
+              <Link href="/about">{t("about")}</Link>
+            </li>
+          </ul>
+
+          <div className={navStyle.langCont}>
+            <select
+              ref={langComp}
+              className={navStyle.lang}
+              defaultValue={locale}
+              onChange={handleLang}
+              aria-label="Language selector"
+            >
+              <option value="en">EN</option>
+              <option value="ur">UR</option>
+            </select>
+          </div>
         </div>
       </div>
     </nav>
