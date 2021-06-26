@@ -1,6 +1,7 @@
 .cont {
     position: fixed;
     top: 0;
+    left:0;
     width: 100vw;
     margin: 0;
     z-index: 999;
@@ -9,7 +10,7 @@
 .nav{
     display: flex;
     justify-content: space-between;
-    padding: 2rem 8vw 0 8vw;
+    padding: 2rem 8vw 2rem 8vw;
 }
 
 .mainNavCont {
@@ -101,8 +102,8 @@
 
 .logo {
     position: relative;
-    width:150px;
-    max-height: 40px;
+    width: 200px;
+    height:80px;
     margin-top: -1vh;
     cursor: pointer;
 }

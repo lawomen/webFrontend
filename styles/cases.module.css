@@ -1,6 +1,6 @@
 .landedNavCont {
     width: 100vw;
-    height: 6rem;
+    height: 8rem;
     top: 0;
     background-color: var(--background);
 }
@@ -12,6 +12,8 @@
 }
 
 .overlay {
+    margin-top: 8rem;
+    
     position: absolute;
     content: "";
     left: 0px;
@@ -19,7 +21,6 @@
     right: 0px;
     bottom: 0px;
     z-index: 2;
-    margin-top: 6rem;
     height: 40vh;
     background-color: var(--bgLanding);
     

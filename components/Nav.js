@@ -93,9 +93,9 @@ function Nav() {
           <Link href="/">
             <Image
               layout="fill"
-              objectFit="cover"
+              objectFit="contain"
               priority
-              src="/logoTemp.png"
+              src="/logoTemp.svg"
               alt="LaWomen Logo"
             />
           </Link>
@@ -139,10 +139,10 @@ function Nav() {
                   <Link href="#">Civil Law</Link>
                 </li>
                 <li>
-                  <Link href="#">Civil Law</Link>
+                  <Link href="#">Tax Law</Link>
                 </li>
                 <li>
-                  <Link href="#">Civil Law</Link>
+                  <Link href="#">Environmental Law</Link>
                 </li>
               </ul>
             </li>
@@ -156,10 +156,13 @@ function Nav() {
               </p>
               <ul className={navStyle.dropdown} aria-label="submenu">
                 <li>
-                  <Link href="/lawyers">Lawyers</Link>
+                  <Link href="/lawyers">Partnering Lawyers</Link>
                 </li>
                 <li>
-                  <Link href="#">Lawomen</Link>
+                  <Link href="#">Team LaWomen</Link>
+                </li>
+                <li>
+                  <Link href="#">Join Us!</Link>
                 </li>
               </ul>
             </li>

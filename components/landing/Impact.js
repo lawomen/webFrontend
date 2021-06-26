@@ -10,22 +10,17 @@ function Impact() {
         initiatives are:
       </p>
       <div className={style.cardCont}>
-        <div className={style.card}>
+      <div className={style.card}>
           <div className={style.imgCont}></div>
-          <h3>FFFFF</h3>
-          <p>FFFF</p>
+          <h3>Empowering Women Lawyers</h3>
+          <p>Female lawyers only make up 5% of the total strength of the bar. <br/> We provide resources, network, and clients for female lawyers to change that. </p>
         </div>
+
 
         <div className={style.card}>
           <div className={style.imgCont}></div>
-          <h3>FFFFF</h3>
-          <p>FFFF</p>
-        </div>
-
-        <div className={style.card}>
-          <div className={style.imgCont}></div>
-          <h3>FFFFF</h3>
-          <p>FFFF</p>
+          <h3>Safe Legal Service for Women</h3>
+          <p>We provide legal services for women, by women lawyers because [... content here]</p>
         </div>
       </div>
     </div>
