@@ -8,8 +8,8 @@
    --primary: #EC7505;
    --alert: #cb3c04;
    --pri2: #1C3A13;
-   --background: rgb(7, 42, 90);
-   --bgLanding: rgba(0,32,76,0.80);
+   --background: #1c3a13;
+   --bgLanding: rgba(28, 58, 19, 0.4);
    font-size: 16px;
 
 }

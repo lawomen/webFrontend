@@ -13,7 +13,7 @@ function Impact() {
       <div className={style.card}>
           <div className={style.imgCont}></div>
           <h3>Empowering Women Lawyers</h3>
-          <p>Female lawyers only make up 5% of the total strength of the bar. <br/> We provide resources, network, and clients for female lawyers to change that. </p>
+          <p>Female lawyers only make up 5% [Enter Content...] </p>
         </div>
 
 
