@@ -95,7 +95,7 @@ function Nav() {
               layout="fill"
               objectFit="contain"
               priority
-              src="/logoTemp.svg"
+              src="/LawomenLogo.svg"
               alt="LaWomen Logo"
             />
           </Link>
