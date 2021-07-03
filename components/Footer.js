@@ -1,3 +1,4 @@
+import Image from "next/image";
 import footerStyles from "./styles/footer.module.css";
 import { useTranslation } from "next-i18next";
 import {
@@ -12,13 +13,21 @@ import {
 } from "react-icons/ri";
 import { IoLocationSharp } from "react-icons/io5";
 
-function Footer({content}) {
+function Footer({ content }) {
   const { t } = useTranslation("footer");
 
   return (
     <footer className={footerStyles.cont}>
       <div className={footerStyles.about}>
-        <h3>Firm Logo</h3>
+        <div className={footerStyles.footerLogo}>
+          <Image
+            layout="fill"
+            objectFit="contain"
+            priority
+            src="/LawomenLogo.svg"
+            alt="LaWomen Logo"
+          />
+        </div>
         <p>{content.mission_statement}</p>
         <div className={footerStyles.socials}>
           <a target="_blank" href="https://www.facebook.com/LawomenPk/">
