@@ -3,9 +3,9 @@ import Layout from './../components/Layout'
 function people() {
   
   return (
-    <Layout>
+    <Layout content={{mission_statement: apiRes.mission_statement, info_title: apiRes.info_title}}>
         <div style={{marginTop: 100, height: '200vh'}}>
-            <h3>hiiii</h3>
+            <h3>THIS IS THE PAGE</h3>
         </div>
     </Layout>
   );

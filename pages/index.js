@@ -24,14 +24,18 @@ export async function getStaticProps({ locale }) {
   const rawLanding = await fetch(
     `https://lawomen-admin.herokuapp.com/landing-page?_locale=${locale}`
   );
-  const resLanding = await rawLanding.json();
+  const landingRes = await rawLanding.json();
+
+  const rawFooter = await fetch(
+    `https://lawomen-admin.herokuapp.com/footer?_locale=${locale}`
+  );
+  const footerRes = await rawFooter.json();
+
+  const apiRes = {...footerRes, ...landingRes}
 
   return {
     props: {
-      apiRes: {
-        tagline: resLanding.tagline,
-        landingDesc: resLanding.landingDesc,
-      },
+      apiRes,
       ...(await serverSideTranslations(locale, [
         "common",
         "landing",
@@ -57,7 +61,7 @@ function Home({ apiRes }) {
   }, []);
 
   return (
-    <Layout>
+    <Layout content={{mission_statement: apiRes.mission_statement, info_title: apiRes.info_title}}>
       <section className={homeStyle.backdrop}>
         <Image
           alt="Decorative background image of library"
@@ -71,8 +75,8 @@ function Home({ apiRes }) {
           <div className={homeStyle.landingCont}>
             <div className={homeStyle.mainContent}>
               <h1>{t2.t("companyName")}</h1>
-              <h2>{apiRes.tagline}</h2>
-              <h3>{apiRes.landingDesc}</h3>
+              <h2>{apiRes.tagline_title}</h2>
+              <h3>{apiRes.tagline_desc}</h3>
               <button
                 className={`${homeStyle.button} ${homeStyle.contact}`}
                 onClick={() => {
@@ -83,17 +87,16 @@ function Home({ apiRes }) {
                 }}
               >
                 <BsFillCaretRightFill size={27} />
-                Contact Us
+                {t1.t("call2action")}
               </button>
             </div>
             <div className={homeStyle.donateContent}>
-              <h2>Consider Donating</h2>
+              <h2>{apiRes.donate_title}</h2>
               <h3>
-                All donations go to supporting our non-profit initiatives, and
-                [content]
+                {apiRes.donate_desc}
               </h3>
               <Link href="#">
-                <button className={homeStyle.button}>Donate</button>
+                <button className={homeStyle.button}>{t1.t("call2action2")}</button>
               </Link>
             </div>
           </div>
@@ -112,19 +115,19 @@ function Home({ apiRes }) {
       </section>
 
       <section>
-        <LawArea />
+        <LawArea content={apiRes.law_area} />
       </section>
 
       <section>
-        <Impact />
+        <Impact content={apiRes}/>
       </section>
 
       <section>
-        <WhyLawomen />
+        <WhyLawomen content={apiRes} />
       </section>
 
       <section className={homeStyle.contactCont} ref={contactUs}>
-        <h3>Let us know how we can help</h3>
+        <h3>{apiRes.contactTitle}</h3>
         <FormikForm />
       </section>
     </Layout>

@@ -7,9 +7,15 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 
 export async function getStaticProps({ locale }) {
+  const rawFooter = await fetch(
+    `https://lawomen-admin.herokuapp.com/footer?_locale=${locale}`
+  );
+  const apiRes = await rawFooter.json();
+
+
   return {
     props: {
-      apiRes: {},
+      apiRes,
       ...(await serverSideTranslations(locale, [
         "common",
         "landing",
@@ -26,7 +32,7 @@ function allBlogs({ apiRes }) {
   const t2 = useTranslation("common");
 
   return (
-    <Layout>
+    <Layout content={{mission_statement: apiRes.mission_statement, info_title: apiRes.info_title}}>
       <div className={style.landedNavCont}></div>
       <div className={style.backdrop}>
         <Image

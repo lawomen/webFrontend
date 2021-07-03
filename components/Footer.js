@@ -12,14 +12,14 @@ import {
 } from "react-icons/ri";
 import { IoLocationSharp } from "react-icons/io5";
 
-function Footer() {
+function Footer({content}) {
   const { t } = useTranslation("footer");
 
   return (
     <footer className={footerStyles.cont}>
       <div className={footerStyles.about}>
         <h3>Firm Logo</h3>
-        <p>Mission Statement: {t("footerDesc")}</p>
+        <p>{content.mission_statement}</p>
         <div className={footerStyles.socials}>
           <a target="_blank" href="https://www.facebook.com/LawomenPk/">
             <RiFacebookCircleFill size={35} />
@@ -34,22 +34,22 @@ function Footer() {
       </div>
 
       <div className={footerStyles.infoCont}>
-        <h3>Office Info</h3>
+        <h3>{content.info_title}</h3>
         <div className={footerStyles.iconP}>
           <AiOutlinePhone />
-          <p>Tele: </p>
+          <p>{t("tele")}</p>
         </div>
         <div className={footerStyles.iconP}>
           <AiOutlineMail />
-          <p>Email: </p>
+          <p>{t("email")}</p>
         </div>
         <div className={footerStyles.iconP}>
           <IoLocationSharp />
-          <p>Address</p>
+          <p>{t("address")}</p>
         </div>
         <div className={footerStyles.iconP}>
           <AiOutlineClockCircle />
-          <p>Working Hours</p>
+          <p>{t("working_hours")}</p>
         </div>
       </div>
     </footer>
