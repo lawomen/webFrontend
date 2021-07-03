@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import Image from "next/image";
-import Link from 'next/link'
+import Link from "next/link";
 import homeStyle from "../styles/Home.module.css";
 
 import Layout from "./../components/Layout";
@@ -31,7 +31,7 @@ export async function getStaticProps({ locale }) {
   );
   const footerRes = await rawFooter.json();
 
-  const apiRes = {...footerRes, ...landingRes}
+  const apiRes = { ...footerRes, ...landingRes };
 
   return {
     props: {
@@ -61,7 +61,12 @@ function Home({ apiRes }) {
   }, []);
 
   return (
-    <Layout content={{mission_statement: apiRes.mission_statement, info_title: apiRes.info_title}}>
+    <Layout
+      content={{
+        mission_statement: apiRes.mission_statement,
+        info_title: apiRes.info_title,
+      }}
+    >
       <section className={homeStyle.backdrop}>
         <Image
           alt="Decorative background image of library"
@@ -92,11 +97,11 @@ function Home({ apiRes }) {
             </div>
             <div className={homeStyle.donateContent}>
               <h2>{apiRes.donate_title}</h2>
-              <h3>
-                {apiRes.donate_desc}
-              </h3>
+              <h3>{apiRes.donate_desc}</h3>
               <Link href="#">
-                <button className={homeStyle.button}>{t1.t("call2action2")}</button>
+                <button className={homeStyle.button}>
+                  {t1.t("call2action2")}
+                </button>
               </Link>
             </div>
           </div>
@@ -119,7 +124,7 @@ function Home({ apiRes }) {
       </section>
 
       <section>
-        <Impact content={apiRes}/>
+        <Impact content={apiRes} />
       </section>
 
       <section>

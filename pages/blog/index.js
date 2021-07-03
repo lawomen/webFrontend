@@ -4,35 +4,29 @@ import Layout from "../../components/Layout";
 import style from "../../styles/blog.module.css";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
 
 export async function getStaticProps({ locale }) {
-  const rawFooter = await fetch(
-    `https://lawomen-admin.herokuapp.com/footer?_locale=${locale}`
+  const rawBlog = await fetch(
+    `https://lawomen-admin.herokuapp.com/blog?_locale=${locale}`
   );
-  const apiRes = await rawFooter.json();
-
+  const apiRes = await rawBlog.json();
 
   return {
     props: {
       apiRes,
-      ...(await serverSideTranslations(locale, [
-        "common",
-        "landing",
-        "nav",
-        "contact",
-        "footer",
-      ])),
+      ...(await serverSideTranslations(locale, ["common", "nav", "footer"])),
     },
   };
 }
 
 function allBlogs({ apiRes }) {
-  const t1 = useTranslation("landing");
-  const t2 = useTranslation("common");
-
   return (
-    <Layout content={{mission_statement: apiRes.mission_statement, info_title: apiRes.info_title}}>
+    <Layout
+      content={{
+        mission_statement: apiRes.mission_statement,
+        info_title: apiRes.info_title,
+      }}
+    >
       <div className={style.landedNavCont}></div>
       <div className={style.backdrop}>
         <Image
@@ -46,13 +40,12 @@ function allBlogs({ apiRes }) {
       </div>
 
       <section className={style.overlay}>
-        <h1>Blog</h1>
-        <p>Intro the blogs we have written. It is a great resource for [content here]</p>
+        <h1>{apiRes.title}</h1>
+        <p>{apiRes.short_desc}</p>
       </section>
 
       <section className={style.mainCont}>
-        <h3>all Blogs</h3>
-        <h1>{t2.t("companyName")}</h1>
+        <h3>{apiRes.content}</h3>
       </section>
     </Layout>
   );
