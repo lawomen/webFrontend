@@ -7,9 +7,9 @@
 :root{
    --primary: #EC7505;
    --alert: #cb3c04;
-   --pri2: #1C3A13;
    --background: #1c3a13;
-   --bgLanding: rgba(28, 58, 19, 0.4);
+   --bgLanding: rgba(28, 58, 19, 0.45);
+   --navBg: #1f4215;
    font-size: 16px;
 
 }
