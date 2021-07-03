@@ -9,7 +9,14 @@ export async function getStaticProps({ locale }) {
   const rawAbout = await fetch(
     `https://lawomen-admin.herokuapp.com/about?_locale=${locale}`
   );
-  const apiRes = await rawAbout.json();
+  const aboutRes = await rawAbout.json();
+
+  const rawFooter = await fetch(
+    `https://lawomen-admin.herokuapp.com/footer?_locale=${locale}`
+  );
+  const footerRes = await rawFooter.json();
+
+  const apiRes = { ...footerRes, ...aboutRes };
 
   return {
     props: {

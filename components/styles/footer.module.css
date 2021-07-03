@@ -19,7 +19,7 @@
 }
 
 .socials {
-    width: 50%;
+    width: 90%;
     margin-top: 2rem;
     opacity: 80%;
     display: flex;
@@ -47,6 +47,7 @@
     position: relative;
     width: 200px;
     height: 100px;
+    margin-block-end: 1.5rem;
 }
 
 @media (max-width: 768px) {

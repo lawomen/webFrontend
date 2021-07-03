@@ -58,6 +58,8 @@
 @media (max-width: 768px) {
     .cardCont {
         flex-direction: column;
+        justify-content: center;
+        align-items: center;
         padding: 2rem 0;
     }
     .subtitle {
@@ -68,10 +70,10 @@
         height: 17rem;
     }
     .card {
-        margin-bottom: 3rem;
+        margin-bottom: 4rem;
     }
 
     .cont>h3::after {
-        width: 70vw;
+        width: 60vw;
     }
 }

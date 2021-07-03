@@ -116,7 +116,7 @@ function Nav() {
               </p>
               <ul className={navStyle.dropdown} aria-label="submenu">
                 <li>
-                  <Link href="/cases">All Cases</Link>
+                  <Link href="/cases">{t("defCases")}</Link>
                 </li>
                 <li>
                   <Link href="#">Case one </Link>
@@ -133,7 +133,7 @@ function Nav() {
               </p>
               <ul className={navStyle.dropdown} aria-label="submenu">
                 <li>
-                  <Link href="/expertise">All Areas</Link>
+                  <Link href="/expertise">{t("defExpertise")}</Link>
                 </li>
                 <li>
                   <Link href="#">Civil Law</Link>
@@ -156,13 +156,13 @@ function Nav() {
               </p>
               <ul className={navStyle.dropdown} aria-label="submenu">
                 <li>
-                  <Link href="/lawyers">Partnering Lawyers</Link>
+                  <Link href="/lawyers">{t("defPeople")}</Link>
                 </li>
                 <li>
-                  <Link href="#">Team LaWomen</Link>
+                  <Link href="#">{t("admPeople")}</Link>
                 </li>
                 <li>
-                  <Link href="#">Join Us!</Link>
+                  <Link href="#">{t("joinPeople")}</Link>
                 </li>
               </ul>
             </li>
@@ -176,7 +176,7 @@ function Nav() {
               </p>
               <ul className={navStyle.dropdown} aria-label="submenu">
                 <li>
-                  <Link href="/blog">All posts</Link>
+                  <Link href="/blog">{t("defBlog")}</Link>
                 </li>
                 <li>
                   <Link href="#">Post One</Link>

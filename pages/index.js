@@ -78,8 +78,8 @@ function Home({ apiRes }) {
         />
         <div className={homeStyle.overlay}>
           <div className={homeStyle.landingCont}>
+            <h1 className={homeStyle.titleContent}>{t2.t("companyName")}</h1>
             <div className={homeStyle.mainContent}>
-              <h1>{t2.t("companyName")}</h1>
               <h2>{apiRes.tagline_title}</h2>
               <h3>{apiRes.tagline_desc}</h3>
               <button

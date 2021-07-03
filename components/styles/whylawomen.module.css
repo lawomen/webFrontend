@@ -55,7 +55,8 @@
     }
 
     .info{
-        padding: 0 1rem;
+        padding: 0;
+        padding-inline-start: 8vw;
         border-bottom: 3px solid black;
     }
 }

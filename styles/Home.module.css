@@ -16,18 +16,7 @@
     background-color: var(--bgLanding);
 }
 
-.landingCont {
-    padding-inline-start: 10vw;
-    padding-block-start: 13vh;
-    width: 88%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-}
 
-.landingCont h1 {
-    font-size: 5.5rem;
-}
 
 .landingCont h2 {
     font-size: 1.75rem;
@@ -37,8 +26,29 @@
     font-size: 1.1rem;
 }
 
+.landingCont {
+    padding-block-start: 17vh;
+    display: grid;
+    grid-template-areas: 
+    ". title title ."
+    ". content donate .";
+    grid-template-columns: 0.5fr 1.5fr 1fr 0.5fr;
+    grid-template-rows: 1fr 1fr;
+}
+
+.titleContent{
+    grid-area: title;
+    font-size: 5.5rem;
+    margin: 7vh 0;
+}
+
+
 .mainContent {
-    margin-inline-end: 8vw;
+    grid-area: content;
+}
+
+.donateContent{
+    grid-area: donate;
 }
 
 .donateContent h3 {
@@ -79,7 +89,7 @@
     position: absolute;
     right: 5vw;
     top: 55vh;
-    opacity: 50%;
+    opacity: 70%;
     z-index: 3;
     display: flex;
     flex-direction: column;
@@ -125,24 +135,38 @@ body[dir="rtl"] .socials {
     .backdrop {
         height: 125vh;
     }
+
+    .landingCont{
+        grid-template-areas: 
+        ". title ."
+        ". content ."
+        ". donate .";
+        grid-template-columns: 0.25fr 1fr 0.3fr;
+        grid-template-rows: 0..75fr 1fr 1fr;
+        padding-block-start: 15vh;
+        padding-block-end: 13vh;
+    }
+
+    .titleContent{
+        font-size: 3.5rem;
+    }
+
     .donateContent{
-        margin-inline-end: 3rem;
         margin-block-start: 4rem;
     }
-    .mainContent{
-        margin-inline-end: 3rem;
-    }
-    .landingCont {
-        flex-direction: column;
-        padding-block-start: 13vh;
-        align-items: flex-start;
-    }
+
     .landingCont h4 {
         font-size: 1.4rem;
     }
-    .landingCont h1 {
-        font-size: 3.5rem;
+
+    .button{
+        font-size: 1.6rem;
     }
+    .socials {
+        top: 80vh;
+    }
+
+    /* contact card at bottom on landing page  */
     .contactCont h3 {
         margin: 0 2rem 3rem 2rem;
     }
@@ -151,11 +175,5 @@ body[dir="rtl"] .socials {
     }
     .contactCont {
         padding: 0 2vw;
-    }
-    .button{
-        font-size: 1.6rem;
-    }
-    .socials {
-        top: 80vh;
     }
 }

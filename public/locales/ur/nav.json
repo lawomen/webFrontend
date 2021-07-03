@@ -1,7 +1,13 @@
 {
-    "about": "کے بارے میں",
+    "about": "ہمارے بارے میں",
     "blog": "بلاگ",
-    "people": "لوگ",
-    "expertise": "مہارت",
-    "cases": "معاملہ"
+    "people": "ساتھی",
+    "expertise": "ہماری خدمات",
+    "cases": "مقدمات",
+    "defCases": "urdu All Cases",
+    "defExpertise": "urdu All Areas",
+    "defPeople": "urdu Partnering Lawyers",
+    "admPeople": "urdu Team LaWomen",
+    "joinPeople": "urdu Join Us!",
+    "defBlog": "urdu All Posts"
 }
