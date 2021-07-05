@@ -69,11 +69,10 @@ function Home({ apiRes }) {
     >
       <section className={homeStyle.backdrop}>
         <Image
-          alt="Decorative background image of library"
-          src="/unsplashHomeTemp.jpg"
+          alt="Background image of a group of women"
+          src="/people.jpeg"
           layout="fill"
           objectFit="cover"
-          quality={10}
           priority
         />
         <div className={homeStyle.overlay}>
@@ -107,13 +106,13 @@ function Home({ apiRes }) {
           </div>
         </div>
         <div className={homeStyle.socials}>
-          <a target="_blank" href="https://www.facebook.com/LawomenPk/">
+          <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/LawomenPk/">
             <RiFacebookCircleFill size={40} />
           </a>
-          <a target="_blank" href="https://www.instagram.com/lawomenpk/">
+          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lawomenpk/">
             <RiInstagramLine size={40} />
           </a>
-          <a target="_blank" href="https://pk.linkedin.com/company/lawomen">
+          <a target="_blank" rel="noopener noreferrer" href="https://pk.linkedin.com/company/lawomen">
             <RiLinkedinFill size={40} />
           </a>
         </div>

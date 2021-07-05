@@ -35,17 +35,15 @@ function allBlogs({ apiRes }) {
       }}
     >
       <div className={style.landedNavCont}></div>
-      <div className={style.backdrop}>
-        <Image
-          alt="Decorative background image of library"
-          src="/unsplashHomeTemp.jpg"
-          layout="fill"
-          objectFit="cover"
-          quality={10}
-          priority
-        />
-      </div>
-
+        <div className={style.backdrop}>
+          <Image
+            alt="Decorative background image of people discussing"
+            src="/klabEvent2.jpeg"
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
+        </div>
       <section className={style.overlay}>
         <h1>{apiRes.title}</h1>
         <p>{apiRes.short_desc}</p>

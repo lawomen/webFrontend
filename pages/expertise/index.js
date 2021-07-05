@@ -38,10 +38,9 @@ function allBlogs({ apiRes }) {
       <div className={style.backdrop}>
         <Image
           alt="Decorative background image of library"
-          src="/unsplashHomeTemp.jpg"
+          src="/zaraImage.jpeg"
           layout="fill"
           objectFit="cover"
-          quality={10}
           priority
         />
       </div>

@@ -45,6 +45,7 @@
 
 .mainContent {
     grid-area: content;
+    margin-inline-end: 5vw;
 }
 
 .donateContent{
@@ -142,13 +143,14 @@ body[dir="rtl"] .socials {
         ". content ."
         ". donate .";
         grid-template-columns: 0.25fr 1fr 0.3fr;
-        grid-template-rows: 0..75fr 1fr 1fr;
+        grid-template-rows: 0.5fr 1fr 1fr;
         padding-block-start: 15vh;
-        padding-block-end: 13vh;
+        margin-block-end: 15vh;
     }
 
     .titleContent{
         font-size: 3.5rem;
+        height: fit-content;
     }
 
     .donateContent{

@@ -1,8 +1,8 @@
 import Image from "next/image";
 import styles from "../styles/whylawomen.module.css";
-import {BsFillBookmarksFill} from 'react-icons/bs'
+import { BsFillBookmarksFill } from "react-icons/bs";
 
-function WhyLawomen({content}) {
+function WhyLawomen({ content }) {
   return (
     <div className={styles.cont}>
       <div className={styles.info}>
@@ -10,16 +10,15 @@ function WhyLawomen({content}) {
         <p>{content.reason1}</p>
         <BsFillBookmarksFill className={styles.bgIcon} size={300} />
       </div>
-      <div className={styles.image}>
-        <Image
-          alt="Decorative background image of library"
-          src="/unsplashHomeTemp.jpg"
-          layout="fill"
-          objectFit="cover"
-          quality={10}
-          priority
-        />
-      </div>
+        <div className={styles.image}>
+          <Image
+            alt="Decorative image of people meeting"
+            src="/peoplemeeting.jpeg"
+            layout="fill"
+            objectFit="cover"
+            priority
+          />
+        </div>
     </div>
   );
 }

@@ -29,13 +29,13 @@ function Footer({ content }) {
         </div>
         <p>{content.mission_statement}</p>
         <div className={footerStyles.socials}>
-          <a target="_blank" href="https://www.facebook.com/LawomenPk/">
+          <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/LawomenPk/">
             <RiFacebookCircleFill size={35} />
           </a>
-          <a target="_blank" href="https://www.instagram.com/lawomenpk/">
+          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lawomenpk/">
             <RiInstagramLine size={35} />
           </a>
-          <a target="_blank" href="https://pk.linkedin.com/company/lawomen">
+          <a target="_blank" rel="noopener noreferrer" href="https://pk.linkedin.com/company/lawomen">
             <RiLinkedinFill size={35} />
           </a>
         </div>
