@@ -11,10 +11,9 @@ function Impact({ content }) {
           <div className={style.imgCont}>
             <Image
               alt="Image of women's right protest"
-              src="/protest.jpeg"
+              src="/signs.jpeg"
               layout="fill"
               objectFit="cover"
-              priority
             />
           </div>
           <h3>{content.impact_card1}</h3>
@@ -28,7 +27,6 @@ function Impact({ content }) {
               src="/sdg5.jpeg"
               layout="fill"
               objectFit="cover"
-              priority
             />
           </div>
           <h3>{content.impact_card2}</h3>

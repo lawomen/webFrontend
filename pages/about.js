@@ -38,7 +38,7 @@ function allBlogs({ apiRes }) {
       <div className={style.backdrop}>
         <Image
           alt="Decorative background image of people in the street"
-          src="/street.jpeg"
+          src="/zoom.jpeg"
           layout="fill"
           objectFit="cover"
           priority

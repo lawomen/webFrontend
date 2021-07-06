@@ -16,7 +16,6 @@ function WhyLawomen({ content }) {
             src="/peoplemeeting.jpeg"
             layout="fill"
             objectFit="cover"
-            priority
           />
         </div>
     </div>

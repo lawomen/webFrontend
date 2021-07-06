@@ -16,6 +16,15 @@
     justify-content: center;
     align-items: flex-start;
     margin-inline-end: 5vw;
+    min-width: 60%;
+}
+
+.missionP{
+    padding-inline-start: 4vw;
+}
+
+.infoCont{
+    min-width: 20%;
 }
 
 .socials {

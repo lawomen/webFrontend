@@ -27,7 +27,7 @@ function Footer({ content }) {
             alt="LaWomen Logo"
           />
         </div>
-        <p>{content.mission_statement}</p>
+        <p className={footerStyles.missionP}>{content.mission_statement}</p>
         <div className={footerStyles.socials}>
           <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/LawomenPk/">
             <RiFacebookCircleFill size={35} />

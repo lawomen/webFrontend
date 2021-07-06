@@ -70,7 +70,7 @@ function Home({ apiRes }) {
       <section className={homeStyle.backdrop}>
         <Image
           alt="Background image of a group of women"
-          src="/people.jpeg"
+          src="/peoplePic1.jpeg"
           layout="fill"
           objectFit="cover"
           priority
