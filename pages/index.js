@@ -31,7 +31,17 @@ export async function getStaticProps({ locale }) {
   );
   const footerRes = await rawFooter.json();
 
-  const apiRes = { ...footerRes, ...landingRes };
+  const rawExpertise = await fetch(
+    `https://lawomen-admin.herokuapp.com/expertise-entries?_locale=${locale}`
+  );
+
+  const allExpertiseRes = await rawExpertise.json();
+
+  const landingExp = allExpertiseRes.filter((ele) => {
+    return (ele.on_landing === true);
+  });
+
+  const apiRes = { ...footerRes, ...landingRes, landingExp };
 
   return {
     props: {
@@ -48,6 +58,7 @@ export async function getStaticProps({ locale }) {
 }
 
 function Home({ apiRes }) {
+    
   const t1 = useTranslation("landing");
   const t2 = useTranslation("common");
 
@@ -106,20 +117,32 @@ function Home({ apiRes }) {
           </div>
         </div>
         <div className={homeStyle.socials}>
-          <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/LawomenPk/">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.facebook.com/LawomenPk/"
+          >
             <RiFacebookCircleFill size={40} />
           </a>
-          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lawomenpk/">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://www.instagram.com/lawomenpk/"
+          >
             <RiInstagramLine size={40} />
           </a>
-          <a target="_blank" rel="noopener noreferrer" href="https://pk.linkedin.com/company/lawomen">
+          <a
+            target="_blank"
+            rel="noopener noreferrer"
+            href="https://pk.linkedin.com/company/lawomen"
+          >
             <RiLinkedinFill size={40} />
           </a>
         </div>
       </section>
 
       <section>
-        <LawArea content={apiRes.law_area} />
+        <LawArea content={apiRes.landingExp} />
       </section>
 
       <section>

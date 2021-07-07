@@ -14,6 +14,7 @@ function Nav() {
   const iconItem = useRef(null);
   const langComp = useRef(null);
   const [openNav, changeOpenNav] = useState(false);
+  const [fullLogo, updateLogoType] = useState(false)
 
   const router = useRouter();
   const locale = router.locale;
@@ -37,9 +38,11 @@ function Nav() {
       if (window.scrollY > 100) {
         navItem.current.className = navStyle.nav + " " + navStyle.scrolledNav;
         langComp.current.style.color = "black";
+        updateLogoType(true)
       } else {
         navItem.current.className = navStyle.nav;
         langComp.current.style.color = "white";
+        updateLogoType(false)
       }
     }
   }
@@ -91,13 +94,19 @@ function Nav() {
       <div ref={navItem} className={navStyle.nav}>
         <div className={navStyle.logo}>
           <Link href="/">
-            <Image
+            {fullLogo? <Image
               layout="fill"
               objectFit="contain"
               priority
-              src="/LawomenLogo.svg"
+              src="/emblem2.svg"
               alt="LaWomen Logo"
-            />
+            />:<Image
+              layout="fill"
+              objectFit="contain"
+              priority
+              src="/emblem1.svg"
+              alt="LaWomen Logo"
+            />}
           </Link>
         </div>
 

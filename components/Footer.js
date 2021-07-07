@@ -23,7 +23,7 @@ function Footer({ content }) {
             layout="fill"
             objectFit="contain"
             priority
-            src="/LawomenLogo.svg"
+            src="/emblem1.svg"
             alt="LaWomen Logo"
           />
         </div>
