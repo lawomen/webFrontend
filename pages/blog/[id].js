@@ -1,7 +1,7 @@
 import MarkdownIt from "markdown-it";
 
 export async function getStaticProps(context){
-    const rawBlog = await fetch(`https://lawomen-admin.herokuapp.com/blog-entries?_sort=date_created:DESC&_where[id]=${context.params.id}&_limit=1`)
+    const rawBlog = await fetch(`https://lawomen-admin.herokuapp.com/blog-entries?_locale=${context.locale}&_sort=date_created:DESC&_where[id]=${context.params.id}&_limit=1`)
     const blogRes = await rawBlog.json()
 
     return{
@@ -17,10 +17,11 @@ export async function getStaticPaths(){
   
     const urBlogRaw = await fetch(`https://lawomen-admin.herokuapp.com/blog-entries?_locale=ur`)
     const urBlog = await urBlogRaw.json()
-  
-    const allBlog = [...urBlog, ...enBlog]
 
-    const paths = allBlog.map(({id})=> ({params:{id: id.toString()}}))
+    const enPaths = enBlog.map(({id})=> ({params:{id: id.toString()}, locale: 'en'}))
+    const urPaths = urBlog.map(({id})=> ({params:{id: id.toString()}, locale: 'ur'}))
+
+    const paths = [...enPaths, ...urPaths]
 
     return{
         paths,
