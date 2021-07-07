@@ -1,73 +1,78 @@
 .cont {
-    width: 100%;
-    background-color: var(--background);
-    color: white;
-    padding: 3rem 0 4rem 0;
-    padding-inline-start: 5vw;
-    padding-inline-end: 15vw;
-    display: flex;
-    justify-content: space-around;
-    align-items: flex-start;
+  width: 100%;
+  background-color: var(--background);
+  color: white;
+  padding: 3rem 0 2rem 0;
+  padding-inline-start: 5vw;
+  padding-inline-end: 5vw;
+  display: grid;
+  grid-template-areas:
+    "logo socials . info"
+    "mission mission . info"
+    "mission mission . info";
+  grid-template-columns: 1fr 1fr 0.25fr 1fr;
+  grid-template-rows: repeat(3, 1fr);
 }
 
-.about {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    margin-inline-end: 5vw;
-    min-width: 60%;
+.missionP {
+  grid-area: mission;
+  padding-inline-start: 5vw;
+  padding-block-start: 3vh;
+    line-height: 1.5rem;
 }
 
-.missionP{
-    padding-inline-start: 4vw;
-}
-
-.infoCont{
-    min-width: 20%;
-}
-
-.socials {
-    width: 90%;
-    margin-top: 2rem;
-    opacity: 80%;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.socials a {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.iconP {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-
-.iconP svg {
-    margin-inline-end: 1rem;
+.infoCont {
+  grid-area: info;
+  min-width: 20%;
 }
 
 .footerLogo {
-    position: relative;
-    width: 200px;
-    height: 100px;
-    margin-block-end: 1.5rem;
+  grid-area: logo;
+  position: relative;
+  width: 200px;
+  height: 100px;
+  margin-block-end: 1.5rem;
+  left: 15%;
+}
+
+.socials {
+  grid-area: socials;
+  width: 100%;
+  margin-top: 2rem;
+  opacity: 80%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  transform: translateX(-20px);
+}
+
+.socials a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.iconP {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.iconP svg {
+  margin-inline-end: 1rem;
 }
 
 @media (max-width: 768px) {
-    .cont {
-        flex-direction: column-reverse;
-        padding: 4rem;
-    }
-    .about {
-        margin-top: 3rem;
-    }
-    .socials {
-        width: 75%;
-    }
+  .cont {
+    grid-template-areas:
+      "logo socials"
+      "mission mission"
+      "info info";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr minmax(5rem, 25vh) 2fr;
+  }
+  .infoCont {
+    padding-inline-start: 5vw;
+    padding-block-end: 5vh;
+  }
 }

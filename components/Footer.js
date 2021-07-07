@@ -17,30 +17,39 @@ function Footer({ content }) {
   const { t } = useTranslation("footer");
   return (
     <footer className={footerStyles.cont}>
-      <div className={footerStyles.about}>
-        <div className={footerStyles.footerLogo}>
-          <Image
-            layout="fill"
-            objectFit="contain"
-            priority
-            src="/emblem1.svg"
-            alt="LaWomen Logo"
-          />
-        </div>
-        <p className={footerStyles.missionP}>{content.mission_statement}</p>
-        <div className={footerStyles.socials}>
-          <a target="_blank" rel="noopener noreferrer" href="https://www.facebook.com/LawomenPk/">
-            <RiFacebookCircleFill size={35} />
-          </a>
-          <a target="_blank" rel="noopener noreferrer" href="https://www.instagram.com/lawomenpk/">
-            <RiInstagramLine size={35} />
-          </a>
-          <a target="_blank" rel="noopener noreferrer" href="https://pk.linkedin.com/company/lawomen">
-            <RiLinkedinFill size={35} />
-          </a>
-        </div>
+      <div className={footerStyles.footerLogo}>
+        <Image
+          layout="fill"
+          objectFit="contain"
+          priority
+          src="/emblem1.svg"
+          alt="LaWomen Logo"
+        />
       </div>
-
+      <div className={footerStyles.socials}>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.facebook.com/LawomenPk/"
+        >
+          <RiFacebookCircleFill size={35} />
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://www.instagram.com/lawomenpk/"
+        >
+          <RiInstagramLine size={35} />
+        </a>
+        <a
+          target="_blank"
+          rel="noopener noreferrer"
+          href="https://pk.linkedin.com/company/lawomen"
+        >
+          <RiLinkedinFill size={35} />
+        </a>
+      </div>
+      <p className={footerStyles.missionP}>{content.mission_statement}</p>
       <div className={footerStyles.infoCont}>
         <h3>{content.info_title}</h3>
         <div className={footerStyles.iconP}>

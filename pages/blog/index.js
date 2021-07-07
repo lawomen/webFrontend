@@ -35,6 +35,7 @@ export async function getStaticProps({ locale }) {
 }
 
 function allBlogs({ apiRes, blogEntry }) {
+
   return (
     <Layout
       content={{
@@ -62,6 +63,7 @@ function allBlogs({ apiRes, blogEntry }) {
           {blogEntry.map(({ id, title, date_created, blog, picture, blog_short_desc }) => (
             <BlogCard
               key={id}
+              id={id}
               title={title}
               date_created={date_created}
               blog={blog}
