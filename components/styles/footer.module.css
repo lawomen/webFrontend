@@ -29,10 +29,10 @@
 .footerLogo {
   grid-area: logo;
   position: relative;
-  width: 200px;
+  width: 100px;
   height: 100px;
   margin-block-end: 1.5rem;
-  left: 15%;
+  left: 30%;
 }
 
 .socials {
@@ -74,5 +74,8 @@
   .infoCont {
     padding-inline-start: 5vw;
     padding-block-end: 5vh;
+  }
+  .footerLogo {
+    left: 10%;
   }
 }

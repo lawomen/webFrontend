@@ -47,26 +47,31 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
   const [onlyAva, updateOnlyAva] = useState(false);
   const nameInput = useRef(null);
   const [curName, updateCurName] = useState("");
-  const [curLawyers, updateCurLawyers] = useState(lawyerEntries)
+  const [curLawyers, updateCurLawyers] = useState(lawyerEntries);
 
   function updateSearch() {
     updateCurName(nameInput.current.value);
 
     let tempListLawyers = lawyerEntries;
 
-    if (curLawArea !== "all"){
-      tempListLawyers = tempListLawyers.filter(({law_area})=>{
-        return law_area.find(({area_title})=>area_title === curLawArea) !== undefined
-      })
+    if (curLawArea !== "all") {
+      tempListLawyers = tempListLawyers.filter(({ law_area }) => {
+        return (
+          law_area.find(({ area_title }) => area_title === curLawArea) !==
+          undefined
+        );
+      });
     }
-    if (onlyAva !== false){
-      tempListLawyers = tempListLawyers.filter(({available})=>available)
+    if (onlyAva !== false) {
+      tempListLawyers = tempListLawyers.filter(({ available }) => available);
     }
-    if (nameInput.current.value !== ""){
-      tempListLawyers = tempListLawyers.filter(({name})=> name.toLowerCase().includes(nameInput.current.value.toLowerCase()))
+    if (nameInput.current.value !== "") {
+      tempListLawyers = tempListLawyers.filter(({ name }) =>
+        name.toLowerCase().includes(nameInput.current.value.toLowerCase())
+      );
     }
 
-    updateCurLawyers(tempListLawyers)
+    updateCurLawyers(tempListLawyers);
   }
 
   return (
@@ -93,6 +98,13 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
       </section>
 
       <section className={style.mainCont}>
+        <div className={style.searchCont}>
+          <input ref={nameInput} type="text" placeholder="Search Name:"></input>
+          <button className={style.searchButton} onClick={updateSearch}>
+            <RiUserSearchFill className={style.searchContIcon} />
+          </button>
+        </div>
+
         <div className={style.filterCont}>
           <h3>Filter by:</h3>
           <label className={style.selectLabel} htmlFor="lawAreaSelect">
@@ -123,13 +135,6 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
           </div>
           <button className={style.refreshBtn} onClick={updateSearch}>
             Update Results
-          </button>
-        </div>
-
-        <div className={style.searchCont}>
-          <input ref={nameInput} type="text" placeholder="Search Name:"></input>
-          <button className={style.searchButton} onClick={updateSearch}>
-            <RiUserSearchFill className={style.searchContIcon} />
           </button>
         </div>
 

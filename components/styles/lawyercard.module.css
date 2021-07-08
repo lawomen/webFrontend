@@ -7,8 +7,7 @@
     "name name area"
     "bio bio area";
   grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 2fr;
-  max-height: 20rem;
+  grid-template-rows: 1fr 1.5fr;
   padding: 1.5rem 2rem;
 }
 
@@ -57,4 +56,20 @@
   padding: 0.35rem;
   border-radius: 3px;
   width: fit-content;
+}
+
+@media (max-width: 768px) {
+  .card {
+    grid-template-areas:
+      "name"
+      "area"
+      "bio";
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(auto-fit, minmax(5rem, 1fr));
+  }
+
+  .areaCont {
+    margin: 0;
+  }
+
 }
