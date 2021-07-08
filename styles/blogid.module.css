@@ -1,0 +1,21 @@
+.landedNavCont {
+    width: 100vw;
+    height: 8rem;
+    top: 0;
+    background-color: var(--background);
+}
+
+.mainCont {
+    min-height: 100vh;
+    padding: 2rem 5rem;
+}
+
+.image{
+    position: relative;
+    width: 20rem;
+    height: 10rem;
+}
+
+@media (max-width: 768px) {
+  
+}

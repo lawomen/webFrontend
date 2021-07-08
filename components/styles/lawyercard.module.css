@@ -1,0 +1,60 @@
+.card {
+  border: 1px solid gray;
+  border-radius: 5px;
+  margin-block-end: 4rem;
+  display: grid;
+  grid-template-areas:
+    "name . area"
+    "bio bio area";
+  grid-template-columns: 1fr 1.5fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  max-height: 20rem;
+  padding: 1.5rem 2rem;
+}
+
+.bio {
+  grid-area: bio;
+  height: fit-content;
+  padding-inline-start: 0.5rem;
+}
+
+.nameCont {
+  grid-area: name;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-self: center;
+}
+
+.nameCont * {
+  margin: 0;
+}
+
+.name {
+  padding: 0.5rem 1rem;
+  border-radius: 3px;
+  background-color: var(--primary);
+  color: white;
+  width: fit-content;
+}
+
+.email {
+  margin-block-start: 1rem;
+  opacity: 85%;
+  padding-inline-start: 0.35rem;
+  letter-spacing: 0.2px;
+}
+
+.areaCont {
+  grid-area: area;
+  margin-inline-start: 2vw;
+}
+
+.areaCard {
+  background-color: var(--background);
+  color: white;
+  margin-block-start: 1rem;
+  padding: 0.35rem;
+  border-radius: 3px;
+  width: fit-content;
+}

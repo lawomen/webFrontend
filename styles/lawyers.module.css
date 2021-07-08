@@ -48,8 +48,90 @@
 .mainCont {
     min-height: 100vh;
     padding: 2rem 5rem;
+
+    display: grid;
+    grid-template-areas: 
+    "filter search"
+    "filter cards"
+    ". cards";
+    grid-template-rows: 8rem 20rem repeat(auto-fit, minmax(20rem, 1fr));
+    grid-template-columns: 1fr 2fr;
+}
+
+.filterCont{
+    grid-area: filter;
+    margin-inline-end: 2rem;
+    border: 1px solid gray;
+    padding: 1rem;
+    border-radius: 10px;
+}
+
+
+.searchCont{
+    grid-area: search;
+    margin-block-end: 1rem;
+    padding: 0.5rem;
+
+    display: flex;
+    align-items: flex-start;
+}
+
+.searchCont input{
+    width: 40vw;
+    margin-inline-end: 2rem;
+    font-size: 1.1rem;
+    padding: 0.75rem 0.5rem;
+}
+
+.searchButton{
+    height: 3rem;
+    cursor: pointer;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    border-radius: 5px;
+}
+
+.searchButton:hover{
+    filter: brightness(0.93);
+}
+
+.searchButton:focus{
+    outline: none;
+    box-shadow: none;
+}
+
+.searchContIcon{
+    height: 100%;
+    width: auto;
+    color: white;
+}
+
+.cardCont{
+    grid-area: cards;
+    margin-block-end: 5rem;
 }
 
 @media (max-width: 768px) {
+
+    .mainCont {
+        grid-template-areas: 
+        "search"
+        "filter"
+        "cards";
+        grid-template-rows: auto auto repeat(auto-fit, minmax(20rem, 1fr));
+        grid-template-columns: 1fr;
+    }
   
+    .filterCont{
+        margin-inline-end: 0;
+        margin-block-end: 5vh;
+    }
+
+    .searchCont{
+        padding: 0.5rem;
+        margin-block-end: 0;
+    }
+    .searchCont input{
+        width: 80%;
+    }
 }
