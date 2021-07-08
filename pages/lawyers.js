@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Layout from "../components/Layout";
 import style from "../styles/lawyers.module.css";
-import LawyerCard from "../components/lawyers/lawyerCard";
+import LawyerCard from "../components/lawyers/LawyerCard";
 
 import { RiUserSearchFill } from "react-icons/ri";
 
