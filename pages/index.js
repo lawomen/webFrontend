@@ -38,7 +38,7 @@ export async function getStaticProps({ locale }) {
   const allExpertiseRes = await rawExpertise.json();
 
   const landingExp = allExpertiseRes.filter((ele) => {
-    return (ele.on_landing === true);
+    return ele.on_landing === true;
   });
 
   const apiRes = { ...footerRes, ...landingRes, landingExp };
@@ -58,7 +58,6 @@ export async function getStaticProps({ locale }) {
 }
 
 function Home({ apiRes }) {
-    
   const t1 = useTranslation("landing");
   const t2 = useTranslation("common");
 
@@ -79,41 +78,32 @@ function Home({ apiRes }) {
       }}
     >
       <section className={homeStyle.backdrop}>
-        <Image
-          alt="Background image of a group of women"
-          src="/peoplePic1.jpeg"
-          layout="fill"
-          objectFit="cover"
-          priority
-        />
-        <div className={homeStyle.overlay}>
-          <div className={homeStyle.landingCont}>
-            <h1 className={homeStyle.titleContent}>{t2.t("companyName")}</h1>
-            <div className={homeStyle.mainContent}>
-              <h2>{apiRes.tagline_title}</h2>
-              <h3>{apiRes.tagline_desc}</h3>
-              <button
-                className={`${homeStyle.button} ${homeStyle.contact}`}
-                onClick={() => {
-                  contactUs.current.scrollIntoView({
-                    behavior: "smooth",
-                    block: "center",
-                  });
-                }}
-              >
-                <BsFillCaretRightFill size={27} />
-                {t1.t("call2action")}
+        <div className={homeStyle.landingCont}>
+          <h1 className={homeStyle.titleContent}>{t2.t("companyName")}</h1>
+          <div className={homeStyle.mainContent}>
+            <h2 className={homeStyle.subtitle}>{apiRes.tagline_title}</h2>
+            <h3 className={homeStyle.desc}>{apiRes.tagline_desc}</h3>
+            <button
+              className={`${homeStyle.button} ${homeStyle.contactBtn}`}
+              onClick={() => {
+                contactUs.current.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
+              }}
+            >
+              <BsFillCaretRightFill size={27} />
+              {t1.t("call2action")}
+            </button>
+          </div>
+          <div className={homeStyle.donateContent}>
+            <h2 className={homeStyle.subtitle}>{apiRes.donate_title}</h2>
+            <h3 className={homeStyle.desc}>{apiRes.donate_desc}</h3>
+            <Link href="#">
+              <button className={homeStyle.button}>
+                {t1.t("call2action2")}
               </button>
-            </div>
-            <div className={homeStyle.donateContent}>
-              <h2>{apiRes.donate_title}</h2>
-              <h3>{apiRes.donate_desc}</h3>
-              <Link href="#">
-                <button className={homeStyle.button}>
-                  {t1.t("call2action2")}
-                </button>
-              </Link>
-            </div>
+            </Link>
           </div>
         </div>
         <div className={homeStyle.socials}>

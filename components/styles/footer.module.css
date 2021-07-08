@@ -1,5 +1,6 @@
 .cont {
-  width: 100%;
+  width: 100vw;
+  overflow: hidden;
   background-color: var(--background);
   color: white;
   padding: 3rem 0 2rem 0;

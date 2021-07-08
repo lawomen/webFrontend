@@ -1,40 +1,19 @@
 .backdrop {
-    min-height: 100vh;
     width: 100vw;
-    position: relative;
     color: white;
-}
-
-.overlay {
-    position: absolute;
-    content: "";
-    left: 0px;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    z-index: 2;
-    background-color: var(--bgLanding);
-}
-
-
-
-.landingCont h2 {
-    font-size: 1.75rem;
-}
-
-.landingCont h3 {
-    font-size: 1.2rem;
-    line-height: 2rem;
+    background: url('../public/peoplePic1.jpeg') no-repeat center center;
+    background-size: cover;
 }
 
 .landingCont {
-    padding-block-start: 17vh;
+    background-color: var(--bgLanding);
     display: grid;
     grid-template-areas: 
     ". title title ."
-    ". content donate .";
-    grid-template-columns: 0.5fr 1.5fr 1fr 0.5fr;
-    grid-template-rows: 1fr 1fr;
+    ". main donate .";
+    grid-template-columns: 15vw 1.5fr 1fr 10vw;
+    grid-template-rows: 1fr 2fr;
+    padding-block-start: 17vh;
 }
 
 .titleContent{
@@ -43,48 +22,13 @@
     margin: 7vh 0;
 }
 
-
-.mainContent {
-    grid-area: content;
-    margin-inline-end: 5vw;
+.mainContent{
+    grid-area: main;
+    margin-inline-end: 8vw;
 }
 
 .donateContent{
     grid-area: donate;
-}
-
-.donateContent h3 {
-    letter-spacing: 0.05rem;
-}
-
-.button {
-    cursor: pointer;
-    font-size: 1.3rem;
-    padding: 1rem;
-    border-radius: 0.5rem;
-    font-family: 'Lora', serif;
-    margin-block-start: 5vh;
-    margin-inline-start: 0.3rem;
-    background-color: var(--primary);
-    border: var(--primary);
-    color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-.contact {
-    justify-content: space-between;
-    gap: 0.4rem;
-}
-
-.button:focus {
-    outline: none;
-    box-shadow: none;
-}
-
-.button:hover {
-    filter: brightness(0.85);
 }
 
 .socials {
@@ -106,6 +50,48 @@ body[dir="rtl"] .socials {
     margin-bottom: 2rem;
 }
 
+
+/* Style area */
+
+.button {
+    cursor: pointer;
+    font-size: 1.3rem;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    font-family: 'Lora', serif;
+    margin-block-start: 5vh;
+    margin-inline-start: 0.3rem;
+    background-color: var(--primary);
+    border: var(--primary);
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.button:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+.button:hover {
+    filter: brightness(0.85);
+}
+
+.contactBtn {
+    justify-content: space-between;
+    gap: 0.4rem;
+}
+
+.subtitle{
+    font-size: 1.75rem;
+    letter-spacing: 0.05rem;
+}
+
+.desc{
+    font-size: 1.2rem;
+    line-height: 2rem;
+}
 
 /* Contact Form */
 
@@ -134,42 +120,32 @@ body[dir="rtl"] .socials {
 }
 
 @media (max-width: 768px) {
-    .backdrop {
-        height: 125vh;
-    }
-
     .landingCont{
         grid-template-areas: 
         ". title ."
-        ". content ."
+        ". main ."
         ". donate .";
         grid-template-columns: 0.25fr 1fr 0.3fr;
         grid-template-rows: 0.5fr 1fr 1fr;
         padding-block-start: 15vh;
-        margin-block-end: 15vh;
+        padding-block-end: 5vh;
     }
-
     .titleContent{
-        font-size: 3.5rem;
-        height: fit-content;
+        font-size: 4.5rem;
     }
 
-    .donateContent{
-        margin-block-start: 4rem;
-    }
-
-    .landingCont h4 {
-        font-size: 1.4rem;
+    .mainContent{
+        margin-block-end: 2rem;
     }
 
     .button{
         font-size: 1.6rem;
     }
+
     .socials {
         top: 80vh;
     }
-
-    /* contact card at bottom on landing page  */
+    /* Contact Form */
     .contactCont h3 {
         margin: 0 2rem 3rem 2rem;
     }
@@ -179,4 +155,5 @@ body[dir="rtl"] .socials {
     .contactCont {
         padding: 0 2vw;
     }
+
 }
