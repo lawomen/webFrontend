@@ -47,9 +47,26 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
   const [onlyAva, updateOnlyAva] = useState(false);
   const nameInput = useRef(null);
   const [curName, updateCurName] = useState("");
+  const [curLawyers, updateCurLawyers] = useState(lawyerEntries)
 
   function updateSearch() {
     updateCurName(nameInput.current.value);
+
+    let tempListLawyers = lawyerEntries;
+
+    if (curLawArea !== "all"){
+      tempListLawyers = tempListLawyers.filter(({law_area})=>{
+        return law_area.find(({area_title})=>area_title === curLawArea) !== undefined
+      })
+    }
+    if (onlyAva !== false){
+      tempListLawyers = tempListLawyers.filter(({available})=>available)
+    }
+    if (nameInput.current.value !== ""){
+      tempListLawyers = tempListLawyers.filter(({name})=> name.toLowerCase().includes(nameInput.current.value.toLowerCase()))
+    }
+
+    updateCurLawyers(tempListLawyers)
   }
 
   return (
@@ -117,7 +134,7 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
         </div>
 
         <div className={style.cardCont}>
-          {lawyerEntries.map(({ id, name, law_area, bio, email }) => (
+          {curLawyers.map(({ id, name, law_area, bio, email }) => (
             <LawyerCard
               key={id}
               name={name}
