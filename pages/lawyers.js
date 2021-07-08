@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { useState, useRef } from "react";
 import Layout from "../components/Layout";
 import style from "../styles/lawyers.module.css";
 import LawyerCard from "../components/lawyers/LawyerCard";
@@ -23,18 +24,34 @@ export async function getStaticProps({ locale }) {
   );
   const footerRes = await rawFooter.json();
 
+  const rawExpertise = await fetch(
+    `https://lawomen-admin.herokuapp.com/law-area-entries?_locale=${locale}`
+  );
+
+  const allExpertise = await rawExpertise.json();
+
   const apiRes = { ...footerRes, ...lawyerRes };
 
   return {
     props: {
       apiRes,
       lawyerEntries,
+      allExpertise,
       ...(await serverSideTranslations(locale, ["common", "nav", "footer"])),
     },
   };
 }
 
-function allBlogs({ apiRes, lawyerEntries }) {
+function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
+  const [curLawArea, updateLawArea] = useState("all");
+  const [onlyAva, updateOnlyAva] = useState(false);
+  const nameInput = useRef(null);
+  const [curName, updateCurName] = useState("");
+
+  function updateSearch() {
+    updateCurName(nameInput.current.value);
+  }
+
   return (
     <Layout
       content={{
@@ -60,12 +77,41 @@ function allBlogs({ apiRes, lawyerEntries }) {
 
       <section className={style.mainCont}>
         <div className={style.filterCont}>
-          <p>Filters</p>
+          <h3>Filter by:</h3>
+          <label className={style.selectLabel} htmlFor="lawAreaSelect">
+            Law Area:
+          </label>
+          <select
+            id="lawAreaSelect"
+            value={curLawArea}
+            onChange={(e) => updateLawArea(e.target.value)}
+          >
+            <option value="all" selected>
+              All
+            </option>
+            {allExpertise.map(({ id, area_title }) => (
+              <option key={id} value={area_title}>
+                {area_title}
+              </option>
+            ))}
+          </select>
+          <div className={style.avaInput}>
+            <label htmlFor="ava">Currently Available</label>
+            <input
+              id="ava"
+              type="checkbox"
+              checked={onlyAva}
+              onChange={() => updateOnlyAva((prev) => !prev)}
+            />
+          </div>
+          <button className={style.refreshBtn} onClick={updateSearch}>
+            Update Results
+          </button>
         </div>
 
         <div className={style.searchCont}>
-          <input type="text" placeholder="Search Name:"></input>
-          <button className={style.searchButton}>
+          <input ref={nameInput} type="text" placeholder="Search Name:"></input>
+          <button className={style.searchButton} onClick={updateSearch}>
             <RiUserSearchFill className={style.searchContIcon} />
           </button>
         </div>
