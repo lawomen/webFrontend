@@ -71,11 +71,11 @@ function allBlogs({ apiRes, lawyerEntries }) {
         </div>
 
         <div className={style.cardCont}>
-          {lawyerEntries.map(({ id, name, areas_of_law, bio, email }) => (
+          {lawyerEntries.map(({ id, name, law_area, bio, email }) => (
             <LawyerCard
               key={id}
               name={name}
-              areas_of_law={areas_of_law}
+              law_area={law_area}
               bio={bio}
               email={email}
             />

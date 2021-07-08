@@ -1,6 +1,6 @@
 import style from "../styles/lawyercard.module.css";
 
-function LawyerCard({ name, areas_of_law, bio, email }) {
+function LawyerCard({ name, law_area, bio, email }) {
   return (
     <div className={style.card}>
       <div className={style.nameCont}>
@@ -9,9 +9,9 @@ function LawyerCard({ name, areas_of_law, bio, email }) {
       </div>
       <div className={style.areaCont}>
         <h3>Areas of Law:</h3>
-        {areas_of_law.map(({ id, text }) => (
+        {law_area.map(({ id, area_title }) => (
           <div className={style.areaCard} key={id}>
-            {text}
+            {area_title}
           </div>
         ))}
       </div>

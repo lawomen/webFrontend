@@ -32,7 +32,7 @@ export async function getStaticProps({ locale }) {
   const footerRes = await rawFooter.json();
 
   const rawExpertise = await fetch(
-    `https://lawomen-admin.herokuapp.com/expertise-entries?_locale=${locale}`
+    `https://lawomen-admin.herokuapp.com/law-area-entries?_locale=${locale}`
   );
 
   const allExpertiseRes = await rawExpertise.json();
