@@ -7,6 +7,7 @@ import LawyerCard from "../components/lawyers/LawyerCard";
 import { RiUserSearchFill } from "react-icons/ri";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 
 export async function getStaticProps({ locale }) {
   const rawLawyerEntries = await fetch(
@@ -37,12 +38,19 @@ export async function getStaticProps({ locale }) {
       apiRes,
       lawyerEntries,
       allExpertise,
-      ...(await serverSideTranslations(locale, ["common", "nav", "footer"])),
+      ...(await serverSideTranslations(locale, [
+        "common",
+        "nav",
+        "footer",
+        "lawyerSearch",
+      ])),
     },
   };
 }
 
 function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
+  const { t } = useTranslation("lawyerSearch");
+
   const [curLawArea, updateLawArea] = useState("all");
   const [onlyAva, updateOnlyAva] = useState(false);
   const nameInput = useRef(null);
@@ -99,16 +107,16 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
 
       <section className={style.mainCont}>
         <div className={style.searchCont}>
-          <input ref={nameInput} type="text" placeholder="Search Name:"></input>
+          <input ref={nameInput} type="text" placeholder={t("searchName")}></input>
           <button className={style.searchButton} onClick={updateSearch}>
             <RiUserSearchFill className={style.searchContIcon} />
           </button>
         </div>
 
         <div className={style.filterCont}>
-          <h3>Filter by:</h3>
+          <h3>{t("filterBy")}</h3>
           <label className={style.selectLabel} htmlFor="lawAreaSelect">
-            Law Area:
+            {t("lawArea")}
           </label>
           <select
             id="lawAreaSelect"
@@ -116,7 +124,7 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
             onChange={(e) => updateLawArea(e.target.value)}
           >
             <option value="all" selected>
-              All
+              {t("allArea")}
             </option>
             {allExpertise.map(({ id, area_title }) => (
               <option key={id} value={area_title}>
@@ -125,7 +133,7 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
             ))}
           </select>
           <div className={style.avaInput}>
-            <label htmlFor="ava">Currently Available</label>
+            <label htmlFor="ava">{t("isAva")}</label>
             <input
               id="ava"
               type="checkbox"
@@ -134,7 +142,7 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
             />
           </div>
           <button className={style.refreshBtn} onClick={updateSearch}>
-            Update Results
+            {t("update")}
           </button>
         </div>
 

@@ -114,6 +114,10 @@
     align-items: center;
 }
 
+*[dir="rtl"] .langCont {
+    margin-inline-end: 10%;
+}
+
 .lang {
     border: none;
     background-color: transparent;
@@ -157,7 +161,7 @@
         z-index: 10;
         transition: color cubic-bezier(0.165, 0.84, 0.44, 1) 1s;
     }
-    .mainNavCont{
+    .mainNavCont {
         width: initial;
     }
     .langCont {

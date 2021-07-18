@@ -1,82 +1,89 @@
 .cont {
-  width: 100vw;
-  overflow: hidden;
-  background-color: var(--background);
-  color: white;
-  padding: 3rem 0 2rem 0;
-  padding-inline-start: 5vw;
-  padding-inline-end: 5vw;
-  display: grid;
-  grid-template-areas:
-    "logo socials . info"
-    "mission mission . info"
-    "mission mission . info";
-  grid-template-columns: 1fr 1fr 0.25fr 1fr;
-  grid-template-rows: repeat(3, 1fr);
+    width: 100vw;
+    overflow: hidden;
+    background-color: var(--background);
+    color: white;
+    padding: 3rem 0 2rem 0;
+    padding-inline-start: 5vw;
+    padding-inline-end: 5vw;
+    display: grid;
+    grid-template-areas: "logo socials . info" "mission mission . info" "mission mission . info";
+    grid-template-columns: 1fr 1fr 0.25fr 1fr;
+    grid-template-rows: repeat(3, 1fr);
 }
 
 .missionP {
-  grid-area: mission;
-  padding-inline-start: 5vw;
-  padding-block-start: 3vh;
+    grid-area: mission;
+    padding-inline-start: 5vw;
+    padding-block-start: 3vh;
     line-height: 1.5rem;
 }
 
 .infoCont {
-  grid-area: info;
-  min-width: 20%;
+    grid-area: info;
+    min-width: 20%;
 }
 
 .footerLogo {
-  grid-area: logo;
-  position: relative;
-  width: 100px;
-  height: 100px;
-  margin-block-end: 1.5rem;
-  left: 30%;
+    grid-area: logo;
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin-block-end: 1.5rem;
+    left: 30%;
+}
+
+*[dir="rtl"] .footerLogo {
+    right: 30%;
 }
 
 .socials {
-  grid-area: socials;
-  width: 100%;
-  margin-top: 2rem;
-  opacity: 80%;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  transform: translateX(-20px);
+    grid-area: socials;
+    width: 100%;
+    opacity: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    transform: translateX(-20px);
+}
+
+*[dir="rtl"] .socials {
+    transform: translateX(20px);
 }
 
 .socials a {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .iconP {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
 }
 
 .iconP svg {
-  margin-inline-end: 1rem;
+    margin-inline-end: 1rem;
 }
 
 @media (max-width: 768px) {
-  .cont {
-    grid-template-areas:
-      "logo socials"
-      "mission mission"
-      "info info";
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr minmax(5rem, 25vh) 2fr;
-  }
-  .infoCont {
-    padding-inline-start: 5vw;
-    padding-block-end: 5vh;
-  }
-  .footerLogo {
-    left: 10%;
-  }
+    .cont {
+        grid-template-areas: "logo socials" "mission mission" "info info";
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1.75fr 2fr;
+    }
+    .missionP{
+      padding-block-end: 2vh;
+    }
+    .infoCont {
+        padding-inline-start: 5vw;
+        padding-block-end: 2vh;
+    }
+    .footerLogo {
+        left: 10%;
+    }
+    *[dir="rtl"] .footerLogo {
+        right: 10%;
+    }
 }

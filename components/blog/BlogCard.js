@@ -2,9 +2,9 @@ import Image from "next/image";
 import Link from "next/link";
 import style from "../styles/blogcard.module.css";
 
-function BlogCard({ id, title, date_created, blog, picture, blog_short_desc }) {
+function BlogCard({ subpath, title, date_created, picture, blog_short_desc }) {
   return (
-    <Link href={`/blog/${id}`}>
+    <Link href={`/blog/${subpath}`}>
       <div className={style.card}>
         <div className={style.cardPic}>
           <Image

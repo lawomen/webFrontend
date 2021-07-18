@@ -41,7 +41,7 @@
     flex-direction: column;
 }
 
-body[dir="rtl"] .socials {
+*[dir="rtl"] .socials {
     right: auto;
     left: 5vw;
 }

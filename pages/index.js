@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import Image from "next/image";
 import Link from "next/link";
 import homeStyle from "../styles/Home.module.css";
 

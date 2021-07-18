@@ -60,13 +60,12 @@ function allBlogs({ apiRes, blogEntry }) {
 
       <section className={style.mainCont}>
         <div className={style.cardCont}>
-          {blogEntry.map(({ id, title, date_created, blog, picture, blog_short_desc }) => (
+          {blogEntry.map(({ id, subpath, title, date_created, picture, blog_short_desc }) => (
             <BlogCard
               key={id}
-              id={id}
+              subpath={subpath}
               title={title}
               date_created={date_created}
-              blog={blog}
               picture={picture}
               blog_short_desc={blog_short_desc}
             />

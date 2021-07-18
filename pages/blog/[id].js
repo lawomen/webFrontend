@@ -7,7 +7,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export async function getStaticProps(context) {
   const rawBlog = await fetch(
-    `https://lawomen-admin.herokuapp.com/blog-entries?_locale=${context.locale}&_sort=date_created:DESC&_where[id]=${context.params.id}&_limit=1`
+    `https://lawomen-admin.herokuapp.com/blog-entries?_locale=${context.locale}&_sort=date_created:DESC&_where[subpath]=${context.params.id}&_limit=1`
   );
   const blogRes = await rawBlog.json();
 
@@ -40,12 +40,13 @@ export async function getStaticPaths() {
   );
   const urBlog = await urBlogRaw.json();
 
-  const enPaths = enBlog.map(({ id }) => ({
-    params: { id: id.toString() },
+
+  const enPaths = enBlog.map(({ subpath }) => ({
+    params: { id: subpath },
     locale: "en",
   }));
-  const urPaths = urBlog.map(({ id }) => ({
-    params: { id: id.toString() },
+  const urPaths = urBlog.map(({ subpath }) => ({
+    params: { id: subpath },
     locale: "ur",
   }));
 
@@ -60,6 +61,7 @@ export async function getStaticPaths() {
 function blog({ blogRes, apiRes }) {
   const md = MarkdownIt();
   const parsedBlog = md.render(blogRes.blog);
+  const parsedSources = md.render(blogRes.sources ? blogRes.sources : "");
 
   return (
     <Layout
@@ -71,19 +73,35 @@ function blog({ blogRes, apiRes }) {
       <div className={style.landedNavCont}></div>
 
       <section className={style.mainCont}>
-        <h1>{blogRes.title}</h1>
-        <p>{blogRes.blog_short_desc}</p>
+        <h1 className={style.title}>{blogRes.title}</h1>
+        <div className={style.shortDesc}>
+          <p>{blogRes.blog_short_desc}</p>
+        </div>
 
-        <div className={style.image}>
+        <div className={style.imageCont}>
           <Image
-            alt="Decorative background image of library"
+            alt={blogRes.picture.alternativeText}
             src={blogRes.picture.url}
             layout="fill"
             objectFit="cover"
             priority
           />
         </div>
-        <div dangerouslySetInnerHTML={{ __html: parsedBlog }} />
+        <div
+          className={style.mainBlog}
+          dangerouslySetInnerHTML={{ __html: parsedBlog }}
+        />
+        {parsedSources === "" ? (
+          ""
+        ) : (
+          <>
+          <h2>Sources</h2>
+          <div
+            className={style.sources}
+            dangerouslySetInnerHTML={{ __html: parsedSources }}
+          />
+          </>
+        )}
       </section>
     </Layout>
   );
