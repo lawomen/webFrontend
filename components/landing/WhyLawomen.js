@@ -7,7 +7,24 @@ function WhyLawomen({ content }) {
     <div className={styles.cont}>
       <div className={styles.info}>
         <h3>{content.whyTitle}</h3>
-        <p>{content.reason1}</p>
+        <div className={styles.reasonCont}>
+          <div className={styles.reason}>
+            <h4>Female Lawyers Team</h4>
+            <p>Reason Desc</p>
+          </div>
+          <div className={styles.reason}>
+            <h4>Corporate Social Responsibility</h4>
+            <p>Reason Desc</p>
+          </div>
+          <div className={styles.reason}>
+            <h4>Special Package for Corporate Bodies</h4>
+            <p>Reason Desc</p>
+          </div>
+          <div className={styles.reason}>
+            <h4>Online</h4>
+            <p>Reason Desc</p>
+          </div>
+        </div>
         <BsFillBookmarksFill className={styles.bgIcon} size={300} />
       </div>
         <div className={styles.image}>

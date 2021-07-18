@@ -7,6 +7,7 @@ import FormikForm from "../components/landing/FormikForm";
 import LawArea from "../components/landing/LawArea";
 import WhyLawomen from "../components/landing/WhyLawomen";
 import Impact from "../components/landing/Impact";
+import People from "../components/landing/People";
 
 import {
   RiInstagramLine,
@@ -82,18 +83,13 @@ function Home({ apiRes }) {
           <div className={homeStyle.mainContent}>
             <h2 className={homeStyle.subtitle}>{apiRes.tagline_title}</h2>
             <h3 className={homeStyle.desc}>{apiRes.tagline_desc}</h3>
-            <button
+            <a
               className={`${homeStyle.button} ${homeStyle.contactBtn}`}
-              onClick={() => {
-                contactUs.current.scrollIntoView({
-                  behavior: "smooth",
-                  block: "center",
-                });
-              }}
+              href="mailto:info@lawomen.pk"
             >
               <BsFillCaretRightFill size={27} />
               {t1.t("call2action")}
-            </button>
+            </a>
           </div>
           <div className={homeStyle.donateContent}>
             <h2 className={homeStyle.subtitle}>{apiRes.donate_title}</h2>
@@ -135,17 +131,22 @@ function Home({ apiRes }) {
       </section>
 
       <section>
+        <WhyLawomen content={apiRes} />
+      </section>
+
+      <section>
         <Impact content={apiRes} />
       </section>
 
       <section>
-        <WhyLawomen content={apiRes} />
+        <People />
       </section>
 
       <section className={homeStyle.contactCont} ref={contactUs}>
         <h3>{apiRes.contactTitle}</h3>
         <FormikForm />
       </section>
+
     </Layout>
   );
 }

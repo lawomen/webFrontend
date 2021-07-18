@@ -14,7 +14,7 @@ function Nav() {
   const iconItem = useRef(null);
   const langComp = useRef(null);
   const [openNav, changeOpenNav] = useState(false);
-  const [fullLogo, updateLogoType] = useState(false)
+  const [fullLogo, updateLogoType] = useState(false);
 
   const router = useRouter();
   const locale = router.locale;
@@ -38,11 +38,11 @@ function Nav() {
       if (window.scrollY > 100) {
         navItem.current.className = navStyle.nav + " " + navStyle.scrolledNav;
         langComp.current.style.color = "black";
-        updateLogoType(true)
+        updateLogoType(true);
       } else {
         navItem.current.className = navStyle.nav;
         langComp.current.style.color = "white";
-        updateLogoType(false)
+        updateLogoType(false);
       }
     }
   }
@@ -94,19 +94,23 @@ function Nav() {
       <div ref={navItem} className={navStyle.nav}>
         <div className={navStyle.logo}>
           <Link href="/">
-            {fullLogo? <Image
-              layout="fill"
-              objectFit="contain"
-              priority
-              src="/emblem2.svg"
-              alt="LaWomen Logo"
-            />:<Image
-              layout="fill"
-              objectFit="contain"
-              priority
-              src="/emblem1.svg"
-              alt="LaWomen Logo"
-            />}
+            {fullLogo ? (
+              <Image
+                layout="fill"
+                objectFit="contain"
+                priority
+                src="/emblem2.svg"
+                alt="LaWomen Logo"
+              />
+            ) : (
+              <Image
+                layout="fill"
+                objectFit="contain"
+                priority
+                src="/emblem1.svg"
+                alt="LaWomen Logo"
+              />
+            )}
           </Link>
         </div>
 
@@ -115,22 +119,8 @@ function Nav() {
         </div>
         <div className={navStyle.mainNavCont}>
           <ul ref={menuItem} className={navStyle.menu}>
-            <li
-              className={navStyle.navitem}
-              aria-haspopup="true"
-              onClick={getSubmenu}
-            >
-              <p>
-                {t("cases")} <BiChevronDown size={23} />
-              </p>
-              <ul className={navStyle.dropdown} aria-label="submenu">
-                <li>
-                  <Link href="/cases">{t("defCases")}</Link>
-                </li>
-                <li>
-                  <Link href="#">Case one </Link>
-                </li>
-              </ul>
+            <li className={navStyle.navitem}>
+              <Link href="/lawyers">Find an Advocate</Link>
             </li>
             <li
               className={navStyle.navitem}
@@ -142,16 +132,13 @@ function Nav() {
               </p>
               <ul className={navStyle.dropdown} aria-label="submenu">
                 <li>
-                  <Link href="/expertise">{t("defExpertise")}</Link>
+                  <Link href="#">Paid Legal Services</Link>
                 </li>
                 <li>
-                  <Link href="#">Civil Law</Link>
+                  <Link href="#">Free Legal Services</Link>
                 </li>
                 <li>
-                  <Link href="#">Tax Law</Link>
-                </li>
-                <li>
-                  <Link href="#">Environmental Law</Link>
+                  <Link href="#">Legal Advice</Link>
                 </li>
               </ul>
             </li>
@@ -171,9 +158,18 @@ function Nav() {
                   <Link href="#">{t("admPeople")}</Link>
                 </li>
                 <li>
+                  <Link href="#">Partner Firms</Link>
+                </li>
+                <li>
+                  <Link href="#">LaWomen Fellows</Link>
+                </li>
+                <li>
                   <Link href="#">{t("joinPeople")}</Link>
                 </li>
               </ul>
+            </li>
+            <li className={navStyle.navitem}>
+              <Link href="/blog">{t("blog")}</Link>
             </li>
             <li
               className={navStyle.navitem}
@@ -181,25 +177,19 @@ function Nav() {
               onClick={getSubmenu}
             >
               <p>
-                {t("blog")} <BiChevronDown size={23} />
+                {t("about")} <BiChevronDown size={23} />{" "}
               </p>
               <ul className={navStyle.dropdown} aria-label="submenu">
                 <li>
-                  <Link href="/blog">{t("defBlog")}</Link>
+                  <Link href="/about">About Us</Link>
                 </li>
                 <li>
-                  <Link href="#">Post One</Link>
+                  <Link href="#">Our Partners</Link>
                 </li>
                 <li>
-                  <Link href="#">Post Two</Link>
-                </li>
-                <li>
-                  <Link href="#">Post Three</Link>
+                  <Link href="#">Our Patrons</Link>
                 </li>
               </ul>
-            </li>
-            <li className={navStyle.navitem}>
-              <Link href="/about">{t("about")}</Link>
             </li>
           </ul>
 

@@ -1,0 +1,28 @@
+.mainCont{
+    min-height: 70vh;
+    padding: 2rem 7rem;
+}
+
+
+.peopleCont{
+    width: 100%;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+.peopleCont>p{
+    font-size: 1.3rem;
+}
+
+.peopleCards{
+    border: 1px solid red;
+    height: 10rem;
+    width: 100%;
+    display: flex;
+}
+
+.supporters{
+    display: flex;
+    gap: 2rem;
+
+}

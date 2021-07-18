@@ -3,7 +3,7 @@
     margin: 4rem 0;
 
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     grid-template-rows: 1fr;
     border: none;
 }
@@ -17,6 +17,7 @@
 
 .info h3{
     font-size: 2.5rem;
+    margin-bottom: 5rem;
 }
 
 .info h3::after {
@@ -32,15 +33,38 @@
 .bgIcon{
     position: relative;
     opacity: 20%;
-    left: -10vw;
-    bottom: -20vh;
+    left: -10%;
+    bottom: 40%;
 }
+
+.reasonCont{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    height: 70%;
+    width: 110%;
+}
+
+.reason{
+    margin-right: 3rem;
+}
+
+.reason>h4{
+    font-size: 1.4rem;
+    line-height: 2rem;
+    margin: 0 0 2rem 0;
+    border-left: 3px solid var(--primary);
+    padding-left: 15px;
+}
+
 
 .image{
     position: relative;
     width: 100%;
     height: 100%;
 }
+
+
 
 @media (max-width: 768px) {
     .info h3::after {
