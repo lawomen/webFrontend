@@ -120,7 +120,7 @@ function Nav() {
         <div className={navStyle.mainNavCont}>
           <ul ref={menuItem} className={navStyle.menu}>
             <li className={navStyle.navitem}>
-              <Link href="/lawyers">Find an Advocate</Link>
+              <Link href="/lawyers">{t("advocate")}</Link>
             </li>
             <li
               className={navStyle.navitem}
@@ -128,17 +128,17 @@ function Nav() {
               onClick={getSubmenu}
             >
               <p>
-                {t("expertise")} <BiChevronDown size={23} />
+                {t("services")} <BiChevronDown size={23} />
               </p>
               <ul className={navStyle.dropdown} aria-label="submenu">
                 <li>
-                  <Link href="/services#paid">Paid Legal Services</Link>
+                  <Link href="/services#paid">{t("paid")}</Link>
                 </li>
                 <li>
-                  <Link href="/services#community">Free Legal Services</Link>
+                  <Link href="/services#community">{t("free")}</Link>
                 </li>
                 <li>
-                  <Link href="/services">Legal Advice</Link>
+                  <Link href="/services">{t("advice")}</Link>
                 </li>
               </ul>
             </li>
@@ -152,16 +152,16 @@ function Nav() {
               </p>
               <ul className={navStyle.dropdown} aria-label="submenu">
                 <li>
-                  <Link href="/people#lawomen">LaWomen Team</Link>
+                  <Link href="/people#lawomen">{t("lawomenTeam")}</Link>
                 </li>
                 <li>
-                  <Link href="/lawyers">{t("defPeople")}</Link>
+                  <Link href="/lawyers">{t("lawyers")}</Link>
                 </li>
                 <li>
-                  <Link href="/people#firms">Partnering Firms</Link>
+                  <Link href="/people#firms">{t("firms")}</Link>
                 </li>
                 <li>
-                  <Link href="/people#fellows">LaWomen Fellows</Link>
+                  <Link href="/people#fellows">{t("fellows")}</Link>
                 </li>
                 <li>
                   <Link href="/apply">{t("joinPeople")}</Link>
@@ -181,13 +181,13 @@ function Nav() {
               </p>
               <ul className={navStyle.dropdown} aria-label="submenu">
                 <li>
-                  <Link href="/about">About Us</Link>
+                  <Link href="/about">{t("aboutUs")}</Link>
                 </li>
                 <li>
-                  <Link href="/patrons">Our Patrons</Link>
+                  <Link href="/patrons">{t("patrons")}</Link>
                 </li>
                 <li>
-                  <Link href="/about#photos">Photo Gallery</Link>
+                  <Link href="/about#photos">{t("gallery")}</Link>
                 </li>
               </ul>
             </li>

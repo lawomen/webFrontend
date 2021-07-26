@@ -1,13 +1,18 @@
 {
-    "about": "About",
-    "blog": "Blog",
+    "advocate": "Find an Advocate",
+    "services": "Services",
+    "paid": "Paid Legal Services",
+    "free": "Free Legal Services",
+    "advice": "Legal Advice",
     "people": "People",
-    "expertise": "Our Services",
-    "cases": "Cases",
-    "defCases": "All Cases",
-    "defExpertise": "All Areas",
-    "defPeople": "Partnering Lawyers",
-    "admPeople": "Team LaWomen",
+    "lawomenTeam": "LaWomen Team",
+    "lawyers": "Partnering Lawyers",
+    "firms": "Partnering Firms",
+    "fellows": "LaWomen Fellows",
     "joinPeople": "Join Us!",
-    "defBlog": "All Posts"
+    "blog": "Blog",
+    "about": "About",
+    "aboutUs": "About Us",
+    "patrons": "Our Patrons",
+    "gallery": "Photo Gallery"
 }

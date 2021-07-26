@@ -78,9 +78,24 @@
         border: none;
     }
 
+    .reasonCont{
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        height: auto;
+        width: auto;
+    }
+
+    .reason{
+        padding-bottom: 4rem;
+    }
+
     .info{
         padding: 0;
         padding-inline-start: 8vw;
         border-bottom: 3px solid black;
+    }
+
+    .bgIcon{
+        bottom: 20%;
     }
 }

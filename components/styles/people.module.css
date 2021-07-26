@@ -1,28 +1,90 @@
-.mainCont{
-    min-height: 70vh;
-    padding: 2rem 7rem;
+.mainCont {
 }
 
+.teamCont {
+  width: 100vw;
+  padding: 0 10vw;
+  margin-bottom: 4rem;
 
-.peopleCont{
-    width: 100%;
-    margin-bottom: 5rem;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
-.peopleCont>p{
-    font-size: 1.3rem;
+.patronsCont {
+  width: 100vw;
+  padding: 0 10vw;
+  margin-bottom: 4rem;
+
+  display: flex;
+  flex-direction: column;
 }
 
-.peopleCards{
-    border: 1px solid red;
-    height: 10rem;
-    width: 100%;
-    display: flex;
+.applyCont {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 8rem;
 }
 
-.supporters{
-    display: flex;
-    gap: 2rem;
+.cardCont {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
 
+.secTitle {
+  text-decoration: underline;
+  margin: 0 auto;
+  margin-bottom: 1.5rem;
+}
+
+.cards {
+  width: 15rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 2rem;
+  border-radius: 5px;
+  box-shadow: 1px 1px 5px rgb(187, 187, 187);
+}
+
+.cardsImg {
+  position: relative;
+  height: 10rem;
+  width: 10rem;
+}
+
+.cardSubtitle {
+  font-size: 1.2rem;
+}
+
+.applyCont h2 {
+  margin: 0 0 2rem 0;
+}
+
+.applyLink {
+  padding: 0 28vw;
+  transform: translate(-2rem);
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+}
+
+.applyLink a {
+  text-decoration: underline;
+  color: rgb(0, 85, 255);
+  font-size: 1.2rem;
+}
+
+@media (max-width: 768px) {
+    .applyLink {
+        flex-direction: column;
+        align-items: center;
+        transform: none;
+    }
+    .applyLink a {
+        margin-bottom: 1rem;
+    }
 }

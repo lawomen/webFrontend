@@ -54,19 +54,19 @@ function Footer({ content }) {
         <h3>{content.info_title}</h3>
         <div className={footerStyles.iconP}>
           <AiOutlinePhone />
-          <p>{t("tele")}</p>
+          <p>{t("tele")} {content.info_title}</p>
         </div>
         <div className={footerStyles.iconP}>
           <AiOutlineMail />
-          <p>{t("email")}</p>
+          <p>{t("email")} {content.info_title}</p>
         </div>
         <div className={footerStyles.iconP}>
           <IoLocationSharp />
-          <p>{t("address")}</p>
+          <p>{t("address")} {content.info_title}</p>
         </div>
         <div className={footerStyles.iconP}>
           <AiOutlineClockCircle />
-          <p>{t("working_hours")}</p>
+          <p>{t("working_hours")} {content.info_title}</p>
         </div>
       </div>
     </footer>
