@@ -187,7 +187,7 @@ function Nav() {
                   <Link href="/patrons">{t("patrons")}</Link>
                 </li>
                 <li>
-                  <Link href="/about#photos">{t("gallery")}</Link>
+                  <Link href="/photos">{t("gallery")}</Link>
                 </li>
               </ul>
             </li>

@@ -52,9 +52,6 @@ function allBlogs({ apiRes }) {
 
       <section className={style.mainCont}>
         <h3>{apiRes.content}</h3>
-        <div id="photos">
-          <h1>Photos here</h1>
-        </div>
       </section>
     </Layout>
   );

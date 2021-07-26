@@ -1,0 +1,20 @@
+.landedNavCont {
+    width: 100vw;
+    height: 8rem;
+    top: 0;
+    background-color: var(--background);
+}
+
+.mainCont {
+    min-height: 100vh;
+    padding: 3rem 10rem;
+}
+
+.galleryCont{
+    border: 1px solid red;
+    min-height: 70vh;
+}
+
+@media (max-width: 768px) {
+  
+}
