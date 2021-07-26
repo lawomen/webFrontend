@@ -47,8 +47,8 @@ function allBlogs({ apiRes }) {
       </div>
 
       <section className={style.overlay}>
-        <h1>{apiRes.title}</h1>
-        <p>{apiRes.short_desc}</p>
+        <h1>People</h1>
+        <p>short desc</p>
       </section>
 
       <section className={style.mainCont}>

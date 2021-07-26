@@ -46,8 +46,8 @@ function services({ apiRes }) {
       </div>
 
       <section className={style.overlay}>
-        <h1>{apiRes.title}</h1>
-        <p>{apiRes.short_desc}</p>
+        <h1>Services</h1>
+        <p>short desc</p>
       </section>
 
       <section className={style.mainCont}>

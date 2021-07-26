@@ -46,12 +46,11 @@ function apply({ apiRes }) {
       </div>
 
       <section className={style.overlay}>
-        <h1>{apiRes.title}</h1>
-        <p>{apiRes.short_desc}</p>
+        <h1>Join LaWomen's Cause</h1>
+        <p>short desc</p>
       </section>
 
       <section className={style.mainCont}>
-        <h3>{apiRes.content}</h3>
       </section>
     </Layout>
   );
