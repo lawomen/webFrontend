@@ -52,17 +52,77 @@ function allBlogs({ apiRes }) {
       </section>
 
       <section className={style.mainCont}>
-        <div id="lawomen">
-          <h1>The LaWomen Team</h1>
-          <h3>Core Team</h3>
-          <p>Zara ....</p>
-          <h1>LaWomen Lawyers</h1>
+        <div id="lawomen" className={style.lawomenSec}>
+          <h1 className={style.secTitle}>The LaWomen Team</h1>
+          <div className={style.cardCont}>
+            <div className={style.cards}>
+              <div className={style.cardsImg}>
+                <Image
+                  layout="fill"
+                  objectFit="contain"
+                  src="/TempkravisLabLogo.png"
+                  alt="Kravis Lab Logo"
+                />
+              </div>
+              <p className={style.cardSubtitle}>Kravis Lab</p>
+            </div>
+          </div>
         </div>
-        <div id="firms">
-          <h1>Partnering Firms</h1>
+        <div id="firms" className={style.firmSec}>
+          <h1 className={style.secTitle}>Partnering Firms</h1>
+          <div className={style.cardCont}>
+            <div className={style.cards}>
+              <div className={style.cardsImg}>
+                <Image
+                  layout="fill"
+                  objectFit="contain"
+                  src="/TempkravisLabLogo.png"
+                  alt="Kravis Lab Logo"
+                />
+              </div>
+              <p className={style.cardSubtitle}>Kravis Lab</p>
+            </div>
+          </div>
         </div>
-        <div id="fellows">
-          <h1>Partnering Firms</h1>
+        <div id="fellows" className={style.fellows}>
+          <h1 className={style.secTitle}>LaWomen Fellows</h1>
+          <div className={style.cardCont}>
+            <div className={style.cards}>
+              <div className={style.cardsImg}>
+                <Image
+                  layout="fill"
+                  objectFit="contain"
+                  src="/TempkravisLabLogo.png"
+                  alt="Kravis Lab Logo"
+                />
+              </div>
+              <p className={style.cardSubtitle}>Kravis Lab</p>
+            </div>
+
+            <div className={style.cards}>
+              <div className={style.cardsImg}>
+                <Image
+                  layout="fill"
+                  objectFit="contain"
+                  src="/TempkravisLabLogo.png"
+                  alt="Kravis Lab Logo"
+                />
+              </div>
+              <p className={style.cardSubtitle}>Kravis Lab</p>
+            </div>
+
+            <div className={style.cards}>
+              <div className={style.cardsImg}>
+                <Image
+                  layout="fill"
+                  objectFit="contain"
+                  src="/TempkravisLabLogo.png"
+                  alt="Kravis Lab Logo"
+                />
+              </div>
+              <p className={style.cardSubtitle}>Kravis Lab</p>
+            </div>
+          </div>
         </div>
       </section>
     </Layout>

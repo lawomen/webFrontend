@@ -8,26 +8,24 @@
 .landingCont {
     background-color: var(--bgLanding);
     display: grid;
-    grid-template-areas: 
-    ". title title ."
-    ". main donate .";
+    grid-template-areas: ". title title ." ". main donate .";
     grid-template-columns: 15vw 1.5fr 1fr 10vw;
     grid-template-rows: 1fr 2fr;
     padding-block-start: 17vh;
 }
 
-.titleContent{
+.titleContent {
     grid-area: title;
     font-size: 5.5rem;
     margin: 7vh 0;
 }
 
-.mainContent{
+.mainContent {
     grid-area: main;
     margin-inline-end: 8vw;
 }
 
-.donateContent{
+.donateContent {
     grid-area: donate;
 }
 
@@ -84,15 +82,16 @@
     width: fit-content;
 }
 
-.subtitle{
+.subtitle {
     font-size: 1.75rem;
     letter-spacing: 0.05rem;
 }
 
-.desc{
+.desc {
     font-size: 1.2rem;
     line-height: 2rem;
 }
+
 
 /* Contact Form */
 
@@ -121,28 +120,22 @@
 }
 
 @media (max-width: 768px) {
-    .landingCont{
-        grid-template-areas: 
-        ". title ."
-        ". main ."
-        ". donate .";
+    .landingCont {
+        grid-template-areas: ". title ." ". main ." ". donate .";
         grid-template-columns: 0.25fr 1fr 0.3fr;
         grid-template-rows: 0.5fr 1fr 1fr;
         padding-block-start: 15vh;
         padding-block-end: 5vh;
     }
-    .titleContent{
+    .titleContent {
         font-size: 4.5rem;
     }
-
-    .mainContent{
+    .mainContent {
         margin-block-end: 2rem;
     }
-
-    .button{
+    .button {
         font-size: 1.6rem;
     }
-
     .socials {
         top: 80vh;
     }
@@ -156,5 +149,7 @@
     .contactCont {
         padding: 0 2vw;
     }
-
+    .donateContent {
+        padding-block-end: 10vh;
+    }
 }

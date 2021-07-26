@@ -74,7 +74,7 @@
 
 .applyLink a {
   text-decoration: underline;
-  color: rgb(0, 85, 255);
+  color: var(--primary);
   font-size: 1.2rem;
 }
 

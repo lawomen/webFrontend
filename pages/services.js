@@ -51,12 +51,36 @@ function services({ apiRes }) {
       </section>
 
       <section className={style.mainCont}>
-        <h3>{apiRes.content}</h3>
-        <div id="paid">
-          <h3>Paid Services</h3>
+        <div id="paid" className={style.paidCont}>
+          <h2 className={style.secTitle}>Paid Services</h2>
+          <p>
+            Sed dictum, tortor a iaculis ultrices, eros odio egestas quam, eget
+            lacinia nisl lacus vel mi. Fusce in eros eu quam fringilla
+            elementum. Curabitur finibus, arcu sit amet elementum porta, felis
+            lorem iaculis metus, a mattis risus mi eu velit. Aenean quis
+            lobortis nibh, a dignissim nisi. Donec facilisis augue ante, in
+            venenatis tellus efficitur eu. Morbi nec vehicula augue. Mauris
+            lacinia risus at ex vestibulum semper. Integer placerat finibus
+            turpis, quis ullamcorper nisi hendrerit ut. Fusce vehicula eros
+            nisl, vel placerat arcu tempus nec. Cras et porttitor nulla. Fusce
+            id malesuada nulla.
+          </p>
         </div>
-        <div id="community">
-          <h3>Free Legal Service for women in need.</h3>
+
+        <div id="community" className={style.freeCont}>
+          <h2 className={style.secTitle}>Free Legal Service for women in need.</h2>
+          <p>
+            Sed dictum, tortor a iaculis ultrices, eros odio egestas quam, eget
+            lacinia nisl lacus vel mi. Fusce in eros eu quam fringilla
+            elementum. Curabitur finibus, arcu sit amet elementum porta, felis
+            lorem iaculis metus, a mattis risus mi eu velit. Aenean quis
+            lobortis nibh, a dignissim nisi. Donec facilisis augue ante, in
+            venenatis tellus efficitur eu. Morbi nec vehicula augue. Mauris
+            lacinia risus at ex vestibulum semper. Integer placerat finibus
+            turpis, quis ullamcorper nisi hendrerit ut. Fusce vehicula eros
+            nisl, vel placerat arcu tempus nec. Cras et porttitor nulla. Fusce
+            id malesuada nulla.
+          </p>
         </div>
       </section>
     </Layout>

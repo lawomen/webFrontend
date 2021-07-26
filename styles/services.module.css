@@ -13,7 +13,6 @@
 
 .overlay {
     margin-top: 8rem;
-    
     position: absolute;
     content: "";
     left: 0px;
@@ -23,7 +22,6 @@
     z-index: 2;
     height: 40vh;
     background-color: var(--bgLanding);
-    
     display: flex;
     justify-content: center;
     align-items: center;
@@ -47,9 +45,20 @@
 
 .mainCont {
     min-height: 100vh;
-    padding: 2rem 5rem;
+    padding: 2rem 15rem;
 }
 
-@media (max-width: 768px) {
-  
+.paidCont {
+    padding: 7rem 0 3rem 0;
 }
+
+.freeCont {
+    padding: 7rem 0 3rem 0;
+}
+
+.secTitle{
+    margin-bottom: 2.5rem;
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {}

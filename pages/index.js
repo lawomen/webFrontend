@@ -8,6 +8,7 @@ import LawArea from "../components/landing/LawArea";
 import WhyLawomen from "../components/landing/WhyLawomen";
 import Impact from "../components/landing/Impact";
 import People from "../components/landing/People";
+import Testimonials from "../components/landing/Testimonials";
 
 import {
   RiInstagramLine,
@@ -141,6 +142,10 @@ function Home({ apiRes }) {
 
       <section>
         <Impact content={apiRes} />
+      </section>
+
+      <section>
+        <Testimonials content="jjk"/>
       </section>
 
       <section>
