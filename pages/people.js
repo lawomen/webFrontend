@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import Layout from "../../components/Layout";
-import style from "../../styles/cases.module.css";
+import Layout from "../components/Layout";
+import style from "../styles/people.module.css";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
@@ -52,7 +52,18 @@ function allBlogs({ apiRes }) {
       </section>
 
       <section className={style.mainCont}>
-        <h3>{apiRes.content}</h3>
+        <div id="lawomen">
+          <h1>The LaWomen Team</h1>
+          <h3>Core Team</h3>
+          <p>Zara ....</p>
+          <h1>LaWomen Lawyers</h1>
+        </div>
+        <div id="firms">
+          <h1>Partnering Firms</h1>
+        </div>
+        <div id="fellows">
+          <h1>Partnering Firms</h1>
+        </div>
       </section>
     </Layout>
   );

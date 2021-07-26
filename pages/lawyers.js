@@ -147,13 +147,13 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
         </div>
 
         <div className={style.cardCont}>
-          {curLawyers.map(({ id, name, law_area, bio, email }) => (
+          {curLawyers.map(({ id, name, law_area, bio, available }) => (
             <LawyerCard
               key={id}
               name={name}
               law_area={law_area}
               bio={bio}
-              email={email}
+              available={available}
             />
           ))}
         </div>

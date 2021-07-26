@@ -35,13 +35,20 @@
   background-color: var(--primary);
   color: white;
   width: fit-content;
+  margin-bottom: 1rem;
 }
 
-.email {
-  margin-block-start: 1rem;
+.isAva{
   opacity: 85%;
   padding-inline-start: 0.35rem;
   letter-spacing: 0.2px;
+  display: flex;
+  align-items: center;
+}
+
+.isAva svg{
+  margin-left: 0.25rem;
+  color: green;
 }
 
 .areaCont {

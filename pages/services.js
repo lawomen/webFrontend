@@ -1,7 +1,7 @@
 import Image from "next/image";
 
-import Layout from "../../components/Layout";
-import style from "../../styles/expertise.module.css";
+import Layout from "../components/Layout";
+import style from "../styles/services.module.css";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
@@ -26,7 +26,7 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-function allBlogs({ apiRes }) {
+function services({ apiRes }) {
   return (
     <Layout
       content={{
@@ -38,7 +38,7 @@ function allBlogs({ apiRes }) {
       <div className={style.backdrop}>
         <Image
           alt="Decorative background image of library"
-          src="/street.jpeg"
+          src="/klabEvent1.jpeg"
           layout="fill"
           objectFit="cover"
           priority
@@ -52,9 +52,15 @@ function allBlogs({ apiRes }) {
 
       <section className={style.mainCont}>
         <h3>{apiRes.content}</h3>
+        <div id="paid">
+          <h3>Paid Services</h3>
+        </div>
+        <div id="community">
+          <h3>Free Legal Service for women in need.</h3>
+        </div>
       </section>
     </Layout>
   );
 }
 
-export default allBlogs;
+export default services;

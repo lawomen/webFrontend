@@ -85,7 +85,12 @@ function Home({ apiRes }) {
             <h3 className={homeStyle.desc}>{apiRes.tagline_desc}</h3>
             <a
               className={`${homeStyle.button} ${homeStyle.contactBtn}`}
-              href="mailto:info@lawomen.pk"
+              onClick={() => {
+                contactUs.current.scrollIntoView({
+                  behavior: "smooth",
+                  block: "center",
+                });
+              }}
             >
               <BsFillCaretRightFill size={27} />
               {t1.t("call2action")}

@@ -132,13 +132,13 @@ function Nav() {
               </p>
               <ul className={navStyle.dropdown} aria-label="submenu">
                 <li>
-                  <Link href="#">Paid Legal Services</Link>
+                  <Link href="/services#paid">Paid Legal Services</Link>
                 </li>
                 <li>
-                  <Link href="#">Free Legal Services</Link>
+                  <Link href="/services#community">Free Legal Services</Link>
                 </li>
                 <li>
-                  <Link href="#">Legal Advice</Link>
+                  <Link href="/services">Legal Advice</Link>
                 </li>
               </ul>
             </li>
@@ -152,19 +152,19 @@ function Nav() {
               </p>
               <ul className={navStyle.dropdown} aria-label="submenu">
                 <li>
+                  <Link href="/people#lawomen">LaWomen Team</Link>
+                </li>
+                <li>
                   <Link href="/lawyers">{t("defPeople")}</Link>
                 </li>
                 <li>
-                  <Link href="#">{t("admPeople")}</Link>
+                  <Link href="/people#firms">Partnering Firms</Link>
                 </li>
                 <li>
-                  <Link href="#">Partner Firms</Link>
+                  <Link href="/people#fellows">LaWomen Fellows</Link>
                 </li>
                 <li>
-                  <Link href="#">LaWomen Fellows</Link>
-                </li>
-                <li>
-                  <Link href="#">{t("joinPeople")}</Link>
+                  <Link href="/apply">{t("joinPeople")}</Link>
                 </li>
               </ul>
             </li>
@@ -184,10 +184,10 @@ function Nav() {
                   <Link href="/about">About Us</Link>
                 </li>
                 <li>
-                  <Link href="#">Our Partners</Link>
+                  <Link href="/patrons">Our Patrons</Link>
                 </li>
                 <li>
-                  <Link href="#">Our Patrons</Link>
+                  <Link href="/about#photos">Photo Gallery</Link>
                 </li>
               </ul>
             </li>

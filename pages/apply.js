@@ -1,22 +1,22 @@
 import Image from "next/image";
 
 import Layout from "../components/Layout";
-import style from "../styles/about.module.css";
+import style from "../styles/apply.module.css";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export async function getStaticProps({ locale }) {
-  const rawAbout = await fetch(
-    `https://lawomen-admin.herokuapp.com/about?_locale=${locale}`
+  const rawExpertise = await fetch(
+    `https://lawomen-admin.herokuapp.com/exper?_locale=${locale}`
   );
-  const aboutRes = await rawAbout.json();
+  const expertiseRes = await rawExpertise.json();
 
   const rawFooter = await fetch(
     `https://lawomen-admin.herokuapp.com/footer?_locale=${locale}`
   );
   const footerRes = await rawFooter.json();
 
-  const apiRes = { ...footerRes, ...aboutRes };
+  const apiRes = { ...footerRes, ...expertiseRes };
 
   return {
     props: {
@@ -26,7 +26,7 @@ export async function getStaticProps({ locale }) {
   };
 }
 
-function allBlogs({ apiRes }) {
+function apply({ apiRes }) {
   return (
     <Layout
       content={{
@@ -37,8 +37,8 @@ function allBlogs({ apiRes }) {
       <div className={style.landedNavCont}></div>
       <div className={style.backdrop}>
         <Image
-          alt="Decorative background image of people in the street"
-          src="/zoom.jpeg"
+          alt="Decorative background image of library"
+          src="/klabEvent1.jpeg"
           layout="fill"
           objectFit="cover"
           priority
@@ -52,12 +52,9 @@ function allBlogs({ apiRes }) {
 
       <section className={style.mainCont}>
         <h3>{apiRes.content}</h3>
-        <div id="photos">
-          <h1>Photos here</h1>
-        </div>
       </section>
     </Layout>
   );
 }
 
-export default allBlogs;
+export default apply;
