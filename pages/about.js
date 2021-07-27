@@ -29,10 +29,7 @@ export async function getStaticProps({ locale }) {
 function allBlogs({ apiRes }) {
   return (
     <Layout
-      content={{
-        mission_statement: apiRes.mission_statement,
-        info_title: apiRes.info_title,
-      }}
+      content={apiRes}
     >
       <div className={style.landedNavCont}></div>
       <div className={style.backdrop}>

@@ -6,17 +6,17 @@ import style from "../styles/photos.module.css";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export async function getStaticProps({ locale }) {
-  const rawAbout = await fetch(
-    `https://lawomen-admin.herokuapp.com/about?_locale=${locale}`
+  const rawPictures = await fetch(
+    `https://lawomen-admin.herokuapp.com/gallery-entries?_locale=${locale}`
   );
-  const aboutRes = await rawAbout.json();
+  const pictures = await rawPictures.json();
 
   const rawFooter = await fetch(
     `https://lawomen-admin.herokuapp.com/footer?_locale=${locale}`
   );
   const footerRes = await rawFooter.json();
 
-  const apiRes = { ...footerRes, ...aboutRes };
+  const apiRes = { ...footerRes, pictures };
 
   return {
     props: {
@@ -28,18 +28,22 @@ export async function getStaticProps({ locale }) {
 
 function allBlogs({ apiRes }) {
   return (
-    <Layout
-      content={{
-        mission_statement: apiRes.mission_statement,
-        info_title: apiRes.info_title,
-      }}
-    >
+    <Layout content={apiRes}>
       <div className={style.landedNavCont}></div>
 
       <section className={style.mainCont}>
-        <div className={style.galleryCont}>
-
-        </div>
+        <div className={style.galleryCont}></div>
+        {apiRes.pictures.map((ele) => (
+          <div key={ele.id}>
+            <Image
+              width={ele.picture.width}
+              height={ele.picture.height}
+              src={ele.picture.url}
+              alt={ele.picture.alternativeText}
+            />
+            <p>{ele.desc}</p>
+          </div>
+        ))}
       </section>
     </Layout>
   );

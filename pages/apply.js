@@ -6,17 +6,17 @@ import style from "../styles/apply.module.css";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export async function getStaticProps({ locale }) {
-  const rawExpertise = await fetch(
-    `https://lawomen-admin.herokuapp.com/exper?_locale=${locale}`
+  const rawApply = await fetch(
+    `https://lawomen-admin.herokuapp.com/apply-page?_locale=${locale}`
   );
-  const expertiseRes = await rawExpertise.json();
+  const applyRes = await rawApply.json();
 
   const rawFooter = await fetch(
     `https://lawomen-admin.herokuapp.com/footer?_locale=${locale}`
   );
   const footerRes = await rawFooter.json();
 
-  const apiRes = { ...footerRes, ...expertiseRes };
+  const apiRes = { ...footerRes, ...applyRes };
 
   return {
     props: {
@@ -29,10 +29,7 @@ export async function getStaticProps({ locale }) {
 function apply({ apiRes }) {
   return (
     <Layout
-      content={{
-        mission_statement: apiRes.mission_statement,
-        info_title: apiRes.info_title,
-      }}
+      content={apiRes}
     >
       <div className={style.landedNavCont}></div>
       <div className={style.backdrop}>
@@ -46,11 +43,12 @@ function apply({ apiRes }) {
       </div>
 
       <section className={style.overlay}>
-        <h1>Join LaWomen's Cause</h1>
-        <p>short desc</p>
+        <h1>{apiRes.title}</h1>
+        <p>{apiRes.short_desc}</p>
       </section>
 
       <section className={style.mainCont}>
+          <p>{apiRes.content}</p>
       </section>
     </Layout>
   );

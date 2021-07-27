@@ -50,6 +50,12 @@
     padding: 2rem 5rem;
 }
 
+.cardsImg {
+    position: relative;
+    height: 20rem;
+    width: 15rem;
+}
+
 @media (max-width: 768px) {
   
 }

@@ -16,7 +16,6 @@ import { IoLocationSharp } from "react-icons/io5";
 function Footer({ content }) {
   const { t } = useTranslation("footer");
 
-  console.log(content)
   return (
     <footer className={footerStyles.cont}>
       <div className={footerStyles.footerLogo}>

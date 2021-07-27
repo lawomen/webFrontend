@@ -6,17 +6,26 @@ import style from "../styles/patrons.module.css";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export async function getStaticProps({ locale }) {
-  const rawExpertise = await fetch(
-    `https://lawomen-admin.herokuapp.com/exper?_locale=${locale}`
+  const rawPeople = await fetch(
+    `https://lawomen-admin.herokuapp.com/people?_locale=${locale}`
   );
-  const expertiseRes = await rawExpertise.json();
+  const allPeopleRes = await rawPeople.json();
+
+  const patronsRes = allPeopleRes.filter((ele) => {
+    return ele.type === "patron";
+  });
+
+  const rawPatronsPage = await fetch(
+    `https://lawomen-admin.herokuapp.com/patrons-page?_locale=${locale}`
+  );
+  const patronsPageRes = await rawPatronsPage.json();
 
   const rawFooter = await fetch(
     `https://lawomen-admin.herokuapp.com/footer?_locale=${locale}`
   );
   const footerRes = await rawFooter.json();
 
-  const apiRes = { ...footerRes, ...expertiseRes };
+  const apiRes = { ...footerRes, patronsRes, ...patronsPageRes };
 
   return {
     props: {
@@ -28,12 +37,7 @@ export async function getStaticProps({ locale }) {
 
 function patrons({ apiRes }) {
   return (
-    <Layout
-      content={{
-        mission_statement: apiRes.mission_statement,
-        info_title: apiRes.info_title,
-      }}
-    >
+    <Layout content={apiRes}>
       <div className={style.landedNavCont}></div>
       <div className={style.backdrop}>
         <Image
@@ -46,12 +50,27 @@ function patrons({ apiRes }) {
       </div>
 
       <section className={style.overlay}>
-        <h1>Patrons</h1>
-        <p>Patrons desc</p>
+        <h1>{apiRes.title}</h1>
+        <p>{apiRes.short_desc}</p>
       </section>
 
       <section className={style.mainCont}>
-        <p>in development</p>
+        {apiRes.patronsRes.map((ele) => {
+          return (
+            <div>
+              <h3>{ele.name}</h3>
+              <div className={style.cardsImg}>
+                <Image
+                  layout="fill"
+                  objectFit="contain"
+                  src={ele.image.url}
+                  alt={ele.image.alternativeText}
+                />
+              </div>
+              <p>{ele.desc}</p>
+            </div>
+          );
+        })}
       </section>
     </Layout>
   );

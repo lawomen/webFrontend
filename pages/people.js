@@ -6,17 +6,22 @@ import style from "../styles/people.module.css";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 export async function getStaticProps({ locale }) {
-  const rawCases = await fetch(
-    `https://lawomen-admin.herokuapp.com/cases?_locale=${locale}`
+  const rawPeoplePage = await fetch(
+    `https://lawomen-admin.herokuapp.com/people-page?_locale=${locale}`
   );
-  const caseRes = await rawCases.json();
+  const peoplePage = await rawPeoplePage.json();
+
+  const rawPeople = await fetch(
+    `https://lawomen-admin.herokuapp.com/people?_locale=${locale}`
+  );
+  const allPeople = await rawPeople.json();
 
   const rawFooter = await fetch(
     `https://lawomen-admin.herokuapp.com/footer?_locale=${locale}`
   );
   const footerRes = await rawFooter.json();
 
-  const apiRes = { ...footerRes, ...caseRes };
+  const apiRes = { ...footerRes, ...peoplePage, allPeople };
 
   return {
     props: {
@@ -27,13 +32,21 @@ export async function getStaticProps({ locale }) {
 }
 
 function allBlogs({ apiRes }) {
+  const firmPeople = apiRes.allPeople.filter((ele) => {
+    return ele.type === "firm";
+  });
+
+  const fellowPeople = apiRes.allPeople.filter((ele) => {
+    return ele.type === "fellow";
+  });
+
+  const teamPeople = apiRes.allPeople.filter((ele) => {
+    return ele.type === "team";
+  });
+
+
   return (
-    <Layout
-      content={{
-        mission_statement: apiRes.mission_statement,
-        info_title: apiRes.info_title,
-      }}
-    >
+    <Layout content={apiRes}>
       <div className={style.landedNavCont}></div>
       <div className={style.backdrop}>
         <Image
@@ -47,81 +60,72 @@ function allBlogs({ apiRes }) {
       </div>
 
       <section className={style.overlay}>
-        <h1>People</h1>
-        <p>short desc</p>
+        <h1>{apiRes.title}</h1>
+        <p>{apiRes.short_desc}</p>
       </section>
 
       <section className={style.mainCont}>
         <div id="lawomen" className={style.lawomenSec}>
-          <h1 className={style.secTitle}>The LaWomen Team</h1>
+          <h1 className={style.secTitle}>{apiRes.lawomenTeamTitle}</h1>
+          <p>{apiRes.lawomenTeamDesc}</p>
           <div className={style.cardCont}>
-            <div className={style.cards}>
-              <div className={style.cardsImg}>
-                <Image
-                  layout="fill"
-                  objectFit="contain"
-                  src="/TempkravisLabLogo.png"
-                  alt="Kravis Lab Logo"
-                />
-              </div>
-              <p className={style.cardSubtitle}>Kravis Lab</p>
-            </div>
+            {teamPeople.map((ele) => {
+              return (
+                <div key={ele.id} className={style.cards}>
+                  <div className={style.cardsImg}>
+                    <Image
+                      layout="fill"
+                      objectFit="contain"
+                      src={ele.image.url}
+                      alt={ele.image.alternativeText}
+                    />
+                  </div>
+                  <p className={style.cardSubtitle}>{ele.name}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
         <div id="firms" className={style.firmSec}>
-          <h1 className={style.secTitle}>Partnering Firms</h1>
+          <h1 className={style.secTitle}>{apiRes.firmsTitle}</h1>
+          <p>{apiRes.firmsDesc}</p>
           <div className={style.cardCont}>
-            <div className={style.cards}>
-              <div className={style.cardsImg}>
-                <Image
-                  layout="fill"
-                  objectFit="contain"
-                  src="/TempkravisLabLogo.png"
-                  alt="Kravis Lab Logo"
-                />
-              </div>
-              <p className={style.cardSubtitle}>Kravis Lab</p>
-            </div>
+            {firmPeople.map((ele) => {
+              return (
+                <div key={ele.id} className={style.cards}>
+                  <div className={style.cardsImg}>
+                    <Image
+                      layout="fill"
+                      objectFit="contain"
+                      src={ele.image.url}
+                      alt={ele.image.alternativeText}
+                    />
+                  </div>
+                  <p className={style.cardSubtitle}>{ele.name}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
         <div id="fellows" className={style.fellows}>
-          <h1 className={style.secTitle}>LaWomen Fellows</h1>
+          <h1 className={style.secTitle}>{apiRes.fellowsTitle}</h1>
+          <p>{apiRes.fellowsDesc}</p>
           <div className={style.cardCont}>
-            <div className={style.cards}>
-              <div className={style.cardsImg}>
-                <Image
-                  layout="fill"
-                  objectFit="contain"
-                  src="/TempkravisLabLogo.png"
-                  alt="Kravis Lab Logo"
-                />
-              </div>
-              <p className={style.cardSubtitle}>Kravis Lab</p>
-            </div>
-
-            <div className={style.cards}>
-              <div className={style.cardsImg}>
-                <Image
-                  layout="fill"
-                  objectFit="contain"
-                  src="/TempkravisLabLogo.png"
-                  alt="Kravis Lab Logo"
-                />
-              </div>
-              <p className={style.cardSubtitle}>Kravis Lab</p>
-            </div>
-
-            <div className={style.cards}>
-              <div className={style.cardsImg}>
-                <Image
-                  layout="fill"
-                  objectFit="contain"
-                  src="/TempkravisLabLogo.png"
-                  alt="Kravis Lab Logo"
-                />
-              </div>
-              <p className={style.cardSubtitle}>Kravis Lab</p>
-            </div>
+            {fellowPeople.map((ele) => {
+              return (
+                <div key={ele.id} className={style.cards}>
+                  <div className={style.cardsImg}>
+                    <Image
+                      layout="fill"
+                      objectFit="contain"
+                      src={ele.image.url}
+                      alt={ele.image.alternativeText}
+                    />
+                  </div>
+                  <p className={style.cardSubtitle}>{ele.name}</p>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
