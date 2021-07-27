@@ -15,6 +15,8 @@ import { IoLocationSharp } from "react-icons/io5";
 
 function Footer({ content }) {
   const { t } = useTranslation("footer");
+
+  console.log(content)
   return (
     <footer className={footerStyles.cont}>
       <div className={footerStyles.footerLogo}>
@@ -52,22 +54,46 @@ function Footer({ content }) {
       <p className={footerStyles.missionP}>{content.mission_statement}</p>
       <div className={footerStyles.infoCont}>
         <h3>{content.info_title}</h3>
-        <div className={footerStyles.iconP}>
-          <AiOutlinePhone />
-          <p>{t("tele")} {content.info_title}</p>
-        </div>
-        <div className={footerStyles.iconP}>
-          <AiOutlineMail />
-          <p>{t("email")} {content.info_title}</p>
-        </div>
-        <div className={footerStyles.iconP}>
-          <IoLocationSharp />
-          <p>{t("address")} {content.info_title}</p>
-        </div>
-        <div className={footerStyles.iconP}>
-          <AiOutlineClockCircle />
-          <p>{t("working_hours")} {content.info_title}</p>
-        </div>
+        {content.telephone ? (
+          <div className={footerStyles.iconP}>
+            <AiOutlinePhone />
+            <p>
+              {t("tele")} {content.telephone}
+            </p>
+          </div>
+        ) : (
+          ""
+        )}
+        {content.email ? (
+          <div className={footerStyles.iconP}>
+            <AiOutlineMail />
+            <p>
+              {t("email")} {content.email}
+            </p>
+          </div>
+        ) : (
+          ""
+        )}
+        {content.address ? (
+          <div className={footerStyles.iconP}>
+            <IoLocationSharp />
+            <p>
+              {t("address")} {content.address}
+            </p>
+          </div>
+        ) : (
+          ""
+        )}
+        {content.working_hours ? (
+          <div className={footerStyles.iconP}>
+            <AiOutlineClockCircle />
+            <p>
+              {t("working_hours")} {content.working_hours}
+            </p>
+          </div>
+        ) : (
+         ""
+        )}
       </div>
     </footer>
   );

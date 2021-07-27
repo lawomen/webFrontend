@@ -9,20 +9,20 @@ function WhyLawomen({ content }) {
         <h3>{content.whyTitle}</h3>
         <div className={styles.reasonCont}>
           <div className={styles.reason}>
-            <h4>Female Lawyers Team</h4>
-            <p>Reason Desc</p>
+            <h4>{content.reason1}</h4>
+            <p>{content.reason1_desc}</p>
           </div>
           <div className={styles.reason}>
-            <h4>Corporate Social Responsibility</h4>
-            <p>Reason Desc</p>
+            <h4>{content.reason2}</h4>
+            <p>{content.reason2_desc}</p>
           </div>
           <div className={styles.reason}>
-            <h4>Special Package for Corporate Bodies</h4>
-            <p>Reason Desc</p>
+            <h4>{content.reason3}</h4>
+            <p>{content.reason3_desc}</p>
           </div>
           <div className={styles.reason}>
-            <h4>Online</h4>
-            <p>Reason Desc</p>
+            <h4>{content.reason4}</h4>
+            <p>{content.reason4_desc}</p>
           </div>
         </div>
         <BsFillBookmarksFill className={styles.bgIcon} size={300} />

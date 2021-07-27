@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import Link from "next/link";
 import homeStyle from "../styles/Home.module.css";
 
@@ -32,24 +32,47 @@ export async function getStaticProps({ locale }) {
   );
   const footerRes = await rawFooter.json();
 
-  const rawExpertise = await fetch(
+  const rawLawArea = await fetch(
     `https://lawomen-admin.herokuapp.com/law-area-entries?_locale=${locale}`
   );
 
-  const allExpertiseRes = await rawExpertise.json();
+  const allLawArea = await rawLawArea.json();
 
-  const landingExp = allExpertiseRes.filter((ele) => {
+  const landingLawArea = allLawArea.filter((ele) => {
     return ele.on_landing === true;
   });
 
-  const apiRes = { ...footerRes, ...landingRes, landingExp };
+  const rawPeople = await fetch(
+    `https://lawomen-admin.herokuapp.com/people?_locale=${locale}`
+  );
+  const allPeople = await rawPeople.json();
+
+  const landingPeople = allPeople.filter((ele) => {
+    return ele.on_landing === true;
+  });
+
+  const rawTestimonials = await fetch(
+    `https://lawomen-admin.herokuapp.com/testimonials?_locale=${locale}`
+  );
+  const allTestimonials = await rawTestimonials.json();
+
+  const landingTestimonials = allTestimonials.filter((ele) => {
+    return ele.on_landing === true;
+  });
+
+  const apiRes = {
+    ...footerRes,
+    ...landingRes,
+    landingLawArea,
+    landingPeople,
+    landingTestimonials,
+  };
 
   return {
     props: {
       apiRes,
       ...(await serverSideTranslations(locale, [
         "common",
-        "landing",
         "nav",
         "contact",
         "footer",
@@ -59,51 +82,33 @@ export async function getStaticProps({ locale }) {
 }
 
 function Home({ apiRes }) {
-  const t1 = useTranslation("landing");
-  const t2 = useTranslation("common");
+  const { t } = useTranslation("common");
 
   const contactUs = useRef(null);
 
-  useEffect(() => {
-    // to call the heroku, deal with cold start so form submit is faster
-    try {
-      fetch("https://lawomen-admin.herokuapp.com/landing-page");
-    } catch {}
-  }, []);
-
   return (
     <Layout
-      content={{
-        mission_statement: apiRes.mission_statement,
-        info_title: apiRes.info_title,
-      }}
+      content={apiRes}
     >
       <section className={homeStyle.backdrop}>
         <div className={homeStyle.landingCont}>
-          <h1 className={homeStyle.titleContent}>{t2.t("companyName")}</h1>
+          <h1 className={homeStyle.titleContent}>{t("companyName")}</h1>
           <div className={homeStyle.mainContent}>
             <h2 className={homeStyle.subtitle}>{apiRes.tagline_title}</h2>
             <h3 className={homeStyle.desc}>{apiRes.tagline_desc}</h3>
             <a
+              href={apiRes.contactLink}
               className={`${homeStyle.button} ${homeStyle.contactBtn}`}
-              onClick={() => {
-                contactUs.current.scrollIntoView({
-                  behavior: "smooth",
-                  block: "center",
-                });
-              }}
             >
               <BsFillCaretRightFill size={27} />
-              {t1.t("call2action")}
+              {apiRes.contactBtn}
             </a>
           </div>
           <div className={homeStyle.donateContent}>
             <h2 className={homeStyle.subtitle}>{apiRes.donate_title}</h2>
             <h3 className={homeStyle.desc}>{apiRes.donate_desc}</h3>
-            <Link href="#">
-              <button className={homeStyle.button}>
-                {t1.t("call2action2")}
-              </button>
+            <Link href={apiRes.donateLink}>
+              <button className={homeStyle.button}>{apiRes.donateBtn}</button>
             </Link>
           </div>
         </div>
@@ -133,7 +138,7 @@ function Home({ apiRes }) {
       </section>
 
       <section>
-        <LawArea content={apiRes.landingExp} />
+        <LawArea content={apiRes.landingLawArea} />
       </section>
 
       <section>
@@ -145,18 +150,17 @@ function Home({ apiRes }) {
       </section>
 
       <section>
-        <Testimonials content="jjk"/>
+        <Testimonials content={apiRes.landingTestimonials} />
       </section>
 
       <section>
-        <People />
+        <People content={apiRes.landingPeople} applyContent={apiRes} />
       </section>
 
       <section className={homeStyle.contactCont} ref={contactUs}>
         <h3>{apiRes.contactTitle}</h3>
         <FormikForm />
       </section>
-
     </Layout>
   );
 }

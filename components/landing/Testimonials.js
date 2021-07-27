@@ -8,12 +8,15 @@ function Testimonials({ content }) {
     return (
       <div className={styles.mainCont}>
         <div className={styles.quoteCont}>
-          <RiChatQuoteFill size={50} />
-          <p>
-            Sed dictum, tortor a iaculis ultrices, eros odio egestas quam, eget
-            lacinia nisl lacus vel mi. Fusce in eros eu quam fringilla
-            elementum. Curabitur finibus
-          </p>
+          {content.map((ele) => {
+            return (
+              <>
+                <RiChatQuoteFill size={50} />
+                <p>{ele.entry}</p>
+                {ele.source ? <p> – {ele.source}</p> : ""}
+              </>
+            );
+          })}
         </div>
       </div>
     );

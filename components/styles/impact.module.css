@@ -16,9 +16,9 @@
 .cont>h3::after {
     content: "";
     display: block;
-    margin-block-start: 0.7rem;
+    margin-block-start: 0.5rem;
     height: 2px;
-    width: 30vw;
+    width: 15rem;
     background-color: var(--primary);
     z-index: 999;
 }
@@ -34,8 +34,8 @@
 .imgCont {
     position: relative;
     overflow: hidden;
-    width: 25vw;
-    height: 25vw;
+    width: 23rem;
+    height: 23rem;
     border-radius: 50%;
 }
 
@@ -53,6 +53,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 0 2rem;
 }
 
 
@@ -71,6 +72,7 @@
         height: 17rem;
     }
     .card {
+        margin: 0;
         margin-bottom: 4rem;
     }
 

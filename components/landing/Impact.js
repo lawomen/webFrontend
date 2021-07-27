@@ -10,8 +10,8 @@ function Impact({ content }) {
         <div className={style.card}>
           <div className={style.imgCont}>
             <Image
-              alt="Image of women's right protest"
-              src="/signs.jpeg"
+              alt="Image of UN Sustainability development goal 5"
+              src="/sdg5.jpeg"
               layout="fill"
               objectFit="cover"
             />
@@ -23,8 +23,8 @@ function Impact({ content }) {
         <div className={style.card}>
           <div className={style.imgCont}>
             <Image
-              alt="Image of UN Sustainability development goal 5"
-              src="/sdg5.jpeg"
+              alt="Image of women's right protest"
+              src="/signs.jpeg"
               layout="fill"
               objectFit="cover"
             />
