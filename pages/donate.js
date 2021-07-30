@@ -28,9 +28,10 @@ export async function getStaticProps({ locale }) {
 }
 
 function allBlogs({ apiRes }) {
-  const md = MarkdownIt();
+  const md = MarkdownIt({ html: true, breaks: true });
   const parsedDonateContent = md.render(apiRes.content);
 
+  console.log(parsedDonateContent)
   return (
     <Layout content={apiRes}>
       <div className={style.landedNavCont}></div>

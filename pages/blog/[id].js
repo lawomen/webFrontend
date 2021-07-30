@@ -58,7 +58,7 @@ export async function getStaticPaths() {
 }
 
 function blog({ blogRes, apiRes }) {
-  const md = MarkdownIt();
+  const md = MarkdownIt({ html: true, breaks: true });
   const parsedBlog = md.render(blogRes.blog);
   const parsedSources = md.render(blogRes.sources ? blogRes.sources : "");
 

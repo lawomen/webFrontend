@@ -28,7 +28,7 @@ export async function getStaticProps({ locale }) {
 }
 
 function apply({ apiRes }) {
-  const md = MarkdownIt();
+  const md = MarkdownIt({ html: true, breaks: true });
   const parsedContent = md.render(apiRes.content);
 
   return (

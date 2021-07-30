@@ -28,7 +28,7 @@ export async function getStaticProps({ locale }) {
 }
 
 function services({ apiRes }) {
-  const md = MarkdownIt();
+  const md = MarkdownIt({ html: true, breaks: true });
   const parsedPaidDesc = md.render(apiRes.paid_desc);
   const parsedFreeDesc = md.render(apiRes.free_desc);
 
