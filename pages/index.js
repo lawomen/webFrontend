@@ -144,7 +144,7 @@ function Home({ apiRes }) {
 
       <section className={homeStyle.areaNotice}>
         <LawArea content={apiRes.landingLawArea} />
-        <Notice />
+        <Notice content={apiRes}/>
       </section>
 
       <section>

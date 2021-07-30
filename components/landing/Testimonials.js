@@ -10,11 +10,11 @@ function Testimonials({ content }) {
         <div className={styles.quoteCont}>
           {content.map((ele) => {
             return (
-              <>
+              <div key={ele.id}>
                 <RiChatQuoteFill size={50} />
                 <p>{ele.entry}</p>
                 {ele.source ? <p> – {ele.source}</p> : ""}
-              </>
+              </div>
             );
           })}
         </div>

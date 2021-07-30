@@ -53,6 +53,13 @@
     font-size: 1.1rem;
 }
 
+.imgCont{
+    position: relative;
+    width: 15vw;
+    height: 7rem;
+    margin-top: 15px;
+}
+
 @media (max-width: 768px) {
     .cont{
         width: initial;

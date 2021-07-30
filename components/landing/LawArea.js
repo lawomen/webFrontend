@@ -9,8 +9,8 @@ function LawArea({ content }) {
   return (
     <div className={styles.cont}>
       {content.map(({ id, area_title, area_desc, icon }) => (
-        <Link passHref href="/services">
-          <div className={styles.card} key={id}>
+        <Link key={id} passHref href="/services">
+          <div className={styles.card}>
             <h3 className={styles.cardTitle}>{area_title}</h3>
             {icon === "GoLaw" && (
               <GoLaw className={styles.cardIcon} size={70} />
