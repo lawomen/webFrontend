@@ -1,4 +1,5 @@
 import Image from "next/image";
+import MarkdownIt from "markdown-it";
 
 import Layout from "../components/Layout";
 import style from "../styles/services.module.css";
@@ -27,6 +28,10 @@ export async function getStaticProps({ locale }) {
 }
 
 function services({ apiRes }) {
+  const md = MarkdownIt();
+  const parsedPaidDesc = md.render(apiRes.paid_desc);
+  const parsedFreeDesc = md.render(apiRes.free_desc);
+
   return (
     <Layout content={apiRes}>
       <div className={style.landedNavCont}></div>
@@ -48,12 +53,24 @@ function services({ apiRes }) {
       <section className={style.mainCont}>
         <div id="paid" className={style.paidCont}>
           <h2 className={style.secTitle}>{apiRes.paid_title}</h2>
-          <p>{apiRes.paid_desc}</p>
+          <div dangerouslySetInnerHTML={{ __html: parsedPaidDesc }} />
+          <Image
+              width={apiRes.paid_img.width}
+              height={apiRes.paid_img.height}
+              src={apiRes.paid_img.url}
+              alt={apiRes.paid_img.alternativeText}
+            />
         </div>
 
         <div id="community" className={style.freeCont}>
           <h2 className={style.secTitle}>{apiRes.free_title}</h2>
-          <p>{apiRes.free_desc}</p>
+          <div dangerouslySetInnerHTML={{ __html: parsedFreeDesc }} />
+          <Image
+              width={apiRes.free_img.width}
+              height={apiRes.free_img.height}
+              src={apiRes.free_img.url}
+              alt={apiRes.free_img.alternativeText}
+            />
         </div>
       </section>
     </Layout>

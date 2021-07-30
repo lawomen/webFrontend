@@ -1,4 +1,5 @@
 import Image from "next/image";
+import MarkdownIt from "markdown-it";
 
 import Layout from "../components/Layout";
 import style from "../styles/apply.module.css";
@@ -27,10 +28,11 @@ export async function getStaticProps({ locale }) {
 }
 
 function apply({ apiRes }) {
+  const md = MarkdownIt();
+  const parsedContent = md.render(apiRes.content);
+
   return (
-    <Layout
-      content={apiRes}
-    >
+    <Layout content={apiRes}>
       <div className={style.landedNavCont}></div>
       <div className={style.backdrop}>
         <Image
@@ -48,7 +50,13 @@ function apply({ apiRes }) {
       </section>
 
       <section className={style.mainCont}>
-          <p>{apiRes.content}</p>
+        <div dangerouslySetInnerHTML={{ __html: parsedContent }} />
+        <Image
+          width={apiRes.image.width}
+          height={apiRes.image.height}
+          src={apiRes.image.url}
+          alt={apiRes.image.alternativeText}
+        />
       </section>
     </Layout>
   );

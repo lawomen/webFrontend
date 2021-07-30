@@ -53,6 +53,7 @@ function allBlogs({ apiRes, blogEntry }) {
       </section>
 
       <section className={style.mainCont}>
+        <p style={{textAlign: 'center'}}>{apiRes.note}</p>
         <div className={style.cardCont}>
           {blogEntry.map(
             ({

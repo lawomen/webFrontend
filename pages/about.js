@@ -1,4 +1,5 @@
 import Image from "next/image";
+import MarkdownIt from "markdown-it";
 
 import Layout from "../components/Layout";
 import style from "../styles/about.module.css";
@@ -27,10 +28,13 @@ export async function getStaticProps({ locale }) {
 }
 
 function allBlogs({ apiRes }) {
+  const md = MarkdownIt();
+  const parsedMission = md.render(apiRes.missionDesc);
+  const parsedStory = md.render(apiRes.storyDesc);
+  const parsedVision = md.render(apiRes.visionDesc);
+
   return (
-    <Layout
-      content={apiRes}
-    >
+    <Layout content={apiRes}>
       <div className={style.landedNavCont}></div>
       <div className={style.backdrop}>
         <Image
@@ -48,7 +52,19 @@ function allBlogs({ apiRes }) {
       </section>
 
       <section className={style.mainCont}>
-        <h3>{apiRes.content}</h3>
+        <h1>{apiRes.missionTitle}</h1>
+        <div dangerouslySetInnerHTML={{ __html: parsedMission }} />
+        <h1>{apiRes.storyTitle}</h1>
+        <div dangerouslySetInnerHTML={{ __html: parsedStory }} />
+        <h1>{apiRes.visionTitle}</h1>
+        <div dangerouslySetInnerHTML={{ __html: parsedVision }} />
+        
+        <Image
+          width={apiRes.image.width}
+          height={apiRes.image.height}
+          src={apiRes.image.url}
+          alt={apiRes.image.alternativeText}
+        />
       </section>
     </Layout>
   );
