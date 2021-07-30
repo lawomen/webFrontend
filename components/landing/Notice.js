@@ -1,4 +1,5 @@
 import style from "../styles/notice.module.css";
+
 import { RiPushpinLine } from "react-icons/ri";
 import Link from "next/link";
 import Image from "next/image";
