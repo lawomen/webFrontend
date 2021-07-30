@@ -50,13 +50,15 @@ function apply({ apiRes }) {
       </section>
 
       <section className={style.mainCont}>
+        <div className={style.imgCont}>
+          <Image
+            layout="fill"
+            objectFit="contain"
+            src={apiRes.apply_img.url}
+            alt={apiRes.apply_img.alternativeText}
+          />
+        </div>
         <div dangerouslySetInnerHTML={{ __html: parsedContent }} />
-        <Image
-          width={apiRes.image.width}
-          height={apiRes.image.height}
-          src={apiRes.image.url}
-          alt={apiRes.image.alternativeText}
-        />
       </section>
     </Layout>
   );

@@ -47,7 +47,17 @@
 
 .mainCont {
     min-height: 100vh;
-    padding: 2rem 5rem;
+    padding: 4rem 5rem;
+}
+
+.imgCont{
+    position: relative;
+    width: 35vw;
+    height: 35vw;
+    float: right;
+    margin-left: 2rem;
+    margin-top: 3rem;
+
 }
 
 @media (max-width: 768px) {

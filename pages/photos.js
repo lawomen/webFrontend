@@ -32,18 +32,21 @@ function allBlogs({ apiRes }) {
       <div className={style.landedNavCont}></div>
 
       <section className={style.mainCont}>
-        <div className={style.galleryCont}></div>
-        {apiRes.pictures.map((ele) => (
-          <div key={ele.id}>
-            <Image
-              width={ele.picture.width}
-              height={ele.picture.height}
-              src={ele.picture.url}
-              alt={ele.picture.alternativeText}
-            />
-            <p>{ele.desc}</p>
-          </div>
-        ))}
+        <div className={style.galleryCont}>
+          {apiRes.pictures.map((ele) => (
+            <div className={style.cardCont} key={ele.id}>
+              <div className={style.imgCont}>
+                <Image
+                  layout="fill"
+                  objectFit="contain"
+                  src={ele.picture.url}
+                  alt={ele.picture.alternativeText}
+                />
+              </div>
+              <p>{ele.desc}</p>
+            </div>
+          ))}
+        </div>
       </section>
     </Layout>
   );

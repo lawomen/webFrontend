@@ -1,64 +1,80 @@
 .landedNavCont {
-    width: 100vw;
-    height: 8rem;
-    top: 0;
-    background-color: var(--background);
+  width: 100vw;
+  height: 8rem;
+  top: 0;
+  background-color: var(--background);
 }
 
 .backdrop {
-    height: 40vh;
-    width: 100vw;
-    position: relative;
+  height: 40vh;
+  width: 100vw;
+  position: relative;
 }
 
 .overlay {
-    margin-top: 8rem;
-    position: absolute;
-    content: "";
-    left: 0px;
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    z-index: 2;
-    height: 40vh;
-    background-color: var(--bgLanding);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    text-align: center;
-    color: white;
-    padding-block-end: 2rem;
+  margin-top: 8rem;
+  position: absolute;
+  content: "";
+  left: 0px;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  z-index: 2;
+  height: 40vh;
+  background-color: var(--bgLanding);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
+  color: white;
+  padding-block-end: 2rem;
 }
 
 .overlay h1 {
-    font-size: 3.5rem;
-    text-transform: uppercase;
-    letter-spacing: 0.2rem;
-    margin: 0;
+  font-size: 3.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin: 0;
 }
 
 .overlay p {
-    font-size: 1.3rem;
-    margin: 1rem 5rem 0 5rem;
+  font-size: 1.3rem;
+  margin: 1rem 5rem 0 5rem;
 }
 
 .mainCont {
-    min-height: 100vh;
-    padding: 2rem 15rem;
+  min-height: 100vh;
+  padding: 2rem 10vw;
 }
 
 .paidCont {
-    padding: 7rem 0 3rem 0;
+  padding: 3rem 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .freeCont {
-    padding: 7rem 0 3rem 0;
+  padding: 3rem 0 1rem 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.secTitle{
-    margin-bottom: 2.5rem;
-    text-decoration: underline;
+.secTitle {
+  margin-bottom: 2.5rem;
+  text-decoration: underline;
 }
 
-@media (max-width: 768px) {}
+.imgCont {
+    margin: 0 0 2rem 0;
+    opacity: 70%;
+}
+
+.contentP{
+    margin: 0 5vw;
+}
+
+@media (max-width: 768px) {
+}

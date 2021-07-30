@@ -29,9 +29,7 @@ export async function getStaticProps({ locale }) {
 
 function allBlogs({ apiRes }) {
   const md = MarkdownIt();
-  const parsedMission = md.render(apiRes.missionDesc);
-  const parsedStory = md.render(apiRes.storyDesc);
-  const parsedVision = md.render(apiRes.visionDesc);
+  const parsedAboutContent = md.render(apiRes.about_content);
 
   return (
     <Layout content={apiRes}>
@@ -52,19 +50,15 @@ function allBlogs({ apiRes }) {
       </section>
 
       <section className={style.mainCont}>
-        <h1>{apiRes.missionTitle}</h1>
-        <div dangerouslySetInnerHTML={{ __html: parsedMission }} />
-        <h1>{apiRes.storyTitle}</h1>
-        <div dangerouslySetInnerHTML={{ __html: parsedStory }} />
-        <h1>{apiRes.visionTitle}</h1>
-        <div dangerouslySetInnerHTML={{ __html: parsedVision }} />
-        
-        <Image
-          width={apiRes.image.width}
-          height={apiRes.image.height}
-          src={apiRes.image.url}
-          alt={apiRes.image.alternativeText}
-        />
+        <div className={style.imgCont}>
+          <Image
+            width={apiRes.about_img.width}
+            height={apiRes.about_img.height}
+            src={apiRes.about_img.url}
+            alt={apiRes.about_img.alternativeText}
+          />
+        </div>
+        <div dangerouslySetInnerHTML={{ __html: parsedAboutContent }} />
       </section>
     </Layout>
   );

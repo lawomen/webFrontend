@@ -11,8 +11,29 @@
 }
 
 .galleryCont{
-    border: 1px solid red;
     min-height: 70vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+.cardCont{
+    width: 25vw;
+    padding: 1rem;
+    display: flex;
+    text-align: center;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0.8rem;
+    margin-bottom: 1.5rem;
+}
+
+.imgCont{
+    position: relative;
+    width: 20vw;
+    height: 20vw;
+    border: 3px dotted black;
 }
 
 @media (max-width: 768px) {

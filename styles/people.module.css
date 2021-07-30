@@ -45,19 +45,19 @@
 
 .mainCont {
     min-height: 100vh;
-    padding: 2rem 10rem;
+    padding: 1rem 13vw;
 }
 
 .lawomenSec {
-    padding: 7rem 0 3rem 0;
+    padding: 3rem 0 3rem 0;
 }
 
 .firmSec {
-    padding: 7rem 0 3rem 0;
+    padding: 3rem 0 3rem 0;
 }
 
 .fellows {
-    padding: 7rem 0 3rem 0;
+    padding: 3rem 0 3rem 0;
 }
 
 .cardCont {
@@ -86,8 +86,8 @@
 
 .cardsImg {
     position: relative;
-    height: 20rem;
-    width: 15rem;
+    height: 15rem;
+    width: 12rem;
 }
 
 @media (max-width: 768px) {}

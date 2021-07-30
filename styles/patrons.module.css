@@ -47,13 +47,17 @@
 
 .mainCont {
     min-height: 100vh;
-    padding: 2rem 5rem;
+    padding: 5rem 10vw;
+}
+
+.card{
+    box-shadow: 8px 8px 20px 3px rgba(199, 198, 198, 0.69);
+    width: fit-content;
+    padding: 3rem;
 }
 
 .cardsImg {
-    position: relative;
-    height: 20rem;
-    width: 15rem;
+    margin-top: 1rem;
 }
 
 @media (max-width: 768px) {

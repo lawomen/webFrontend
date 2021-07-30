@@ -53,24 +53,34 @@ function services({ apiRes }) {
       <section className={style.mainCont}>
         <div id="paid" className={style.paidCont}>
           <h2 className={style.secTitle}>{apiRes.paid_title}</h2>
-          <div dangerouslySetInnerHTML={{ __html: parsedPaidDesc }} />
-          <Image
-              width={apiRes.paid_img.width}
-              height={apiRes.paid_img.height}
+          <div className={style.imgCont}>
+            <Image
+              width={500}
+              height={500 * (apiRes.paid_img.height / apiRes.paid_img.width)}
               src={apiRes.paid_img.url}
               alt={apiRes.paid_img.alternativeText}
             />
+          </div>
+          <div
+            className={style.contentP}
+            dangerouslySetInnerHTML={{ __html: parsedPaidDesc }}
+          />
         </div>
 
         <div id="community" className={style.freeCont}>
           <h2 className={style.secTitle}>{apiRes.free_title}</h2>
-          <div dangerouslySetInnerHTML={{ __html: parsedFreeDesc }} />
-          <Image
-              width={apiRes.free_img.width}
-              height={apiRes.free_img.height}
+          <div className={style.imgCont}>
+            <Image
+              width={500}
+              height={500 * (apiRes.free_img.height / apiRes.free_img.width)}
               src={apiRes.free_img.url}
               alt={apiRes.free_img.alternativeText}
             />
+          </div>
+          <div
+            className={style.contentP}
+            dangerouslySetInnerHTML={{ __html: parsedFreeDesc }}
+          />
         </div>
       </section>
     </Layout>

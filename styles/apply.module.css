@@ -50,6 +50,15 @@
     padding: 2rem 5rem;
 }
 
+.imgCont{
+    position: relative;
+    width: 35vw;
+    height: 35vw;
+    float: right;
+    margin-left: 2rem;
+
+}
+
 @media (max-width: 768px) {
   
 }

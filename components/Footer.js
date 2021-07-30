@@ -22,7 +22,6 @@ function Footer({ content }) {
         <Image
           layout="fill"
           objectFit="contain"
-          priority
           src="/emblem1.svg"
           alt="LaWomen Logo"
         />

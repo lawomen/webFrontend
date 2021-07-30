@@ -57,12 +57,12 @@ function patrons({ apiRes }) {
       <section className={style.mainCont}>
         {apiRes.patronsRes.map((ele) => {
           return (
-            <div>
+            <div className={style.card} key={ele.id}>
               <h3>{ele.name}</h3>
               <div className={style.cardsImg}>
                 <Image
-                  layout="fill"
-                  objectFit="contain"
+                  height={70}
+                  width={70*(ele.image.width/ele.image.height)}
                   src={ele.image.url}
                   alt={ele.image.alternativeText}
                 />

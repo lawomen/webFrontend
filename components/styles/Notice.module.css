@@ -1,11 +1,11 @@
 .cont {
     height: 40rem;
-    width: 25vw;
+    width: 30vw;
     transform: translateY(-10vh);
     background-color: white;
     border-left: 8px solid rgba(229, 229, 229, 0.719);
     color: rgb(78, 78, 78);
-    padding: 0.5rem 4rem 1rem 1.5rem;
+    padding: 0.5rem 3rem 1rem 2rem;
     border-top-left-radius: 5px;
     overflow: scroll;
 }
@@ -68,5 +68,9 @@
         border-left: none;
         box-shadow: 5px 8px 10px 10px rgba(199, 198, 198, 0.25);
         border-radius: 0.2rem;
+    }
+    .imgCont{
+        position: relative;
+        width: 50vw;
     }
 }

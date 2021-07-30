@@ -10,7 +10,7 @@
     flex-wrap: wrap;
 }
 
-.quoteCont {
+.quoteCard{
     width: 30vw;
     line-height: 1.8rem;
     margin: 0 3rem 4rem 3rem;
@@ -29,9 +29,9 @@
         padding: 7rem 2rem;
     }
 
-    .quoteCont {
+    .quoteCard {
         width: auto;
         margin: 0 0 2rem 0;
-        padding: 0 1rem;
+        padding: 0 2rem;
     }
 }
