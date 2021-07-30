@@ -3,13 +3,13 @@
     margin: 4rem 0;
 
     display: grid;
-    grid-template-columns: 2fr 1fr;
+    grid-template-columns: 2.2fr 1fr;
     grid-template-rows: 1fr;
     border: none;
 }
 
 .info{
-    padding: 0 4rem;
+    padding: 0 1rem 0 4rem;
     background-color: var(--background);
     color: white;
 
@@ -42,11 +42,10 @@
     grid-template-columns: 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     height: 70%;
-    width: 110%;
 }
 
 .reason{
-    margin-inline-start: 3rem;
+    margin: 0 1rem;
 }
 
 .reason>h4{
