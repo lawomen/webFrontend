@@ -20,6 +20,7 @@ import { BsFillCaretRightFill } from "react-icons/bs";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
+import Notice from "../components/landing/Notice";
 
 export async function getStaticProps({ locale }) {
   const rawLanding = await fetch(
@@ -87,9 +88,7 @@ function Home({ apiRes }) {
   const contactUs = useRef(null);
 
   return (
-    <Layout
-      content={apiRes}
-    >
+    <Layout content={apiRes}>
       <section className={homeStyle.backdrop}>
         <div className={homeStyle.landingCont}>
           <h1 className={homeStyle.titleContent}>{t("companyName")}</h1>
@@ -137,8 +136,9 @@ function Home({ apiRes }) {
         </div>
       </section>
 
-      <section>
+      <section className={homeStyle.areaNotice}>
         <LawArea content={apiRes.landingLawArea} />
+        <Notice />
       </section>
 
       <section>

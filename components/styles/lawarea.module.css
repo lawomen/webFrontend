@@ -1,9 +1,10 @@
 .cont{
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
     grid-gap: 5rem;
-    margin: 0 6rem;
+    padding: 0 4vw;
     margin-bottom: 5vh;
+    width: 75vw;
 }
 
 .card{
@@ -40,7 +41,8 @@
     grid-area: icon;
 
     position: relative;
-    top: 30px;
+    top: 20px;
+    left: -20px;
 
     transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1)
 }
@@ -68,9 +70,9 @@
 
 @media (max-width: 768px) {
     .cont{
+        width: initial;
         margin: 0 1.5rem;
         grid-template-columns: 1fr;
-
     }
 
     .card{

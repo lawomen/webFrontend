@@ -1,0 +1,64 @@
+.cont {
+    height: 40rem;
+    width: 25vw;
+    transform: translateY(-10vh);
+    background-color: white;
+    border-left: 8px solid rgba(229, 229, 229, 0.719);
+    color: rgb(78, 78, 78);
+    padding: 0.5rem 4rem 1rem 1.5rem;
+    border-top-left-radius: 5px;
+    overflow: scroll;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header h1 {
+    font-size: 1.7rem;
+    border-bottom: 3px solid var(--primary);
+}
+
+.cardNotice, .cardAd{
+    margin-bottom: 3rem;
+}
+
+.cardNotice a, .cardAd a{
+    font-size: 0.85rem;
+    text-decoration: underline;
+
+}
+
+.cardNotice h2 {
+    border-left: 3px solid rgba(36, 95, 212, 0.8);
+    padding-left: 8px;
+    font-size: 1.2rem;
+    margin-bottom: 7px;
+}
+
+.cardAd h2 {
+    border-left: 3px solid red;
+    padding-left: 8px;
+    font-size: 1.2rem;
+    margin-bottom: 7px;
+}
+
+.cardAd h2::after {
+    content: "#Ad";
+    position: relative;
+    left: 8vw;
+    color: rgba(255, 0, 0, 0.6);
+}
+
+@media (max-width: 768px) {
+    .cont{
+        width: initial;
+        height: 20rem;
+        margin-bottom: 5rem;
+        border-left: none;
+        box-shadow: 5px 8px 10px 10px rgba(199, 198, 198, 0.25);
+        border-radius: 0.2rem;
+    }
+}

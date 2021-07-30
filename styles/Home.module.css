@@ -92,6 +92,11 @@
     line-height: 2rem;
 }
 
+.areaNotice{
+    display: flex;
+}
+
+
 
 /* Contact Form */
 
@@ -125,7 +130,7 @@
         grid-template-columns: 0.25fr 1fr 0.3fr;
         grid-template-rows: 0.5fr 1fr 1fr;
         padding-block-start: 15vh;
-        padding-block-end: 5vh;
+        padding-block-end: 7vh;
     }
     .titleContent {
         font-size: 4.5rem;
@@ -151,5 +156,9 @@
     }
     .donateContent {
         padding-block-end: 10vh;
+    }
+    .areaNotice{
+        display: flex;
+        flex-direction: column-reverse;
     }
 }
