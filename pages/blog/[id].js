@@ -40,7 +40,6 @@ export async function getStaticPaths() {
   );
   const urBlog = await urBlogRaw.json();
 
-
   const enPaths = enBlog.map(({ subpath }) => ({
     params: { id: subpath },
     locale: "en",
@@ -64,12 +63,7 @@ function blog({ blogRes, apiRes }) {
   const parsedSources = md.render(blogRes.sources ? blogRes.sources : "");
 
   return (
-    <Layout
-      content={{
-        mission_statement: apiRes.mission_statement,
-        info_title: apiRes.info_title,
-      }}
-    >
+    <Layout content={apiRes}>
       <div className={style.landedNavCont}></div>
 
       <section className={style.mainCont}>
@@ -95,11 +89,11 @@ function blog({ blogRes, apiRes }) {
           ""
         ) : (
           <>
-          <h2>Sources</h2>
-          <div
-            className={style.sources}
-            dangerouslySetInnerHTML={{ __html: parsedSources }}
-          />
+            <h2>Sources</h2>
+            <div
+              className={style.sources}
+              dangerouslySetInnerHTML={{ __html: parsedSources }}
+            />
           </>
         )}
       </section>

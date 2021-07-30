@@ -35,14 +35,8 @@ export async function getStaticProps({ locale }) {
 }
 
 function allBlogs({ apiRes, blogEntry }) {
-
   return (
-    <Layout
-      content={{
-        mission_statement: apiRes.mission_statement,
-        info_title: apiRes.info_title,
-      }}
-    >
+    <Layout content={apiRes}>
       <div className={style.landedNavCont}></div>
       <div className={style.backdrop}>
         <Image
@@ -60,16 +54,25 @@ function allBlogs({ apiRes, blogEntry }) {
 
       <section className={style.mainCont}>
         <div className={style.cardCont}>
-          {blogEntry.map(({ id, subpath, title, date_created, picture, blog_short_desc }) => (
-            <BlogCard
-              key={id}
-              subpath={subpath}
-              title={title}
-              date_created={date_created}
-              picture={picture}
-              blog_short_desc={blog_short_desc}
-            />
-          ))}
+          {blogEntry.map(
+            ({
+              id,
+              subpath,
+              title,
+              date_created,
+              picture,
+              blog_short_desc,
+            }) => (
+              <BlogCard
+                key={id}
+                subpath={subpath}
+                title={title}
+                date_created={date_created}
+                picture={picture}
+                blog_short_desc={blog_short_desc}
+              />
+            )
+          )}
         </div>
       </section>
     </Layout>

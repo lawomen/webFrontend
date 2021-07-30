@@ -17,6 +17,7 @@ import {
 } from "react-icons/ri";
 
 import { BsFillCaretRightFill } from "react-icons/bs";
+import {FiMail} from 'react-icons/fi'
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
@@ -132,6 +133,11 @@ function Home({ apiRes }) {
             href="https://pk.linkedin.com/company/lawomen"
           >
             <RiLinkedinFill size={40} />
+          </a>
+          <a
+           href="mailto:info@lawomen.pk"
+          >
+            <FiMail size={37} />
           </a>
         </div>
       </section>

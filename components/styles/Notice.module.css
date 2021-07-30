@@ -48,8 +48,9 @@
 .cardAd h2::after {
     content: "#Ad";
     position: relative;
-    left: 8vw;
+    left: 4vw;
     color: rgba(255, 0, 0, 0.6);
+    font-size: 1.1rem;
 }
 
 @media (max-width: 768px) {
