@@ -55,6 +55,7 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
   const [onlyAva, updateOnlyAva] = useState(false);
   const nameInput = useRef(null);
   const [curName, updateCurName] = useState("");
+  const [onlyLawomenLy, updateOnlyLawomenLy] = useState(false);
   const [curLawyers, updateCurLawyers] = useState(lawyerEntries);
 
   function updateSearch() {
@@ -72,6 +73,9 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
     }
     if (onlyAva !== false) {
       tempListLawyers = tempListLawyers.filter(({ available }) => available);
+    }
+    if (onlyLawomenLy !== false) {
+      tempListLawyers = tempListLawyers.filter(({ lawomenLawyer }) => lawomenLawyer);
     }
     if (nameInput.current.value !== "") {
       tempListLawyers = tempListLawyers.filter(({ name }) =>
@@ -129,7 +133,7 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
               </option>
             ))}
           </select>
-          <div className={style.avaInput}>
+          <div className={style.checkboxInput}>
             <label htmlFor="ava">{t("isAva")}</label>
             <input
               id="ava"
@@ -138,19 +142,31 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
               onChange={() => updateOnlyAva((prev) => !prev)}
             />
           </div>
+          <div className={style.checkboxInput}>
+            <label htmlFor="lawomenLy">{t("lawomenLawyer")}</label>
+            <input
+              id="lawomenLy"
+              type="checkbox"
+              checked={onlyLawomenLy}
+              onChange={() => updateOnlyLawomenLy((prev) => !prev)}
+            />
+          </div>
           <button className={style.refreshBtn} onClick={updateSearch}>
             {t("update")}
           </button>
         </div>
 
         <div className={style.cardCont}>
-          {curLawyers.map(({ id, name, law_area, bio, available }) => (
+          {curLawyers.map(({ id, name, law_area, bio, available, lawomenLawyer, city}) => (
             <LawyerCard
               key={id}
               name={name}
               law_area={law_area}
               bio={bio}
               available={available}
+              lawomenLawyer={lawomenLawyer}
+              city={city}
+              contactLink={apiRes.contactLink}
             />
           ))}
         </div>
