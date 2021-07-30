@@ -67,7 +67,7 @@
 
 .applyLink {
   margin: 0 auto;
-  transform: translate(2rem);
+  transform: translate(-2rem);
   display: flex;
   justify-content: space-between;
 }

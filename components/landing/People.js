@@ -15,7 +15,7 @@ function People({ content, applyContent }) {
   return (
     <div className={styles.mainCont}>
       <div className={styles.teamCont}>
-        <h2 className={styles.secTitle}>Our Team</h2>
+        <h2 className={styles.secTitle}>{applyContent.teamTitle}</h2>
         <div className={styles.cardCont}>
           {landingTeam.map((ele) => {
             return (
@@ -37,7 +37,7 @@ function People({ content, applyContent }) {
       </div>
 
       <div className={styles.patronsCont}>
-        <h2 className={styles.secTitle}>Our Patrons</h2>
+        <h2 className={styles.secTitle}>{applyContent.patronTitle}</h2>
         <div className={styles.cardCont}>
           {landingPatrons.map((ele) => {
             return (

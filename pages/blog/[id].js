@@ -14,7 +14,14 @@ export async function getStaticProps(context) {
   const rawFooter = await fetch(
     `https://lawomen-admin.herokuapp.com/footer?_locale=${context.locale}`
   );
-  const apiRes = await rawFooter.json();
+  const footerRes = await rawFooter.json();
+
+  const rawBlogPage = await fetch(
+    `https://lawomen-admin.herokuapp.com/blog?_locale=${context.locale}`
+  );
+  const blogPageRes = await rawBlogPage.json();
+
+  const apiRes = {...blogPageRes, ...footerRes}
 
   return {
     props: {
@@ -89,7 +96,7 @@ function blog({ blogRes, apiRes }) {
           ""
         ) : (
           <>
-            <h2>Sources</h2>
+            <h2>{apiRes.source}</h2>
             <div
               className={style.sources}
               dangerouslySetInnerHTML={{ __html: parsedSources }}

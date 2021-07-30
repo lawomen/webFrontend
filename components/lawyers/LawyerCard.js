@@ -43,7 +43,7 @@ function LawyerCard({ name, law_area, bio, available, lawomenLawyer, city, conta
         ))}
       </div>
       <div className={style.bio}>
-        <p>{bio} </p>
+        <p>{bio}</p>
 
         <Link passHref href={contactLink}>
           <p className={style.contact}>
