@@ -47,6 +47,11 @@
     transition: color 0.3s cubic-bezier(0.19, 1, 0.22, 1)
 }
 
+*[dir="rtl"] .cardIcon{
+    top: 20px;
+    left: 20px;
+}
+
 .arrow{
     position: absolute;
     bottom: 2rem;

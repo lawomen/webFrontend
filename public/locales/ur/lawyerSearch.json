@@ -1,12 +1,12 @@
 {
-    "searchName": "urdu Search Name:",
-    "filterBy": "urdu Filter By:",
-    "lawArea": "urdu Law Area:",
-    "lawArea2": "urdu Areas of Law:",
-    "allArea": "urdu All",
-    "isAva": "urdu Currently Available",
-    "update": "urdu Update Results",
-    "ava": "urdu Available",
-    "lawomenLawyer": "urdu LaWomen Lawyer",
+    "searchName": "تلاش کریں",
+    "filterBy": "مزید تلاش",
+    "lawArea": "قانونی اصناف",
+    "lawArea2": "قانونی اصناف",
+    "allArea": "سب",
+    "isAva": "موجودہ",
+    "update": "تازہ نتائج",
+    "ava": "دستیاب",
+    "lawomenLawyer": "ہمارے وکیل۔",
     "contact": "رابطہ کریں"
 }

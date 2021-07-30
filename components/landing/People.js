@@ -11,6 +11,7 @@ function People({ content, applyContent }) {
     return ele.type === "team";
   });
 
+
   return (
     <div className={styles.mainCont}>
       <div className={styles.teamCont}>

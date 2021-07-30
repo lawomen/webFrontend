@@ -3,7 +3,7 @@
     width: 30vw;
     transform: translateY(-10vh);
     background-color: white;
-    border-left: 8px solid rgba(229, 229, 229, 0.719);
+    border-inline-start: 8px solid rgba(229, 229, 229, 0.719);
     color: rgb(78, 78, 78);
     padding: 0.5rem 3rem 1rem 2rem;
     border-top-left-radius: 5px;
@@ -32,26 +32,28 @@
 }
 
 .cardNotice h2 {
-    border-left: 3px solid rgba(36, 95, 212, 0.8);
-    padding-left: 8px;
+    border-inline-start: 3px solid rgba(36, 95, 212, 0.8);
+    padding-inline-start: 8px;
     font-size: 1.2rem;
     margin-bottom: 7px;
 }
 
 .cardAd h2 {
-    border-left: 3px solid red;
-    padding-left: 8px;
+    border-inline-start: 3px solid red;
+    padding-inline-start: 8px;
     font-size: 1.2rem;
     margin-bottom: 7px;
 }
 
-.cardAd h2::after {
+*[dir="ltr"] .cardAd h2::after {
     content: "#Ad";
     position: relative;
     left: 4vw;
     color: rgba(255, 0, 0, 0.6);
     font-size: 1.1rem;
 }
+
+
 
 .imgCont{
     position: relative;
