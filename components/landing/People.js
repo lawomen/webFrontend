@@ -11,7 +11,6 @@ function People({ content, applyContent }) {
     return ele.type === "team";
   });
 
-
   return (
     <div className={styles.mainCont}>
       <div className={styles.teamCont}>
@@ -29,7 +28,7 @@ function People({ content, applyContent }) {
                   />
                 </div>
                 <p className={styles.cardSubtitle}>{ele.name}</p>
-                {<p className={styles.cardSubtitle2}>{ele.position_optional}</p>}
+                <p>{ele.position_optional}</p>
               </div>
             );
           })}
@@ -51,7 +50,7 @@ function People({ content, applyContent }) {
                   />
                 </div>
                 <p className={styles.cardSubtitle}>{ele.name}</p>
-                {<p>{ele.position_optional}</p>}
+                <p>{ele.position_optional}</p>
               </div>
             );
           })}

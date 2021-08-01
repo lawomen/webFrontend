@@ -80,7 +80,8 @@ function allBlogs({ apiRes }) {
                       alt={ele.image.alternativeText}
                     />
                   </div>
-                  <p className={style.cardSubtitle}>{ele.name}</p>
+                  <p>{ele.name}</p>
+                  <p className={style.cardSubtitle}>{ele.position_optional}</p>
                 </div>
               );
             })}
@@ -101,7 +102,8 @@ function allBlogs({ apiRes }) {
                       alt={ele.image.alternativeText}
                     />
                   </div>
-                  <p className={style.cardSubtitle}>{ele.name}</p>
+                  <p>{ele.name}</p>
+                  <p className={style.cardSubtitle}>{ele.position_optional}</p>
                 </div>
               );
             })}
@@ -122,7 +124,8 @@ function allBlogs({ apiRes }) {
                       alt={ele.image.alternativeText}
                     />
                   </div>
-                  <p className={style.cardSubtitle}>{ele.name}</p>
+                  <p>{ele.name}</p>
+                  <p className={style.cardSubtitle}>{ele.position_optional}</p>
                 </div>
               );
             })}
