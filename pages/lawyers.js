@@ -54,13 +54,11 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
   const [curLawArea, updateLawArea] = useState("all");
   const [onlyAva, updateOnlyAva] = useState(false);
   const nameInput = useRef(null);
-  const [curName, updateCurName] = useState("");
+  const cityInput = useRef(null);
   const [onlyLawomenLy, updateOnlyLawomenLy] = useState(false);
   const [curLawyers, updateCurLawyers] = useState(lawyerEntries);
 
   function updateSearch() {
-    updateCurName(nameInput.current.value);
-
     let tempListLawyers = lawyerEntries;
 
     if (curLawArea !== "all") {
@@ -75,11 +73,20 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
       tempListLawyers = tempListLawyers.filter(({ available }) => available);
     }
     if (onlyLawomenLy !== false) {
-      tempListLawyers = tempListLawyers.filter(({ lawomenLawyer }) => lawomenLawyer);
+      tempListLawyers = tempListLawyers.filter(
+        ({ lawomenLawyer }) => lawomenLawyer
+      );
     }
     if (nameInput.current.value !== "") {
       tempListLawyers = tempListLawyers.filter(({ name }) =>
         name.toLowerCase().includes(nameInput.current.value.toLowerCase())
+      );
+    }
+    if (cityInput.current.value !== "") {
+      tempListLawyers = tempListLawyers.filter(
+        ({ city }) =>
+          city &&
+          city.toLowerCase().includes(cityInput.current.value.toLowerCase())
       );
     }
 
@@ -87,9 +94,7 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
   }
 
   return (
-    <Layout
-      content={apiRes}
-    >
+    <Layout content={apiRes}>
       <div className={style.landedNavCont}></div>
       <div className={style.backdrop}>
         <Image
@@ -108,7 +113,11 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
 
       <section className={style.mainCont}>
         <div className={style.searchCont}>
-          <input ref={nameInput} type="text" placeholder={t("searchName")}></input>
+          <input
+            ref={nameInput}
+            type="text"
+            placeholder={t("searchName")}
+          ></input>
           <button className={style.searchButton} onClick={updateSearch}>
             <RiUserSearchFill className={style.searchContIcon} />
           </button>
@@ -133,6 +142,15 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
               </option>
             ))}
           </select>
+
+          <label htmlFor="location">{t("location")}</label>
+          <input
+            className={style.locationText}
+            ref={cityInput}
+            type="text"
+            id="location"
+          />
+
           <div className={style.checkboxInput}>
             <label htmlFor="ava">{t("isAva")}</label>
             <input
@@ -157,18 +175,20 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
         </div>
 
         <div className={style.cardCont}>
-          {curLawyers.map(({ id, name, law_area, bio, available, lawomenLawyer, city}) => (
-            <LawyerCard
-              key={id}
-              name={name}
-              law_area={law_area}
-              bio={bio}
-              available={available}
-              lawomenLawyer={lawomenLawyer}
-              city={city}
-              contactLink={apiRes.contactLink}
-            />
-          ))}
+          {curLawyers.map(
+            ({ id, name, law_area, bio, available, lawomenLawyer, city }) => (
+              <LawyerCard
+                key={id}
+                name={name}
+                law_area={law_area}
+                bio={bio}
+                available={available}
+                lawomenLawyer={lawomenLawyer}
+                city={city}
+                contactLink={apiRes.contactLink}
+              />
+            )
+          )}
         </div>
       </section>
     </Layout>

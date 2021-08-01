@@ -78,7 +78,7 @@
 }
 
 .filterCont select{
-    margin-block-end: 1.5rem;
+    margin-block-end: 1rem;
     padding: 0.5rem 0.25rem;
     padding-inline-end: 0.75rem;
 }
@@ -170,6 +170,13 @@
     grid-area: cards;
     margin-block-end: 5rem;
 }
+
+.locationText{
+    margin-block-end: 1.5rem;
+    padding: 6px;
+    margin-block-start: 5px;
+}
+
 
 @media (max-width: 768px) {
     .mainCont {
