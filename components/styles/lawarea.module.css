@@ -5,6 +5,7 @@
     padding: 0 4vw;
     margin-bottom: 5vh;
     width: 70vw;
+    height: fit-content;
 }
 
 .card{

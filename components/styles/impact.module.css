@@ -18,7 +18,7 @@
     display: block;
     margin-block-start: 0.5rem;
     height: 2px;
-    width: 15rem;
+    width: 55vw;
     background-color: var(--primary);
     z-index: 999;
 }
