@@ -9,7 +9,7 @@
     margin-top: 7rem;
     display: grid;
     grid-template-areas: "logo socials . info" "mission mission . info" "mission mission . info";
-    grid-template-columns: 1fr 1fr 0.25fr 1fr;
+    grid-template-columns: 1.5fr 1fr 0.25fr 1fr;
     grid-template-rows: repeat(3, 1fr);
 }
 
@@ -28,14 +28,16 @@
 .footerLogo {
     grid-area: logo;
     position: relative;
-    width: 100px;
-    height: 100px;
+    width: 310px;
+    height: 110px;
     margin-block-end: 1.5rem;
-    left: 30%;
+    left: 8vw;
+    padding:5px;
+    background-color: rgba(245, 245, 245, 0.204);
 }
 
 *[dir="rtl"] .footerLogo {
-    right: 30%;
+    right: 7vw;
 }
 
 .socials {
@@ -70,9 +72,9 @@
 
 @media (max-width: 768px) {
     .cont {
-        grid-template-areas: "logo socials" "mission mission" "info info";
+        grid-template-areas: "logo logo" "socials socials" "mission mission" "info info";
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1.75fr 2fr;
+        grid-template-rows: 1fr 0.5fr 1.5fr 2fr;
     }
     .missionP{
       padding-block-end: 2vh;
@@ -81,10 +83,11 @@
         padding-inline-start: 5vw;
         padding-block-end: 2vh;
     }
-    .footerLogo {
-        left: 10%;
+    .footerLogo{
+        left: 13vw;
     }
+
     *[dir="rtl"] .footerLogo {
-        right: 10%;
+        right: 13vw;
     }
 }

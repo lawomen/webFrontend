@@ -20,10 +20,11 @@ function Footer({ content }) {
     <footer className={footerStyles.cont}>
       <div className={footerStyles.footerLogo}>
         <Image
-          layout="fill"
           objectFit="contain"
-          src="/emblem1.svg"
+          src="/fullLogo.png"
           alt="LaWomen Logo"
+          width={300}
+          height={100}
         />
       </div>
       <div className={footerStyles.socials}>
