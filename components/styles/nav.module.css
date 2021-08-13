@@ -107,15 +107,12 @@
 }
 
 .langCont {
-    margin-inline-end: 5%;
+    margin-right: 5%;
     display: flex;
     justify-content: flex-start;
     align-items: center;
 }
 
-*[dir="rtl"] .langCont {
-    margin-inline-end: 10%;
-}
 
 .lang {
     border: none;
@@ -167,6 +164,7 @@
         position: absolute;
         left: 7vw;
         z-index: 10;
+        margin-top: 5px;
     }
     .lang {
         font-size: 1.5rem;

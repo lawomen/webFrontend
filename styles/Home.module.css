@@ -18,6 +18,7 @@
     grid-area: title;
     font-size: 5.5rem;
     margin: 7vh 0;
+    font-family: 'Lora', 'Arial', serif;
 }
 
 .mainContent {
