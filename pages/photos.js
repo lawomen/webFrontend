@@ -1,9 +1,8 @@
-import Image from "next/image";
-
 import Layout from "../components/Layout";
 import style from "../styles/photos.module.css";
 
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Photo from "../components/Photo";
 
 export async function getStaticProps({ locale }) {
   const rawPictures = await fetch(
@@ -34,17 +33,7 @@ function allBlogs({ apiRes }) {
       <section className={style.mainCont}>
         <div className={style.galleryCont}>
           {apiRes.pictures.map((ele) => (
-            <div className={style.cardCont} key={ele.id}>
-              <div className={style.imgCont}>
-                <Image
-                  layout="fill"
-                  objectFit="contain"
-                  src={ele.picture.url}
-                  alt={ele.picture.alternativeText}
-                />
-              </div>
-              <p>{ele.desc}</p>
-            </div>
+            <Photo url={ele.picture.url} alt={ele.desc} key={ele.id} />
           ))}
         </div>
       </section>
