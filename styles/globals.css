@@ -5,10 +5,10 @@
 }
 
 :root {
-    --primary: #EC7505;
-    --alert: #cb3c04;
-    --background: #1c3a13;
-    --bgLanding: rgba(28, 58, 19, 0.55);
+    --primary: #EC2225;
+    --alert: #cbb704;
+    --background: #010101cf;
+    --bgLanding: #3d3d3fac;
     --navBg: #1f4215;
     font-size: 16px;
 }
