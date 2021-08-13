@@ -6,10 +6,11 @@
 
 :root {
     --primary: #EC2225;
-    --alert: #cbb704;
+    --alert: #EC2225;
     --background: #010101cf;
     --bgLanding: #3d3d3fac;
-    --navBg: #1f4215;
+    --navBg: rgb(197, 50, 53);
+    --navBg2: #1e1e1e;
     font-size: 16px;
 }
 

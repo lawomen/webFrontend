@@ -66,12 +66,12 @@
 
 .card:hover .cardIcon{
     color: var(--primary);
-    opacity: 100;
+    opacity: 1;
 }
 
 .card:hover .arrow{
     color: var(--primary);
-    opacity: 100;
+    opacity: 1;
 }
 
 @media (max-width: 768px) {
