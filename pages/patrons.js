@@ -61,8 +61,8 @@ function patrons({ apiRes }) {
               <h3>{ele.name}</h3>
               <div className={style.cardsImg}>
                 <Image
-                  height={70}
-                  width={70*(ele.image.width/ele.image.height)}
+                  height={90}
+                  width={90*(ele.image.width/ele.image.height)}
                   src={ele.image.url}
                   alt={ele.image.alternativeText}
                 />

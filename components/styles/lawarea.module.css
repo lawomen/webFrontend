@@ -82,7 +82,11 @@
     }
 
     .card{
-        height: 120%;
+        box-shadow: 3px 4px 5px 5px rgba(199, 198, 198, 0.25);
+    }
+
+    .card:hover{
+        box-shadow: 5px 6px 6px 8px rgba(199, 198, 198, 0.25);
     }
 
     .cardIcon{

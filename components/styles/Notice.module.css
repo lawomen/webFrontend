@@ -57,9 +57,11 @@
 
 .imgCont{
     position: relative;
-    width: 15vw;
-    height: 7rem;
+    width: 18vw;
+    height: 18rem;
     margin-top: 15px;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 @media (max-width: 768px) {
@@ -73,6 +75,7 @@
     }
     .imgCont{
         position: relative;
-        width: 50vw;
+        width: 60vw;
+        height: 20rem;
     }
 }
