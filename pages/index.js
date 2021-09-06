@@ -9,6 +9,7 @@ import WhyLawomen from "../components/landing/WhyLawomen";
 import Impact from "../components/landing/Impact";
 import People from "../components/landing/People";
 import Testimonials from "../components/landing/Testimonials";
+import Modal from "../components/landing/Popup";
 
 import {
   RiInstagramLine,
@@ -90,6 +91,7 @@ function Home({ apiRes }) {
 
   return (
     <Layout content={apiRes}>
+      <Modal content={apiRes.alert}/>
       <section className={homeStyle.backdrop}>
         <div className={homeStyle.landingCont}>
           <h1 className={homeStyle.titleContent}>{t("companyName")}<span className={homeStyle.tm}>™</span></h1>

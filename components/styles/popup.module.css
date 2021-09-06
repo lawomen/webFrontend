@@ -1,0 +1,31 @@
+.main{
+    z-index: 999;
+    position: fixed;
+    width:100vw;
+    height: 100vh;
+    background: rgba(233, 219, 219, 0.396);
+    opacity: 50;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.content{
+    padding: 0.5rem 2rem;
+    text-align: left;
+    width: 50vw;
+    height: 50vh;
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px rgba(132, 132, 132, 0.539);
+}
+
+.icon{
+    position: relative;
+    left: 44vw;
+    color: red;
+}
+
+.paragraph{
+    font-size: 1.3rem;
+}
