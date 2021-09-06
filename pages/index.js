@@ -92,7 +92,7 @@ function Home({ apiRes }) {
     <Layout content={apiRes}>
       <section className={homeStyle.backdrop}>
         <div className={homeStyle.landingCont}>
-          <h1 className={homeStyle.titleContent}>{t("companyName")}</h1>
+          <h1 className={homeStyle.titleContent}>{t("companyName")}<span className={homeStyle.tm}>™</span></h1>
           <div className={homeStyle.mainContent}>
             <h2 className={homeStyle.subtitle}>{apiRes.tagline_title}</h2>
             <h3 className={homeStyle.desc}>{apiRes.tagline_desc}</h3>

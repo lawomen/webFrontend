@@ -21,6 +21,11 @@
     font-family: 'Lora', 'Arial', serif;
 }
 
+.tm{
+    font-size: 1.5rem;
+    vertical-align: 130%;
+}
+
 .mainContent {
     grid-area: main;
     margin-inline-end: 8vw;
