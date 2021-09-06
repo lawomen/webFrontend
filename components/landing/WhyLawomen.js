@@ -29,8 +29,8 @@ function WhyLawomen({ content }) {
       </div>
         <div className={styles.image}>
           <Image
-            alt="Decorative image of people meeting"
-            src="/peoplemeeting.jpeg"
+            alt="'Law women' legal consultation session"
+            src="/legalConsult2.jpeg"
             layout="fill"
             objectFit="cover"
           />

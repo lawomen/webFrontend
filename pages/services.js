@@ -37,8 +37,8 @@ function services({ apiRes }) {
       <div className={style.landedNavCont}></div>
       <div className={style.backdrop}>
         <Image
-          alt="Decorative background image of library"
-          src="/klabEvent1.jpeg"
+          alt="Four women at table. Legal consultation session of LaWomen"
+          src="/legalConsult3.jpeg"
           layout="fill"
           objectFit="cover"
           priority

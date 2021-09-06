@@ -36,8 +36,8 @@ function allBlogs({ apiRes }) {
       <div className={style.landedNavCont}></div>
       <div className={style.backdrop}>
         <Image
-          alt="Decorative background image of people in the street"
-          src="/zoom.jpeg"
+          alt="Women writing"
+          src="/writing.jpeg"
           layout="fill"
           objectFit="cover"
           priority

@@ -36,8 +36,8 @@ function apply({ apiRes }) {
       <div className={style.landedNavCont}></div>
       <div className={style.backdrop}>
         <Image
-          alt="Decorative background image of library"
-          src="/klabEvent1.jpeg"
+          alt="Women talking"
+          src="/personTalk2.jpeg"
           layout="fill"
           objectFit="cover"
           priority

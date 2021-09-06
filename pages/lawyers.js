@@ -98,8 +98,8 @@ function allBlogs({ apiRes, lawyerEntries, allExpertise }) {
       <div className={style.landedNavCont}></div>
       <div className={style.backdrop}>
         <Image
-          alt="Decorative background image of people meeting"
-          src="/peoplemeeting.jpeg"
+          alt="Three women. Legal consultation session"
+          src="/legalConsult.jpeg"
           layout="fill"
           objectFit="cover"
           priority

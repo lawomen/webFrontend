@@ -40,8 +40,8 @@ function allBlogs({ apiRes, blogEntry }) {
       <div className={style.landedNavCont}></div>
       <div className={style.backdrop}>
         <Image
-          alt="Decorative background image of people discussing"
-          src="/klabEvent2.jpeg"
+          alt="Women at conference."
+          src="/talkConference2.jpeg"
           layout="fill"
           objectFit="cover"
           priority

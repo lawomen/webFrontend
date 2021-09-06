@@ -12,7 +12,7 @@ function BlogCard({ subpath, title, date_created, picture, blog_short_desc }) {
             src={picture.url}
             layout="fill"
             objectFit="cover"
-            quality={25}
+            quality={50}
           />
         </div>
         <div className={style.cardDesc}>
