@@ -4,18 +4,18 @@
   width: 100vw;
   height: 20vh;
   margin-top: 80vh;
-  padding: 0.5rem 4rem;
+  padding: 2rem 8rem;
   text-align: left;
-  background-color: rgb(255, 255, 255);
-  border-top: 2px solid black;
+  background-color: rgba(74, 72, 72, 0.9);
   overflow-y: scroll;
+  color: white;
 }
 
 .icon {
   position: absolute;
-  right: 3vw;
-  bottom: 15vh;
-  color: var(--primary);
+  right: 5vw;
+  bottom: 14vh;
+  color: white;
 }
 
 .icon:hover{
@@ -24,4 +24,10 @@
 
 .paragraph {
   font-size: 1.1rem;
+}
+
+@media (max-width: 768px) {
+  .main{
+    padding: 2vh 6vw;
+  }
 }

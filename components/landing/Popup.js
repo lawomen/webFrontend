@@ -9,7 +9,7 @@ function Modal({ content }) {
     <>
       {curOpen ? (
           <div className={styles.main}>
-            <RiCloseFill onClick={() => setOpen(false)} className={styles.icon} size={30}/>
+            <RiCloseFill onClick={() => setOpen(false)} className={styles.icon} size={40}/>
             <p className={styles.paragraph}>{content}</p>
           </div>
       ) : null}
