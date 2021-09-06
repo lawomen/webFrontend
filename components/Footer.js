@@ -50,7 +50,11 @@ function Footer({ content }) {
           <RiLinkedinFill size={35} />
         </a>
       </div>
-      <p className={footerStyles.missionP}>{content.mission_statement}</p>
+      <p className={footerStyles.missionP}>
+        {content.mission_statement}
+        <br />
+        <br /> {content.copyrights}
+      </p>
       <div className={footerStyles.infoCont}>
         <h3>{content.info_title}</h3>
         {content.telephone ? (
@@ -91,7 +95,7 @@ function Footer({ content }) {
             </p>
           </div>
         ) : (
-         ""
+          ""
         )}
       </div>
     </footer>
