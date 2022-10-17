@@ -71,7 +71,7 @@ export async function getStaticProps({ locale }) {
     landingTestimonials,
   };
   
-  console.log(apiRes.landingTestimonials);
+  
 
   return {
     props: {
@@ -176,3 +176,4 @@ function Home({ apiRes }) {
 }
 
 export default Home;
+console.log(apiRes.landingTestimonials);
