@@ -70,6 +70,8 @@ export async function getStaticProps({ locale }) {
     landingPeople,
     landingTestimonials,
   };
+  
+  console.log(apiRes.landingTestimonials);
 
   return {
     props: {
