@@ -160,7 +160,7 @@ function Home({ apiRes }) {
       </section>
 
       <section>
-        <Testimonials content={apiRes.landingTestimonials} />
+        <Testimonials content=hello world />
       </section>
 
       <section>
